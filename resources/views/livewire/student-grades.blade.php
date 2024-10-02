@@ -5,7 +5,7 @@
         <img src="https://www.iubip.ru/local/templates/univer/img/logo.svg">
         <img src="https://www.centrinvest.ru/_ipx/_/logo.svg">
     </x-slot>
-    <div class = "bg-gradient-to-br from-sky-900 via-blue-600 to-cyan-700 h-screen w-full ">
+    <div class = "bg-gradient-to-br from-sky-100 via-blue-200 h-screen w-full ">
         <div class = "flex item-center justify-center">
             <input type = "text"
                 class = "placeholder:italic placeholder:text-green-600 rounded-md ml-2 w-1/2 text-xl h-16 mt-10 border border-green-600 text-blue-500"
