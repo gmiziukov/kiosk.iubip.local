@@ -2,6 +2,8 @@
     <x-slot name="head">
     </x-slot>
     <x-slot name="logotip">
+        <img src="https://www.iubip.ru/local/templates/univer/img/logo.svg">
+        <img src="https://www.centrinvest.ru/_ipx/_/logo.svg">
     </x-slot>
     <div class = "bg-blue-200  h-screen w-full flex flex-col items-center justify-center">
         <div class="max-w-7xl mx-auto p-6 lg:p-8">
@@ -11,7 +13,6 @@
             <!-- Картинка главная -->
             <div class="mt-16">
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-4 lg:gap-8 ">
-
                     <a href="https://laravel.com/docs"
                         class="bg-gradient-to-br h-64  from-blue-800 from-60%  to-blue-700 p-6 rounded-xl flex shadow-md shadow-emerald-400 hover:scale-[1.01]">
                         <div>
@@ -98,4 +99,5 @@
             </div>
         </div>
     </div>
+</div>
 </x-main-layout>
