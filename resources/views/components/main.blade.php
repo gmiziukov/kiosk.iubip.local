@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
-        <title>{{ config('app.name', 'Laravel') }}</title>
+        <title>ll</title>
 
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
@@ -18,8 +18,21 @@
         @livewireStyles
     </head>
     <body>
-        {{ $head }}
-        <div class="font-sans text-gray-900 antialiased">
+        <div class = "h-16 w-screan bg-sky-500">
+            @if ($logotip)
+                <div class="flex">
+                    <div class="flex gap-7 pl-2">
+                        {{$logotip}}
+                    </div>
+                    <div class = "text-center w-full text-5xl"> 
+                        {{$head}}
+                    </div>
+                </div>
+            @else
+                {{$head}}
+            @endif
+       </div>
+        <div>
             {{ $slot }}
         </div>
 
