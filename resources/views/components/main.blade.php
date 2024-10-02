@@ -29,10 +29,12 @@
                     </div>
                 </div>
             @else
-                {{$head}}
+                <div>
+                    {{$head}}
+                </div>
             @endif
        </div>
-        <div>
+        <div class = "">
             {{ $slot }}
         </div>
 

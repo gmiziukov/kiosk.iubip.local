@@ -1,4 +1,12 @@
-<x-guest-layout>
+<x-main-layout>
+    <x-slot name="logotip">
+        <img src="https://www.iubip.ru/local/templates/univer/img/logo.svg">
+        <img src="https://www.centrinvest.ru/_ipx/_/logo.svg">
+    </x-slot>
+    <x-slot name="head">
+        главная страница
+    </x-slot>
+
 <div class = "bg-gradient-to-br from-sky-900 via-blue-600 to-cyan-700 h-screen w-full flex flex-col items-center justify-center">    
     <div class="max-w-7xl mx-auto p-6 lg:p-8">
         <div class="flex justify-center">
@@ -92,4 +100,4 @@
         </div>
     </div>
 </div>
-</x-guest-layout>
+</x-main-layout>
