@@ -7,7 +7,12 @@ use Illuminate\Support\Facades\DB;
 
 class ClassScheduleController extends Controller
 {
-    public function data(){
-        return DB::table("schedules")->get();
+    public function data($data_now, $group_now){
+        $a = DB::table("schedules")
+        ->where("date", $data_now);
+        if($group_now != NULL){
+            $a->where("group", strtoupper($group_now));
+        }
+        return $a->get();
     }
 }
