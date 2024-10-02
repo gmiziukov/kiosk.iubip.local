@@ -17,6 +17,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/student-grades', function () {
+    return view('pages.student-grades');
+})->name('student.grades');
+
+
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
