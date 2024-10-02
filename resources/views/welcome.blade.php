@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <x-main-layout>
     <x-slot name="head">
     </x-slot>
@@ -6,37 +5,29 @@
         <img src="https://www.iubip.ru/local/templates/univer/img/logo.svg">
         <img src="https://www.centrinvest.ru/_ipx/_/logo.svg">
     </x-slot>
-    <x-slot name="head">
-        главная страница
-    </x-slot>
+    <div
+        class = "bg-gradient-to-br from-sky-900 via-blue-600 to-cyan-700 h-screen w-full flex flex-col items-center justify-center">
+        <div class="max-w-7xl mx-auto p-6 lg:p-8">
+            <div class="flex justify-center">
+                <svg viewBox="0 0 62 65" fill="none" xmlns="http://www.w3.org/2000/svg" class="h-16 w-auto"> </svg>
+            </div>
+            <!-- Картинка главная -->
+            <div class="mt-16">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 lg:gap-8 ">
 
-<div class = "bg-gradient-to-br from-sky-900 via-blue-600 to-cyan-700 h-screen w-full flex flex-col items-center justify-center">    
-=======
-<x-guest-layout>
-<div class = "bg-blue-200  h-screen w-full flex flex-col items-center justify-center">    
->>>>>>> e7c2e54a3ae9d6b5aa3786582edc4eb2fd9879f5
-    <div class="max-w-7xl mx-auto p-6 lg:p-8">
-        <div class="flex justify-center">
-            <svg viewBox="0 0 62 65" fill="none" xmlns="http://www.w3.org/2000/svg" class="h-16 w-auto">   </svg>
-        </div>
-        <!-- Картинка главная -->
-        <div class="mt-16">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 lg:gap-8 ">
-
-                <a href="https://laravel.com/docs"
-                    class="bg-gradient-to-br h-64  from-blue-800 from-60%  to-blue-700 p-6 rounded-xl flex shadow-md shadow-emerald-400 hover:scale-[1.01]">
-                    <div>
-                        <!-- <img class="inline size-8" src="{{ asset('img/icons8-64.png') }}" alt="..."> -->
-                        <div
-                            class="h-16 w-16 bg-blue-600 flex items-center justify-center rounded-full">
-                            <i class="fa-regular fa-calendar-days fa-2xl" style="color: #08cc22;"></i>
+                    <a href="https://laravel.com/docs"
+                        class="bg-gradient-to-br h-64  from-blue-800 from-60%  to-blue-700 p-6 rounded-xl flex shadow-md shadow-emerald-400 hover:scale-[1.01]">
+                        <div>
+                            <!-- <img class="inline size-8" src="{{ asset('img/icons8-64.png') }}" alt="..."> -->
+                            <div class="h-16 w-16 bg-blue-600 flex items-center justify-center rounded-full">
+                                <i class="fa-regular fa-calendar-days fa-2xl" style="color: #08cc22;"></i>
+                            </div>
+                            <h2 class="mt-6 text-2xl font-sans font-normal text-white">График пересдач</h2>
+                            <p class="mt-4 text-slate-300 text-sm leading-relaxed">
+                                Найдите время и кабинет, где преподаватели будут рады принять и закрыть ваши долги
+                            </p>
                         </div>
-                        <h2 class="mt-6 text-2xl font-sans font-normal text-white">График пересдач</h2>
-                        <p class="mt-4 text-slate-300 text-sm leading-relaxed"> 
-                            Найдите время и кабинет, где преподаватели будут рады принять и закрыть ваши долги 
-                        </p>
-                    </div>
-                </a>
+                    </a>
 
                     <a href="{{ route('student.grades') }}"
                         class="bg-gradient-to-b h-64 from-blue-800 from-60%  to-blue-700 p-6 rounded-xl shadow-md shadow-emerald-400 hover:scale-[1.01]">
@@ -110,5 +101,4 @@
             </div>
         </div>
     </div>
-</div>
 </x-main-layout>
