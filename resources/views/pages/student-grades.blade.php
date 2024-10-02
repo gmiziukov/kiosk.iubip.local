@@ -1,3 +1,3 @@
-<x-guest-layout>
+<x-main-layout>
     @livewire('student-grades')
-</x-guest-layout>
+</x-main-layout>
