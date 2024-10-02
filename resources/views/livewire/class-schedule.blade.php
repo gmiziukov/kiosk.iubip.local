@@ -2,7 +2,7 @@
     <div class = "flex ">
         <input wire:model = "currentDate" type="date" id="start" name="search-data" />
         <input wire:model = "group" type="text" value ="k1N1"> 
-        <button wire:click="oo()">найти</button>
+        <button wire:click="search()">найти</button>
     </div>
         
     <table>

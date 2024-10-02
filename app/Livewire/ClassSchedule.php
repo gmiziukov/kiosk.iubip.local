@@ -18,7 +18,7 @@ class ClassSchedule extends Component
         $this->data = $datatable->data($data_now, $group_now);
         // dd($this->data);
     }
-    public function oo(){
+    public function search(){
         $this->datatable($this->currentDate, $this->group);
     }
 
