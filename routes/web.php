@@ -16,7 +16,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-
+Route::get('/class-schedule', function () {
+    return view('class-schedule');
+});
 Route::get('/student-grades', function () {
     return view('pages.student-grades');
 })->name('student.grades');
