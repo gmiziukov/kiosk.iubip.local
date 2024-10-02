@@ -1,43 +1,49 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="csrf-token" content="{{ csrf_token() }}">
 
-        <title>ll</title>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 
-        <!-- Fonts -->
-        <link rel="preconnect" href="https://fonts.bunny.net">
-        <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
+    <title>ll</title>
 
-        <!-- Scripts -->
-        @vite(['resources/css/app.css', 'resources/js/app.js'])
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.bunny.net">
+    <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
 
-        <!-- Styles -->
-        @livewireStyles
-    </head>
-    <body>
-        <div class = "h-16 w-screan bg-sky-500">
+    <!-- Scripts -->
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
+
+    <!-- Styles -->
+    @livewireStyles
+</head>
+
+<body>
+    <div class="h-screen w-full flex flex-col">
+        <div class="z-10 bg-gradient-to-r from-sky-900 to-blue-600 h-20 shadow-lg shadow-blue-500/50">
+            <!--Нужна ли тень? -->
             @if ($logotip)
                 <div class="flex">
-                    <div class="flex gap-7 pl-2">
-                        {{$logotip}}
+                    <div class="  flex gap-7 pl-2">
+                        {{ $logotip }}
                     </div>
-                    <div class = "text-center w-full text-5xl"> 
-                        {{$head}}
+                    <div class = "text-center text-white ">
+                        {{ $head }}
                     </div>
                 </div>
             @else
                 <div>
-                    {{$head}}
+                    {{ $head }}
                 </div>
             @endif
-       </div>
+        </div>
         <div class = "">
             {{ $slot }}
         </div>
+    </div>
+    
+    @livewireScripts
+</body>
 
-        @livewireScripts
-    </body>
 </html>
