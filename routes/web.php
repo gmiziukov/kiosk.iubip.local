@@ -19,6 +19,9 @@ Route::get('/', function () {
 Route::get('/class-schedule', function () {
     return view('class-schedule');
 });
+Route::get('/order-documen', function () {
+    return view('order-documen');
+});
 Route::get('/student-grades', function () {
     return view('pages.student-grades');
 })->name('student.grades');
