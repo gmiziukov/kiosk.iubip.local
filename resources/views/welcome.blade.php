@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 <x-main-layout>
     <x-slot name="logotip">
         <img src="https://www.iubip.ru/local/templates/univer/img/logo.svg">
@@ -9,10 +9,6 @@
     </x-slot>
 
 <div class = "bg-gradient-to-br from-sky-900 via-blue-600 to-cyan-700 h-screen w-full flex flex-col items-center justify-center">    
-=======
-<x-guest-layout>
-<div class = "bg-blue-200  h-screen w-full flex flex-col items-center justify-center">    
->>>>>>> e7c2e54a3ae9d6b5aa3786582edc4eb2fd9879f5
     <div class="max-w-7xl mx-auto p-6 lg:p-8">
         <div class="flex justify-center">
             <svg viewBox="0 0 62 65" fill="none" xmlns="http://www.w3.org/2000/svg" class="h-16 w-auto">   </svg>
