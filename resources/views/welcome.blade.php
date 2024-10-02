@@ -1,5 +1,5 @@
 <x-guest-layout>
-<div class = "bg-gradient-to-br from-sky-900 via-blue-600 to-cyan-700 h-screen w-full flex flex-col items-center justify-center">    
+<div class = "bg-blue-200  h-screen w-full flex flex-col items-center justify-center">    
     <div class="max-w-7xl mx-auto p-6 lg:p-8">
         <div class="flex justify-center">
             <svg viewBox="0 0 62 65" fill="none" xmlns="http://www.w3.org/2000/svg" class="h-16 w-auto">   </svg>
@@ -23,7 +23,7 @@
                     </div>
                 </a>
 
-                <a href="https://laracasts.com" 
+                <a href="{{route('student.grades')}}" 
                     class="bg-gradient-to-b h-64 from-blue-800 from-60%  to-blue-700 p-6 rounded-xl shadow-md shadow-emerald-400 hover:scale-[1.01]">
                     <div>
                         <div class="h-16 w-16 bg-blue-600 flex items-center justify-center rounded-full">
