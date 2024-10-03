@@ -18,7 +18,16 @@
     <!-- Styles -->
     @livewireStyles
 </head>
+<script>
+        var myVar = setInterval(function() {
+    myTimer();
+    }, 1000);
 
+    function myTimer() {
+    var d = new Date();
+    document.getElementById("clock").innerHTML = d.toLocaleTimeString();
+    }
+</script>
 <body>
     <div class="h-screen w-full flex flex-col">
         <div class="z-10 bg-white h-32 shadow-lg shadow-gray-100">
@@ -30,6 +39,9 @@
                     </div>
                     <div class = "text-center text-blue-600 ">
                         {{ $head }}
+                    </div>
+                    <div>
+                        <p id="clock"></p>
                     </div>
                 </div>
             @else
