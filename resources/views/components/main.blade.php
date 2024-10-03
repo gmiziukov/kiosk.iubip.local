@@ -21,14 +21,14 @@
 
 <body>
     <div class="h-screen w-full flex flex-col">
-        <div class="z-10 bg-gradient-to-r from-sky-100 to-blue-200 h-20 shadow-lg shadow-gray-100">
+        <div class="z-10 bg-white h-32 shadow-lg shadow-gray-100">
             <!--Нужна ли тень? -->
             @if ($logotip)
                 <div class="flex">
-                    <div class="  flex gap-7 pl-2">
+                    <div class="  flex gap-7 pl-4 pt-2">
                         {{ $logotip }}
                     </div>
-                    <div class = "text-center text-white ">
+                    <div class = "text-center text-blue-600 ">
                         {{ $head }}
                     </div>
                 </div>

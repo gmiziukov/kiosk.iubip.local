@@ -1,4 +1,4 @@
-<div class = "h-full w-full bg-gradient-to-br from-sky-100 via-blue-200">
+<div class = "h-full w-full bg-white">
     <div class = "flex ">
         <input
             class = "placeholder:italic  rounded-md ml-2 w-72 text-xl h-16 mt-10 border border-green-600 text-blue-500"
