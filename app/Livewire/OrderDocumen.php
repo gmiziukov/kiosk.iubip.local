@@ -14,8 +14,13 @@ class OrderDocumen extends Component
     //     $this->request($type_documen, $name);
     // }
     public function request(){
-        $time_var = new OrderDocumentController;
-        return $time_var->add_order($this->type_document, $this->name);
+        if($this->type_document != 0){
+            $time_var = new OrderDocumentController;
+            return $time_var->add_order($this->type_document, $this->name);
+        }
+        else{
+            return 0;
+        }
 
     }
     public function mount(){
