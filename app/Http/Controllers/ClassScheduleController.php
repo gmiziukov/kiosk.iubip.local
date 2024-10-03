@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Carbon\Carbon;
 
 class ClassScheduleController extends Controller
 {
@@ -14,5 +15,11 @@ class ClassScheduleController extends Controller
             $a->where("group", strtoupper($group_now));
         }
         return $a->get();
+    }
+    public function add_day(){
+        $now = Carbon::now();
+        $weekStartDate = $now->startOfWeek()->format("Y-m-d");
+        
+        $weekendDate = $now->endOfWeek()->format("Y-m-d");
     }
 }

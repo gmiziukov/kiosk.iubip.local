@@ -10,24 +10,34 @@
             class = "outline text-xl ml-8 font-medium border border-green-400 h-14 w-20 mt-11 bg-white text-green-600 rounded-md"
             wire:click="search()">найти</button>
     </div>
+    {{$now}}
     <div class = "">
     <table class = "border-separate border-spacing-1 rounded-lg font-sans font-normal text-xl text-white text-center mt-4 ml-2">
         <thead class = "bg-gradient-to-br from-blue-700 h-12 w-96 from-60%  to-blue-900">
             <tr>
                 <td class="border w-72 rounded-md font-normal border-blue-200">
-                    Дата
+                    время
+                </td>
+                <td class="border w-72 rounded-md font-normal border-blue-200">
+                    понедельник
                 </td>
                 <td class="border w-80 rounded-md font-sans font-normal border-blue-200">
-                    Место
+                    вторник
                 </td>
                 <td class="border rounded-md text-xl font-sans font-normal border-blue-200">
-                    Дисциплина
+                    среда 
                 </td>
                 <td class="border w-72 rounded-md text-xl font-sans font-normal border-blue-200">
-                    Время
+                    четверг 
                 </td>
                 <td class="border w-96 rounded-md text-xl font-sans font-normal border-blue-200">
-                    Преподаватель
+                    пятница 
+                </td>
+                <td class="border w-96 rounded-md text-xl font-sans font-normal border-blue-200">
+                    субота 
+                </td>
+                <td class="border w-96 rounded-md text-xl font-sans font-normal border-blue-200">
+                    воскресенье 
                 </td>
             </tr>
         </thead>
@@ -35,19 +45,18 @@
         @foreach ($data as $enddata)
             <tr>
                 <td class = "rounded-md h-14  border border-blue-200">
-                    {{ $enddata->date }}
-                </td>
-                <td class = "rounded-md border border-blue-200">
-                    {{ $enddata->lesson_place }}
-                </td>
-                <td class = "rounded-md border border-blue-200">
-                    {{ $enddata->discipline }}
-                </td>
-                <td class = "rounded-md border border-blue-200">
                     {{ $enddata->time }}
                 </td>
                 <td class = "rounded-md border border-blue-200">
+                    {{ $enddata->discipline }}
                     {{ $enddata->teacher }}
+                    {{ $enddata->lesson_place }}
+                </td>
+                <td class = "rounded-md border border-blue-200">
+                </td>
+                <td class = "rounded-md border border-blue-200">
+                </td>
+                <td class = "rounded-md border border-blue-200">
                 </td>
             </tr>
         @endforeach
@@ -55,5 +64,23 @@
     </table>
     </div>
     {{-- {{dd($data)}} --}}
-
+    <x-dialog-modal wire:model="confirmingUserDeletion">
+        <x-slot name="title">
+            Delete Account
+        </x-slot>
+    
+        <x-slot name="content">
+            Are you sure you want to delete your account? Once your account is deleted, all of its resources and data will be permanently deleted.
+        </x-slot>
+    
+        <x-slot name="footer">
+            <x-secondary-button wire:click="$toggle('confirmingUserDeletion')" wire:loading.attr="disabled">
+                Nevermind
+            </x-secondary-button>
+    
+            <x-danger-button class="ml-2" wire:click="deleteUser" wire:loading.attr="disabled">
+                Delete Account
+            </x-danger-button>
+        </x-slot>
+    </x-dialog-modal>
 </div>
