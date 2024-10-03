@@ -16,10 +16,18 @@ class ClassScheduleController extends Controller
         }
         return $a->get();
     }
-    public function add_day(){
+    public function add_day($group_now){
         $now = Carbon::now();
         $weekStartDate = $now->startOfWeek()->format("Y-m-d");
-        
         $weekendDate = $now->endOfWeek()->format("Y-m-d");
+        $a = DB::table("schedules")
+        ->where("date", '>=',$weekStartDate )
+        ->where("date", '<=',$weekendDate );
+        if($group_now != NULL){
+            $a->where("group", strtoupper($group_now));
+        }
+        $a = $a->get();
+        // dd($a);
+        return $a;
     }
 }

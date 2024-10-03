@@ -10,58 +10,65 @@
             class = "outline text-xl ml-8 font-medium border border-green-400 h-14 w-20 mt-11 bg-white text-green-600 rounded-md"
             wire:click="search()">найти</button>
     </div>
-    {{$now}}
     <div class = "">
-    <table class = "border-separate border-spacing-1 rounded-lg font-sans font-normal text-xl text-white text-center mt-4 ml-2">
-        <thead class = "bg-gradient-to-br from-blue-700 h-12 w-96 from-60%  to-blue-900">
-            <tr>
-                <td class="border w-72 rounded-md font-normal border-blue-200">
-                    время
-                </td>
-                <td class="border w-72 rounded-md font-normal border-blue-200">
-                    понедельник
-                </td>
-                <td class="border w-80 rounded-md font-sans font-normal border-blue-200">
-                    вторник
-                </td>
-                <td class="border rounded-md text-xl font-sans font-normal border-blue-200">
-                    среда 
-                </td>
-                <td class="border w-72 rounded-md text-xl font-sans font-normal border-blue-200">
-                    четверг 
-                </td>
-                <td class="border w-96 rounded-md text-xl font-sans font-normal border-blue-200">
-                    пятница 
-                </td>
-                <td class="border w-96 rounded-md text-xl font-sans font-normal border-blue-200">
-                    субота 
-                </td>
-                <td class="border w-96 rounded-md text-xl font-sans font-normal border-blue-200">
-                    воскресенье 
-                </td>
-            </tr>
-        </thead>
-        <tbody class = "bg-gradient-to-br h-14 from-blue-600 from-60%  to-blue-900">
-        @foreach ($data as $enddata)
-            <tr>
-                <td class = "rounded-md h-14  border border-blue-200">
-                    {{ $enddata->time }}
-                </td>
-                <td class = "rounded-md border border-blue-200">
-                    {{ $enddata->discipline }}
-                    {{ $enddata->teacher }}
-                    {{ $enddata->lesson_place }}
-                </td>
-                <td class = "rounded-md border border-blue-200">
-                </td>
-                <td class = "rounded-md border border-blue-200">
-                </td>
-                <td class = "rounded-md border border-blue-200">
-                </td>
-            </tr>
-        @endforeach
-        </tbody>
-    </table>
+        <table class = "border-separate border-spacing-1 rounded-lg font-sans font-normal text-xl text-white text-center mt-4 ml-2">
+            <thead class = "bg-gradient-to-br from-blue-700 h-12 w-96 from-60%  to-blue-900">
+                <tr>
+                    <td class="border w-72 rounded-md font-normal border-blue-200">
+                        время
+                    </td>
+                    <td class="border w-72 rounded-md font-normal border-blue-200">
+                        понедельник
+                    </td>
+                    <td class="border w-80 rounded-md font-sans font-normal border-blue-200">
+                        вторник
+                    </td>
+                    <td class="border rounded-md text-xl font-sans font-normal border-blue-200">
+                        среда 
+                    </td>
+                    <td class="border w-72 rounded-md text-xl font-sans font-normal border-blue-200">
+                        четверг 
+                    </td>
+                    <td class="border w-96 rounded-md text-xl font-sans font-normal border-blue-200">
+                        пятница 
+                    </td>
+                    <td class="border w-96 rounded-md text-xl font-sans font-normal border-blue-200">
+                        субота 
+                    </td>
+                    <td class="border w-96 rounded-md text-xl font-sans font-normal border-blue-200">
+                        воскресенье 
+                    </td>
+                </tr>
+            </thead>
+            <tbody class = "bg-gradient-to-br h-14 from-blue-600 from-60%  to-blue-900">
+                {{-- @foreach ($now as $now1)
+        
+                    {{$now1->date}}
+                @endforeach --}}
+                @foreach ($now as $now1)
+                    {{-- {{dd($now1->date);}} --}}
+                    @if($now1->date == "2024-10-03")
+                        <tr>
+                            <td class= "border w-96 rounded-md text-xl font-sans font-normal border-blue-200">
+                                {{ $now1->time }}
+                            </td>
+    
+                                {{-- {{ $now1->discipline }}
+                                {{ $now1->teacher }}
+                                {{ $now1->lesson_place }} --}}
+    
+                        </tr>
+                        <tr>
+    
+                        </tr>
+                         
+                        @else
+                            nope
+                        
+                     @endif
+                @endforeach
+            </tbody>
+        </table>
     </div>
     {{-- {{dd($data)}} --}}
     <x-dialog-modal wire:model="confirmingUserDeletion">
