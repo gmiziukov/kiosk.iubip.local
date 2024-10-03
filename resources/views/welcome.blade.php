@@ -6,7 +6,7 @@
         <img src="https://www.centrinvest.ru/_ipx/_/logo.svg">
     </x-slot>
     <div
-        class = "bg-gradient-to-br from-sky-100 via-blue-200 h-screen w-full flex flex-col items-center justify-center">
+        class = "bg-white h-screen w-full flex flex-col items-center justify-center">
         <div class="max-w-7xl mx-auto p-6 lg:p-8">
             <div class="flex justify-center">
                 <svg viewBox="0 0 62 65" fill="none" xmlns="http://www.w3.org/2000/svg" class="h-16 w-auto"> </svg>
