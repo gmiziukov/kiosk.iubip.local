@@ -2,17 +2,15 @@
     <x-slot name="head">
     </x-slot>
     <x-slot name="logotip">
-        <img src="https://www.iubip.ru/local/templates/univer/img/logo.svg">
-        <img src="https://www.centrinvest.ru/_ipx/_/logo.svg">
+        <img class = "w-32" src="https://www.iubip.ru/local/templates/univer/img/logo.svg">
+        <img class = "w-52" src="https://www.centrinvest.ru/_ipx/_/logo.svg">
+        <a class = "flex items-center pl-80 text-center font-semibold font-sans bg-clip-text text-transparent bg-gradient-to-t from-blue-600 to-blue-950 text-4xl leading-relaxed">Южный Университет (ИУБиП)</a>
     </x-slot>
     <div
-        class = "bg-white h-screen w-full flex flex-col items-center justify-center">
-        <div class="max-w-7xl mx-auto p-6 lg:p-8">
-            <div class="flex justify-center">
-                <svg viewBox="0 0 62 65" fill="none" xmlns="http://www.w3.org/2000/svg" class="h-16 w-auto"> </svg>
-            </div>
+        class = "h-screen w-full flex flex-col items-center justify-center">
+        <div class="max-w-screen-2xl ">
             <!-- Картинка главная -->
-            <div class="mt-16">
+            <div class="mt-32">
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-4 lg:gap-8 ">
 
                     <a href="https://laravel.com/docs"
