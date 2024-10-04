@@ -2,9 +2,9 @@
     <x-slot name="head">
     </x-slot>
     <x-slot name="logotip">
-        <img class = "w-32" src="https://www.iubip.ru/local/templates/univer/img/logo.svg">
-        <img class = "w-52" src="https://www.centrinvest.ru/_ipx/_/logo.svg">
-        <a class = "flex items-center pl-80 text-center font-semibold font-sans bg-clip-text text-transparent bg-gradient-to-t from-blue-600 to-blue-950 text-4xl leading-relaxed">Южный Университет (ИУБиП)</a>
+        <img class = "w-32" src="{{ asset('img/logo_dark.png') }}">
+        <img class = "w-48" src="https://www.centrinvest.ru/_ipx/_/logo.svg">
+        <a class = " pl-80 text-center mt-2 font-sans bg-clip-text font-bold text-transparent bg-gradient-to-t to-white from-gray-400 text-4xl leading-relaxed">Южный Университет (ИУБиП)</a>
     </x-slot>
     <div
         class = "h-screen w-full flex flex-col items-center justify-center">

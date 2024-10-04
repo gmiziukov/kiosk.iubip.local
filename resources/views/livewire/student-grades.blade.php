@@ -2,8 +2,8 @@
     <x-slot name="head">
     </x-slot>
     <x-slot name="logotip">
-        <img src="https://www.iubip.ru/local/templates/univer/img/logo.svg">
-        <img src="https://www.centrinvest.ru/_ipx/_/logo.svg">
+        <img class = "w-32" src="{{ asset('img/logo_dark.png') }}">
+        <img class = "w-48" src="https://www.centrinvest.ru/_ipx/_/logo.svg">
     </x-slot>
     <div class="h-screen w-full">
         <div class="flex flex-row w-full p-4">
@@ -21,7 +21,7 @@
 
             </div>
             <div class="w-1/3 ml-8 flex items-center justify-center">
-                <div class = "text-red-900  border-dashed border-2 text-3xl list-none">
+                <div class = "bg-clip-text text-transparent font-semibold bg-gradient-to-b from-red-800 from-1% via-red-600 via-60% to-red-800 to-2% border-dashed border-2 text-3xl list-none">
                     <li class = "text-center"> Пожалуйста, </li>
                     <li>заполни поля как указано в форме!</li>
                 </div>
