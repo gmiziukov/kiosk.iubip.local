@@ -1,5 +1,4 @@
 <div>
-
     <input wire:model = "name" type="text" placeholder="назовись воин">
     <select wire:model = "type_document">
         <option value=0>не выбрано</option>
