@@ -19,63 +19,76 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             /* Белый цвет */
-            font-size: 36px;
+            font-size: 33px;
             /* Размер шрифта */
             font-weight: bold;
             /* Жирный шрифт */
-            position: fixed;
-            /* Фиксированное позиционирование */
-            top: 15px;
-            /* Отступ сверху */
-            right: 30px
+
+        }
+        #date {
+            background: -webkit-linear-gradient(#ffffff, #a09e9e);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            /* Белый цвет */
+            font-size: 30px;
+            /* Размер шрифта */
+            font-weight: bold;
+            /* Жирный шрифт */
+
         }
     </style>
 </head>
-<div id="clock"></div>
 
-
-<script>
-    var myVar = setInterval(function() {
-        myTimer();
-    }, 1000);
-
-    function myTimer() {
-        var d = new Date();
-        var hours = d.getHours().toString().padStart(2, '0'); // Форматируем часы
-        var minutes = d.getMinutes().toString().padStart(2, '0'); // Форматируем минуты
-        document.getElementById("clock").innerHTML = hours + ':' + minutes; // Выводим время
-    }
-</script>
-
-<body style="background-image: url({{ asset('img/colorkit7.png') }})">
+<body style="background-image: url({{ asset('img/colorkit20.png') }})">
 
     <div class="h-screen w-full flex flex-col">
-        <div class=" h-32 shadow-lg ">
-            <!--Нужна ли тень? -->
-            @if ($logotip)
-                <div class="flex">
-                    <div class="  flex gap-4 pl-4 pt-2">
-                        {{ $logotip }}
-                    </div>
-                    <div class = "text-center text-white">
+        <div class="fixed z-10 h-26 w-full bg-blue-800 shadow-lg ">
+            <div class="h-full flex flex-row">
+                <div class="w-1/3 flex space-x-4 pl-4 pt-2">
+                    <img class = "w-32" src="{{ asset('img/logo_dark.png') }}">
+                    <img class = "w-48" src="https://www.centrinvest.ru/_ipx/_/logo.svg">
+                </div>
+                <div
+                    class = "w-1/3 flex items-center justify-center text-white text-center font-sans text-4xl leading-relaxed">
+                    <span class = " bg-clip-text font-bold text-transparent bg-gradient-to-t to-white from-gray-400">
                         {{ $head }}
-                    </div>
-                    <div>
+                    </span>
+                </div>
+                <div class="w-1/3 flex justify-end px-10">
+                    <div class="flex flex-col items-center justify-center">
+                        <p id="date"></p>
                         <p id="clock"></p>
                     </div>
                 </div>
-            @else
-                <div>
-                    {{ $head }}
-                </div>
-            @endif
+            </div>
         </div>
-        <div class = "">
+        <div class = "mt-8">
             {{ $slot }}
         </div>
     </div>
-
     @livewireScripts
-</body>
+    <script>
+        var myVar = setInterval(function() {
+            myTimer();
+            myDate();
+        }, 1000);
 
+        function myTimer() {
+            var d = new Date();
+            var hours = d.getHours().toString().padStart(2, '0'); // Форматируем часы
+            var minutes = d.getMinutes().toString().padStart(2, '0'); // Форматируем минуты
+            document.getElementById("clock").innerHTML = hours + ':' + minutes; // Выводим время
+        }
+
+        function myDate() {
+            var d = new Date();
+            var day = d.getDate(); // Получаем день
+            var month = ["Января", "Февраля", "Марта", "Апреля", "Мая", "Июня", "Июля", "Августа", "Сентября", "Октября",
+                "Ноября", "Декабря"
+            ][d.getMonth()]; // Массив месяцев
+
+            document.getElementById("date").innerHTML = day + ' ' + month; // Выводим дату
+        }
+    </script>
+</body>
 </html>

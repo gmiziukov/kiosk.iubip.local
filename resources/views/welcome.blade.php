@@ -1,10 +1,6 @@
 <x-main-layout>
     <x-slot name="head">
-    </x-slot>
-    <x-slot name="logotip">
-        <img class = "w-32" src="{{ asset('img/logo_dark.png') }}">
-        <img class = "w-48" src="https://www.centrinvest.ru/_ipx/_/logo.svg">
-        <a class = " pl-80 text-center mt-2 font-sans bg-clip-text font-bold text-transparent bg-gradient-to-t to-white from-gray-400 text-4xl leading-relaxed">Южный Университет (ИУБиП)</a>
+        Южный Университет (ИУБиП)
     </x-slot>
     <div
         class = "h-screen w-full flex flex-col items-center justify-center">
@@ -13,7 +9,7 @@
             <div class="mt-32">
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-4 lg:gap-8 ">
 
-                    <a href="https://laravel.com/docs"
+                    <a href="/retake-schedule"
                         class="bg-gradient-to-br h-64  from-blue-800 from-60%  to-blue-700 p-6 rounded-xl flex shadow-md shadow-emerald-400 hover:scale-[1.01]">
                         <div>
                             <!-- <img class="inline size-8" src="{{ asset('img/icons8-64.png') }}" alt="..."> -->

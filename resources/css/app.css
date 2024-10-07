@@ -4,6 +4,12 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer components {
+    .select-component {
+        @apply w-1/3 ml-4 italic outline outline-offset-2 outline-emerald-400 rounded-md h-14 text-lg border border-green-600 text-green-600 mr-4
+    }
+}
+
 [x-cloak] {
     display: none;
 }
