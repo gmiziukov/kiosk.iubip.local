@@ -22,6 +22,9 @@ Route::get('/class-schedule', function () {
 Route::get('/order-documen', function () {
     return view('order-documen');
 });
+Route::get('/retake-schedule', function () {
+    return view('pages.retake-schedule');
+})->name('retake.schedule');
 Route::get('/student-grades', function () {
     return view('pages.student-grades');
 })->name('student.grades');

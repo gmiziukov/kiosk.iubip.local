@@ -25,14 +25,11 @@
                 <!-- Картинка главная -->
                 <div class="grid md:grid-cols-5 gap-4 lg:gap-10">
 
-                    <a href="https://laravel.com/docs"
-                        class="bg-gradient-to-br h-60  from-blue-800 from-60%  to-blue-700 p-6 rounded-xl flex shadow-md shadow-emerald-400 hover:scale-[1.01]">
+                    <a href="https://laravel.com/docs" style="background-image: url({{ asset('img/economi.jpg') }}); background-size: cover; "
+                        class=" p-6 rounded-xl flex shadow-md shadow-emerald-400 hover:scale-[1.01]">
                         <div>
-                            <div class="h-16 w-16 bg-blue-600 flex items-center justify-center rounded-full">
-                                <i class="fa-regular fa-calendar-days fa-2xl" style="color: #08cc22;"></i>
-                            </div>
-                            <h2 class="mt-6 text-2xl font-sans font-normal text-white">Академия экономики и управления
-                            </h2>
+
+                            <h2 class="mt-6 text-3xl font-sans text-center font-normal text-white">Академия экономики и управления</h2>
                         </div>
                     </a>
 
