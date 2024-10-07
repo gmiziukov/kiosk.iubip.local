@@ -3,9 +3,12 @@
 namespace App\Livewire;
 
 use Livewire\Component;
+use App\Livewire\SelectStudentOrTeacher;
 use App\Http\Controllers;
 use App\Http\Controllers\ClassScheduleController;
+use App\resources\views;
 use Carbon\Carbon;
+
 class ClassSchedule extends Component
 {
 
@@ -18,7 +21,7 @@ class ClassSchedule extends Component
     public $weekendDate = NULL;  
     public $confirmingUserDeletion = False;
     public $time_var = ["08:20-09:50","10:00-11:30","11:40-13:10","13:30-15:00","15:10-16:40","17:00-18:30","18:40-20:10","20:20-21:50"];
-    
+    public $SoTc = NULL;
     public function week($group){
         $new_a = new ClassScheduleController();
         $this->now = $new_a->add_day($group);
@@ -34,7 +37,8 @@ class ClassSchedule extends Component
         $this->week($this->group);
         // $this->datatable($this->currentDate, $this->group);
     }
-    
+
+
     public function mount()  {
         $now_date =Carbon::now(); 
         // $this->weekStartDate = $now_date->startOfWeek()->format("Y-m-d");
