@@ -37,8 +37,10 @@ class ClassSchedule extends Component
     
     public function mount()  {
         $now_date =Carbon::now(); 
-        $this->weekStartDate = $now_date->startOfWeek()->format("Y-m-d");
-        $this->weekendDate = $now_date->endOfWeek()->format("Y-m-d");
+        // $this->weekStartDate = $now_date->startOfWeek()->format("Y-m-d");
+        // $this->weekendDate = $now_date->endOfWeek()->format("Y-m-d");
+        $this->weekStartDate = '2024-09-30';
+        $this->weekendDate = '2024-10-05';
         $this->now_date1=Carbon::parse($this->weekStartDate);
         $this->now_date1 = $this->weekStartDate;
         $this->week($this->group);
