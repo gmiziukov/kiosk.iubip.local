@@ -10,6 +10,10 @@
             class = "outline text-xl ml-8 font-medium border border-green-400 h-14 w-20 mt-11 bg-white text-green-600 rounded-md"
             wire:click="search()">найти</button>
     </div>
+    <?php
+        $a = $_POST['SoT'];
+        echo $a;
+    ?>
     <div class = "">
         <table class = "border-separate border-spacing-1 rounded-lg font-sans font-normal text-xl text-white text-center mt-4 ml-2">
             <thead class = "bg-gradient-to-br from-blue-700 h-12 w-96 from-60%  to-blue-900">
@@ -42,61 +46,39 @@
             </thead>
             <tbody class = "bg-gradient-to-br h-14 from-blue-600 from-60%  to-blue-900">
                 @foreach($time_var as $time)
-                <tr>
-                    <td>
-                        {{$time}}
-
-                    </td>                    
-
-                    @foreach ($now as $now1)
-
-                    @if ($now1->date == Carbon\Carbon::parse($now_date1)->addDays(1)->format("Y-m-d"))
-                        {{-- @for ($i =0; $i!=7;$i++)  --}}
-                                @if( $now1->time == $time )
-                                    <td class="border w-96 rounded-md text-xl font-sans font-normal border-blue-200">
-                                        {{$now1->discipline}}
-                                    </td>
-                                @else
-                                    <td>
-                                        
-                                    </td>
-                                @endif
-                    
-                        {{-- @endfor --}}
-                    @endif
-
-
-
-
-
-                    @if ($now1->date == Carbon\Carbon::parse($now_date1)->addDays(2)->format("Y-m-d"))
-                        {{-- @for ($i =0; $i!=7;$i++)  --}}
-                                @if( $now1->time == $time )
-                                    <td class="border w-96 rounded-md text-xl font-sans font-normal border-blue-200">
-                                        {{$now1->discipline}}
-                                    </td>
-                                @else
-
-                                @endif
-                    
-                        {{-- @endfor --}}
-                    @endif
-
-
-
-
-
-
-
-
-                    @endforeach
-
-                </tr>
+                    <tr>
+                        <td>
+                            {{$time}}
+                        </td>                    
+                        @for ($i =0; $i!=7;$i++) 
+                            <td class="border w-96 rounded-md text-xl font-sans font-normal border-blue-200">
+                                <table>
+                                    @foreach ($now as $now1)
+                                        @if( $now1->time == $time )
+                                            @if ($now1->date == Carbon\Carbon::parse($now_date1)->addDays($i)->format("Y-m-d"))
+                                                <tr>
+                                                    {{$now1->discipline}}
+                                                </tr>
+                                                <tr>
+                                                    {{$now1->lesson_place}}
+                                                </tr>
+                                                <tr>
+                                                    {{$now1->lesson_type}}
+                                                </tr>
+                                                <tr>
+                                                    {{$now1->teacher}}
+                                                </tr>
+                                            @endif
+                                        @endif
+                                    @endforeach
+                                </table>
+                            </td>
+                        @endfor
+                    </tr>
                 @endforeach
             </tbody>
         </table>
     </div>
-    {{-- {{dd($data)}} --}}
     <x-dialog-modal wire:model="confirmingUserDeletion">
         <x-slot name="title">
             Delete Account

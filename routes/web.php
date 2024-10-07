@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,6 +14,9 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
+});
+Route::get('/SelectStudentOrTeacher', function () {
+    return view('SelectStudentOrTeacher');
 });
 Route::get('/class-schedule', function () {
     return view('class-schedule');

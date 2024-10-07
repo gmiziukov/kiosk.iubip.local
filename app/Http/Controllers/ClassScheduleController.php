@@ -18,8 +18,10 @@ class ClassScheduleController extends Controller
     }
     public function add_day($group_now){
         $now = Carbon::now();
-        $weekStartDate = $now->startOfWeek()->format("Y-m-d");
-        $weekendDate = $now->endOfWeek()->format("Y-m-d");
+        // $weekStartDate = $now->startOfWeek()->format("Y-m-d");
+        // $weekendDate = $now->endOfWeek()->format("Y-m-d");
+        $weekStartDate = '2024-09-30';
+        $weekendDate ='2024-10-05';
         $a = DB::table("schedules")
         ->where("date", '>=',$weekStartDate )
         ->where("date", '<=',$weekendDate );
@@ -30,4 +32,5 @@ class ClassScheduleController extends Controller
         // dd($a);
         return $a;
     }
+
 }

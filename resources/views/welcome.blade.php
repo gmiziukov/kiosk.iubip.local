@@ -51,7 +51,7 @@
                         </div>
                     </a>
 
-                    <a href="/class-schedule"
+                    <a href="/SelectStudentOrTeacher"
                         class="bg-gradient-to-tr h-64 from-blue-800 from-60%  to-blue-700 p-6 rounded-xl shadow-md shadow-emerald-400 hover:scale-[1.01]">
                         <div>
                             <div class="h-16 w-16 bg-blue-600 flex items-center justify-center rounded-full">
