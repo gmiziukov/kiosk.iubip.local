@@ -45,124 +45,36 @@
                     <tr>
                         <td>
                             {{$time}}
-
                         </td>                    
-                        <td class="border w-96 rounded-md text-xl font-sans font-normal border-blue-200">
-                            @foreach ($now as $now1)
-                            {{-- @for ($i =0; $i!=6;$i++)  --}}
-                            @if( $now1->time == $time )
-                                @if ($now1->date == Carbon\Carbon::parse($now_date1)->addDays(0)->format("Y-m-d"))
-                                    {{-- <td class="border w-96 rounded-md text-xl font-sans font-normal border-blue-200">       --}}
-                                        {{$now1->date}}
-
-                                @else
-                                @endif
-        
-                            @else
-                            @endif
-                            @endforeach
-                        </td>
-                            
-                        <td class="border w-96 rounded-md text-xl font-sans font-normal border-blue-200">
-                            @foreach ($now as $now1)
-                            {{-- @for ($i =0; $i!=6;$i++)  --}}
-                            @if( $now1->time == $time )
-                                @if ($now1->date == Carbon\Carbon::parse($now_date1)->addDays(1)->format("Y-m-d"))
-                                    {{-- <td class="border w-96 rounded-md text-xl font-sans font-normal border-blue-200">       --}}
-                                        {{$now1->date}}
-
-                                @else
-                                @endif
-        
-                            @else
-                            @endif
-                            @endforeach
-                        </td>
-                        <td class="border w-96 rounded-md text-xl font-sans font-normal border-blue-200">
-                            @foreach ($now as $now1)
-                            {{-- @for ($i =0; $i!=6;$i++)  --}}
-                            @if( $now1->time == $time )
-                                @if ($now1->date == Carbon\Carbon::parse($now_date1)->addDays(2)->format("Y-m-d"))
-                                    {{-- <td class="border w-96 rounded-md text-xl font-sans font-normal border-blue-200">       --}}
-                                        {{$now1->date}}
-
-                                @else
-                                @endif
-        
-                            @else
-                            @endif
-                            @endforeach
-                        </td>
-                        <td class="border w-96 rounded-md text-xl font-sans font-normal border-blue-200">
-                            @foreach ($now as $now1)
-                            {{-- @for ($i =0; $i!=6;$i++)  --}}
-                            @if( $now1->time == $time )
-                                @if ($now1->date == Carbon\Carbon::parse($now_date1)->addDays(3)->format("Y-m-d"))
-                                    {{-- <td class="border w-96 rounded-md text-xl font-sans font-normal border-blue-200">       --}}
-                                        {{$now1->date}}
-
-                                @else
-                                @endif
-        
-                            @else
-                            @endif
-                            @endforeach
-                        </td>
-                        <td class="border w-96 rounded-md text-xl font-sans font-normal border-blue-200">
-                            @foreach ($now as $now1)
-                            {{-- @for ($i =0; $i!=6;$i++)  --}}
-                            @if( $now1->time == $time )
-                                @if ($now1->date == Carbon\Carbon::parse($now_date1)->addDays(4)->format("Y-m-d"))
-                                    {{-- <td class="border w-96 rounded-md text-xl font-sans font-normal border-blue-200">       --}}
-                                        {{$now1->date}}
-
-                                @else
-                                @endif
-        
-                            @else
-                            @endif
-                            @endforeach
-                        </td>
-                        <td class="border w-96 rounded-md text-xl font-sans font-normal border-blue-200">
-                            @foreach ($now as $now1)
-                            {{-- @for ($i =0; $i!=6;$i++)  --}}
-                            @if( $now1->time == $time )
-                                @if ($now1->date == Carbon\Carbon::parse($now_date1)->addDays(5)->format("Y-m-d"))
-                                    {{-- <td class="border w-96 rounded-md text-xl font-sans font-normal border-blue-200">       --}}
-                                        {{$now1->time}}
-
-                                @else
-                                @endif
-        
-                            @else
-                            @endif
-                            @endforeach
-                        </td>
-                        <td class="border w-96 rounded-md text-xl font-sans font-normal border-blue-200">
-                            @foreach ($now as $now1)
-                            {{-- @for ($i =0; $i!=6;$i++)  --}}
-                            @if( $now1->time == $time )
-                                @if ($now1->date == Carbon\Carbon::parse($now_date1)->addDays(6)->format("Y-m-d"))
-                                    {{-- <td class="border w-96 rounded-md text-xl font-sans font-normal border-blue-200">       --}}
-                                        {{$now1->time}}
-
-                                @else
-                                @endif
-        
-                            @else
-                            @endif
-                            @endforeach
-                        </td>
-                        {{-- @endfor --}}
-
-                        
-
+                        @for ($i =0; $i!=7;$i++) 
+                            <td class="border w-96 rounded-md text-xl font-sans font-normal border-blue-200">
+                                <table>
+                                    @foreach ($now as $now1)
+                                        @if( $now1->time == $time )
+                                            @if ($now1->date == Carbon\Carbon::parse($now_date1)->addDays($i)->format("Y-m-d"))
+                                                <tr>
+                                                    {{$now1->discipline}}
+                                                </tr>
+                                                <tr>
+                                                    {{$now1->lesson_place}}
+                                                </tr>
+                                                <tr>
+                                                    {{$now1->lesson_type}}
+                                                </tr>
+                                                <tr>
+                                                    {{$now1->teacher}}
+                                                </tr>
+                                            @endif
+                                        @endif
+                                    @endforeach
+                                </table>
+                            </td>
+                        @endfor
                     </tr>
                 @endforeach
             </tbody>
         </table>
     </div>
-    {{-- {{dd($data)}} --}}
     <x-dialog-modal wire:model="confirmingUserDeletion">
         <x-slot name="title">
             Delete Account
