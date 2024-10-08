@@ -25,53 +25,40 @@
                 <!-- Картинка главная -->
                 <div class="grid md:grid-cols-5 gap-4 lg:gap-10">
 
-                    <a href="https://laravel.com/docs" style="background-image: url({{ asset('img/economi.jpg') }}); background-size: cover; "
+                    <a href="https://laravel.com/docs" style="background-image: url({{ asset('img/economi1.png') }}); background-size: cover; "
                         class=" p-6 rounded-xl flex shadow-md shadow-emerald-400 hover:scale-[1.01]">
-                        <div>
-
-                            <h2 class="mt-6 text-3xl font-sans text-center font-normal text-white">Академия экономики и управления</h2>
+                        <div class="flex items-center justify-center">
+                            <h2 class="text-3xl font-sans text-center font-normal text-white">Академия экономики и управления</h2>
                         </div>
                     </a>
 
-                    <a href="{{ route('student.grades') }}"
-                        class="bg-gradient-to-b h-60 from-blue-800 from-60%  to-blue-700 p-6 rounded-xl shadow-md shadow-emerald-400 hover:scale-[1.01]">
-                        <div>
-                            <div class="h-16 w-16 bg-blue-600 flex items-center justify-center rounded-full">
-                                <i class="fa-solid fa-user-clock fa-xl" style="color: #08cc22;"></i>
-                            </div>
-                            <h2 class="mt-6 text-2xl font-sans font-normal text-white">Академия права и государственной
+                    <a href="{{ route('student.grades') }}" style="background-image: url({{ asset('img/laywer.png') }}); background-size: cover;"
+                        class="p-6 rounded-xl shadow-md flex shadow-emerald-400 hover:scale-[1.01]">
+                        <div class="flex items-center justify-center">
+                            <h2 class=" text-2xl font-sans text-center font-normal text-white">Академия права и государственной
                                 службы</h2>
                         </div>
                     </a>
 
-                    <a href="https://laracasts.com"
+                    <a href="https://laracasts.com" style="background-image: url({{ asset('img/laywer.png') }}); background-size: cover;"
                         class="bg-gradient-to-bl h-60 from-blue-800 from-60%  to-blue-700 p-6 rounded-xl shadow-md shadow-emerald-400 hover:scale-[1.01]">
-                        <div>
-                            <div class="h-16 w-16 bg-blue-600 flex items-center justify-center rounded-full">
-                                <i class="fa-solid fa-people-pulling fa-2xl" style="color: #08cc22;"></i>
-                            </div>
-                            <h2 class="mt-6 text-2xl font-sans font-normal text-white">Академия гуманитарных технологий
+                        <div class="flex items-center justify-center">
+                            <h2 class="text-2xl font-sans text-center font-normal text-white">Академия гуманитарных технологий
                             </h2>
                         </div>
                     </a>
 
                     <a href="/class-schedule"
                         class="bg-gradient-to-tr h-60 from-blue-800 from-60%  to-blue-700 p-6 rounded-xl shadow-md shadow-emerald-400 hover:scale-[1.01]">
-                        <div>
-                            <div class="h-16 w-16 bg-blue-600 flex items-center justify-center rounded-full">
-                                <i class="fa-solid fa-book-open fa-2xl" style="color: #08cc22;"></i>
-                            </div>
-                            <h2 class="mt-6 text-2xl font-sans font-normal text-white">Академия цифрового развития</h2>
+                        <div class="flex items-center justify-center">
+                            <h2 class="text-2xl font-sans text-center font-normal text-white">Академия цифрового развития</h2>
                         </div>
                     </a>
 
                     <a href="/class-schedule"
                         class="bg-gradient-to-tr h-60 from-blue-800 from-60%  to-blue-700 p-6 rounded-xl shadow-md shadow-emerald-400 hover:scale-[1.01]">
-                        <div>
-                            <div class="h-16 w-16 bg-blue-600 flex items-center justify-center rounded-full">
-                                <i class="fa-solid fa-book-open fa-2xl" style="color: #08cc22;"></i>
-                            </div>
-                            <h2 class="mt-6 text-2xl font-sans font-normal text-white">Академия туризма и индустрии
+                        <div class="flex items-center justify-center">
+                            <h2 class="text-2xl font-sans font-normal text-center text-white">Академия туризма и индустрии
                                 гостеприимства</h2>
                         </div>
                     </a>
