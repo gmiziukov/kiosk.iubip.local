@@ -10,7 +10,6 @@ class RetakeSchedule extends Component
 {
     public function render()
     {
-        \Carbon\Carbon::setLocale('ru');
         $data = ModelsRetakeSchedule::get();    
         return view('livewire.retake-schedule', ['data' => $data]);
     }
