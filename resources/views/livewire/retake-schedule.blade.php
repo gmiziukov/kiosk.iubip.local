@@ -24,7 +24,6 @@
                                     {{ \Carbon\Carbon::parse($schedule->time)->format('H:i') }}</td>
                                 <td class="border w-96 rounded-md text-xl font-sans font-normal border-blue-200">
                                     {{ $schedule->classroom }}</td>
-                                {{-- Выведите значения других столбцов  --}}
                             </tr>
                         @endforeach
                     </tbody>

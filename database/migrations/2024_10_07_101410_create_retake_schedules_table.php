@@ -13,6 +13,10 @@ return new class extends Migration
     {
         Schema::create('retake_schedules', function (Blueprint $table) {
             $table->id();
+            $table->string('fio_teacher');
+            $table->date('date');
+            $table->time('time');
+            $table->text('classroom');
             $table->timestamps();
         });
     }
