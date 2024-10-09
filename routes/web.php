@@ -17,10 +17,10 @@ Route::get('/', function () {
 });
 Route::get('/SelectStudentOrTeacher', function () {
     return view('SelectStudentOrTeacher');
-});
-Route::get('/class-schedule', function () {
-    return view('class-schedule');
-});
+})->name('SelectStudentOrTeacher');
+Route::get('/class-schedule/{SoT}', function ($SoT) {
+    return view('class-schedule', ['SoT'=> $SoT]);
+})->name('class-schedule');
 Route::get('/order-documen', function () {
     return view('order-documen');
 });

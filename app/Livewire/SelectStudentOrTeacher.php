@@ -9,14 +9,14 @@ class SelectStudentOrTeacher extends Component
 {
 
 
-    public $SoT = 0;
+    public $SoT = "Student";
     public function student (){
-        return $this->SoT;
+        return redirect()->route('class-schedule', ['SoT'=>$this->SoT]);
     }
     public function teacher(){
-        $this->SoT = 1;
+        $this->SoT = "Teacher";
         // dd($this->SoT);
-        return $this->SoT;
+        return redirect()->route('class-schedule',['SoT'=>$this->SoT]);
     }
     public function render()
     {

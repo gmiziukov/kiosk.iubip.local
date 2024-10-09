@@ -10,10 +10,7 @@
             class = "outline text-xl ml-8 font-medium border border-green-400 h-14 w-20 mt-11 bg-white text-green-600 rounded-md"
             wire:click="search()">найти</button>
     </div>
-    <?php
-        $a = $_POST['SoT'];
-        echo $a;
-    ?>
+
     <div class = "">
         <table class = "border-separate border-spacing-1 rounded-lg font-sans font-normal text-xl text-white text-center mt-4 ml-2">
             <thead class = "bg-gradient-to-br from-blue-700 h-12 w-96 from-60%  to-blue-900">
