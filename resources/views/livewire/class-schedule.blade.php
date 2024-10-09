@@ -42,37 +42,85 @@
                 </tr>
             </thead>
             <tbody class = "bg-gradient-to-br h-14 from-blue-600 from-60%  to-blue-900">
-                @foreach($time_var as $time)
-                    <tr>
-                        <td>
-                            {{$time}}
-                        </td>                    
-                        @for ($i =0; $i!=7;$i++) 
-                            <td class="border w-96 rounded-md text-xl font-sans font-normal border-blue-200">
-                                <table>
-                                    @foreach ($now as $now1)
-                                        @if( $now1->time == $time )
-                                            @if ($now1->date == Carbon\Carbon::parse($now_date1)->addDays($i)->format("Y-m-d"))
-                                                <tr>
-                                                    {{$now1->discipline}}
-                                                </tr>
-                                                <tr>
-                                                    {{$now1->lesson_place}}
-                                                </tr>
-                                                <tr>
-                                                    {{$now1->lesson_type}}
-                                                </tr>
-                                                <tr>
-                                                    {{$now1->teacher}}
-                                                </tr>
+                @if ($SoT == "Student")
+                    {{$SoT}}
+                    @foreach($time_var as $time)
+                        <tr>
+                            <td>
+                                {{$time}}
+                            </td>                    
+                            @for ($i =0; $i!=7;$i++) 
+                                <td class="border w-96 rounded-md text-xl font-sans font-norm   al border-blue-200">
+                                    <table>
+                                            @foreach ($now as $now1)
+                                                @if( $now1->time == $time )
+                                                    @if ($now1->date == Carbon\Carbon::parse($now_date1)->addDays($i)->format("Y-m-d"))
+                                                        <tr>
+
+                                                            {{$now1->discipline}}
+ 
+                                                        </tr>
+                                                        <tr>
+                                                            {{$now1->lesson_place}}
+                                                        </tr>
+                                                        <tr>
+                                                            {{$now1->lesson_type}}
+                                                        </tr>
+                                                        <tr>
+                                                            {{$now1->teacher}}
+                                                        </tr>
+                                                    @endif
+                                                @endif
+                                            @endforeach
+                                        </table>
+                                    </td>
+                                @endfor
+                            </tr>
+                    @endforeach
+                @endif
+                @if ($SoT == "Teacher")
+                    {{$SoT}}
+                    @foreach($time_var as $time)
+                        <tr>
+                            <td>
+                                {{$time}}
+                            </td>                    
+                            @for ($i =0; $i!=7;$i++) 
+                                <td class="border w-96 rounded-md text-xl font-sans font-norm   al border-blue-200">
+                                    <table>
+
+                                        @foreach ($now as $now1)
+                                            @if( $now1->time == $time )
+                                                @if ($now1->date == Carbon\Carbon::parse($now_date1)->addDays($i)->format("Y-m-d"))
+                                                    <tr>
+
+                                                        {{$now1->lesson_place}}
+                                                       
+                                                    </tr>
+                                                    <tr>
+
+                                                            {{$now1->lesson_type}}
+                          
+ 
+                                                    </tr>
+                                                    <tr>
+                                                        {{$now1->group}}
+                                                    </tr>
+                                                    <tr>
+
+                                                        {{$now1->discipline}}
+
+
+                                                    </tr>
+                                                @endif
                                             @endif
-                                        @endif
-                                    @endforeach
-                                </table>
-                            </td>
-                        @endfor
-                    </tr>
+                                        @endforeach
+                                    </table>
+                                </td>
+                            @endfor
+                        </tr>
                 @endforeach
+            @endif
             </tbody>
         </table>
     </div>

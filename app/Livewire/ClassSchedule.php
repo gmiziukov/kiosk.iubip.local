@@ -24,7 +24,12 @@ class ClassSchedule extends Component
     public $SoT = 0;
     public function week($group){
         $new_a = new ClassScheduleController();
-        $this->now = $new_a->add_day($group);
+        if ($this->SoT == "Student"){
+            $this->now = $new_a->add_day_student($group);
+        }
+        else{
+            $this->now = $new_a->add_day_teacher($group);
+        }
         return $this->now;
         
     }
