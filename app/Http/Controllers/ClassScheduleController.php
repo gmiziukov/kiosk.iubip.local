@@ -45,8 +45,19 @@ class ClassScheduleController extends Controller
             $a->where("teacher", strtoupper($group_now));
         }
         $a = $a->get();
+        $b = $a;
+        foreach($a as $a_arr)
+            foreach($b as $b_arr)
+                if($a_arr->date == $b_arr->date and $a_arr->time == $b_arr->time and $a_arr->discipline == $b_arr->discipline and $a_arr->group != $b_arr->group){
+
+                    $a_arr->discipline = "";
+                    $a_arr->lesson_type = "";
+                    // unset($a[$a_arr->discipline]);
+                }
+            
+
         // dd($a);
         return $a;
-    }
+            }
 
 }
