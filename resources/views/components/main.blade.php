@@ -25,6 +25,7 @@
             /* Жирный шрифт */
 
         }
+
         #date {
             background: -webkit-linear-gradient(#ffffff, #a09e9e);
             -webkit-background-clip: text;
@@ -39,18 +40,28 @@
     </style>
 </head>
 
-<body style="background-image: url({{ asset('img/colorkit16.png') }})">
+<body class="bg-cover" style="background-image: url({{ asset('img/colorkit16.png')}}); bg-cover;">
 
-    <div class="h-screen w-full flex flex-col">
+    <div class="h-screen w-full fixed flex flex-col">
         <div class="fixed z-10 h-26 w-full bg-opacity-40 backdrop-blur-md bg-blue-900 shadow-lg ">
             <div class="h-full flex flex-row">
+                <div>
+                    <button onclick="goBack()" class="fa-solid fa-chevron-left fa-2xl mt-6 ml-2" style="color: #c4cacc;"></button>
+                    <script>
+                        function goBack() {
+                            if (window.location.pathname !== '/') { // Проверяем, не находимся ли на главной странице
+                                window.history.back();
+                            }
+                        }
+                    </script>
+                </div>
                 <div class="w-1/3 flex space-x-4 pl-4 pt-2">
-                    <img class = "w-32" src="{{ asset('img/logo_dark.png') }}">
-                    <img class = "w-48" src="https://www.centrinvest.ru/_ipx/_/logo.svg">
+                    <img class="w-32" src="{{ asset('img/logo_dark.png') }}">
+                    <img class="w-48" src="https://www.centrinvest.ru/_ipx/_/logo.svg">
                 </div>
                 <div
-                    class = "w-1/3 flex items-center justify-center text-white text-center font-sans text-4xl leading-relaxed">
-                    <span class = " bg-clip-text font-bold text-transparent bg-gradient-to-t to-white from-gray-400">
+                    class="w-1/3 flex items-center justify-center text-white text-center font-sans text-4xl leading-relaxed">
+                    <span class=" bg-clip-text font-bold text-transparent bg-gradient-to-t to-white from-gray-400">
                         {{ $head }}
                     </span>
                 </div>
@@ -62,7 +73,7 @@
                 </div>
             </div>
         </div>
-        <div class = "mt-8">
+        <div class="mt-8">
             {{ $slot }}
         </div>
     </div>
@@ -91,4 +102,5 @@
         }
     </script>
 </body>
+
 </html>

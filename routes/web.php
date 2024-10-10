@@ -30,8 +30,8 @@ Route::get('/retake-schedule', function () {
 Route::get('/student-grades', function () {
     return view('pages.student-grades');
 })->name('student.grades');
-Route::get('/order-document-search/{$key}', function ($key) {
-    return view('pages.order-document-search', ['$key' => $key]);
+Route::get('/order-document-search/{key}', function ($key) {
+    return view('pages.order-document-search', ['key' => $key]);
 })->name('order.document.search');
 
 

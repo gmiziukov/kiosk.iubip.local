@@ -13,6 +13,6 @@ class OrderDocumentSearch extends Component
     }
     public function mount($key)
     {
-
+        $this->key = $key;
     }
 }
