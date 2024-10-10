@@ -1,6 +1,6 @@
 <div>
     <div class="w-full h-full overflow-y-auto">
-        <div class="py-20">
+        <div class="">
             <div class="flex justify-center ">
                 <div class="fixed">
                     <table class="table border-separate border-spacing-2 font-sans font-medium text-xl text-white ml-2 text-center">

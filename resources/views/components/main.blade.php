@@ -45,16 +45,6 @@
     <div class="h-screen w-full fixed flex flex-col">
         <div class="fixed z-10 h-26 w-full bg-opacity-40 backdrop-blur-md bg-blue-900 shadow-lg ">
             <div class="h-full flex flex-row">
-                <div>
-                    <button onclick="goBack()" class="fa-solid fa-chevron-left fa-2xl mt-6 ml-2" style="color: #c4cacc;"></button>
-                    <script>
-                        function goBack() {
-                            if (window.location.pathname !== '/') { // Проверяем, не находимся ли на главной странице
-                                window.history.back();
-                            }
-                        }
-                    </script>
-                </div>
                 <div class="w-1/3 flex space-x-4 pl-4 pt-2">
                     <img class="w-32" src="{{ asset('img/logo_dark.png') }}">
                     <img class="w-48" src="https://www.centrinvest.ru/_ipx/_/logo.svg">
@@ -74,6 +64,9 @@
             </div>
         </div>
         <div class="mt-8">
+            @if(isset($backButton))
+            {{$backButton}}
+            @endif
             {{ $slot }}
         </div>
     </div>
