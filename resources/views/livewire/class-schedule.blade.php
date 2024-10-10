@@ -12,6 +12,7 @@
     </div>
 
     <div class = "">
+
         <table class = "border-separate border-spacing-1 rounded-lg font-sans font-normal text-xl text-white text-center mt-4 ml-2">
             <thead class = "bg-gradient-to-br from-blue-700 h-12 w-96 from-60%  to-blue-900">
                 <tr>
@@ -58,7 +59,7 @@
                                                         <tr>
 
                                                             {{$now1->discipline}}
- 
+
                                                         </tr>
                                                         <tr>
                                                             {{$now1->lesson_place}}
@@ -86,32 +87,25 @@
                                 {{$time}}
                             </td>                    
                             @for ($i =0; $i!=7;$i++) 
-                                <td class="border w-96 rounded-md text-xl font-sans font-norm   al border-blue-200">
+                                <td class="border w-96 rounded-md text-xl font-sans font-norm border-blue-200">
                                     <table>
-
                                         @foreach ($now as $now1)
+                                            {{-- {{dd($now)}} --}}
                                             @if( $now1->time == $time )
                                                 @if ($now1->date == Carbon\Carbon::parse($now_date1)->addDays($i)->format("Y-m-d"))
-                                                    <tr>
 
-                                                        {{$now1->lesson_place}}
-                                                       
-                                                    </tr>
-                                                    <tr>
+                                                    <tr class = "list-none"> 
+                                                        {{$now1->lesson_type}}
 
-                                                            {{$now1->lesson_type}}
-                          
- 
+                                                            
                                                     </tr>
-                                                    <tr>
+                                                    <tr>  
                                                         {{$now1->group}}
                                                     </tr>
                                                     <tr>
-
                                                         {{$now1->discipline}}
-
-
                                                     </tr>
+
                                                 @endif
                                             @endif
                                         @endforeach
