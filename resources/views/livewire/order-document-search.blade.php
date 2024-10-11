@@ -25,8 +25,22 @@
                 </div>
             </div>
         </div>
-
-      
+        <div class="flex flex-col py-32">
+            <div class="h-1/2 flex flex-col items-center justify-center ">
+                <div class="max-w-screen-2xl">
+            <div class="ml-40 previous-specialization">
+                @foreach($specialization[$key] as $key => $specialization)
+                <div class="font-sans text-3xl ml-4 font-extrabold text-green-600">{{$key}}</div>
+                <div class="mt-2 mb-4 previous-specialization">
+                    @foreach($specialization as $key => $value)
+                    <p class="font-sans text-2xl px-2 w-11/12 flex items-center h-28 rounded-xl shadow-md shadow-emerald-400 hover:scale-[1.01] tracking-wider font-semibold text-white">
+                        {{$value}}
+                    </p>
+                    @endforeach
+                </div>
+                @endforeach
+            </div>
+            
         </div>
     </div>
 </div>

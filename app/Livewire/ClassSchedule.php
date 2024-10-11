@@ -14,8 +14,8 @@ class ClassSchedule extends Component
 
     public $data ;
     public $currentDate = '';
-    public $group =  "к1и1(11)";
-    public $now = "к1и1(11)";
+    public $group =  "К1И1(11)";
+    public $now = "К1И1(11)";
     public $now_date1; 
     public $weekStartDate = NULL;
     public $weekendDate = NULL;  
