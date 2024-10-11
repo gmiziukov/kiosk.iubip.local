@@ -94,6 +94,7 @@
             document.getElementById("date").innerHTML = day + ' ' + month; // Выводим дату
         }
     </script>
+    @stack('modal')
 </body>
 
 </html>

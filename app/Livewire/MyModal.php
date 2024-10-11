@@ -4,12 +4,11 @@ namespace App\Livewire;
 
 use Livewire\Component;
 
-class StudentGrades extends Component
+class MyModal extends Component
 {
-
+    public $inputData;
     public function render()
-
     {
-        return view('livewire.student-grades');
+        return view('livewire.my-modal');
     }
 }
