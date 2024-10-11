@@ -1,5 +1,5 @@
 <div x-data="{ open: false }">
-    <button @click="open = true" class="btn btn-primary">войти</button>
+    <button @click="open = true" class="btn bg-blue-500 p-4">войти</button>
 
     <div x-show="open" class="fixed inset-0 flex items-center justify-center z-50">
         <div class="fixed inset-0 bg-black opacity-50" @click="open = false"></div>
