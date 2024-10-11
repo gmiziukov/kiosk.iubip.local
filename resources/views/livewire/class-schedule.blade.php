@@ -1,46 +1,42 @@
 <div class="h-full w-full">
-    <div class="flex ">
+    <div class="flex items-center justify-center px-4">
         <input
-            class="placeholder:italic placeholder:text-green-600 rounded-md ml-2 w-1/2 text-xl h-16 mt-10 border border-green-600 text-blue-500"
+            class="placeholder:italic placeholder:text-green-600 rounded-md ml-2 w-1/2 text-xl h-16 border border-green-600 text-blue-500"
             placeholder="Введите нужную группу" wire:model="group" type="text" value="">
         <button
-            class="outline text-xl ml-8 font-medium border border-green-400 h-14 w-20 mt-11 bg-white text-green-600 rounded-md"
+            class="outline text-xl ml-8 font-medium border border-green-400 h-14 w-20 bg-white text-green-600 rounded-md"
             wire:click="search()">найти</button>
     </div>
+
     <div class="">
-    <div class="flex justify-center">
-        <div class="fixed">
-            <table class="border-separate border-spacing-1 rounded-lg font-sans font-normal text-xl text-white p-4">
-                <thead class="bg-gradient-to-br text-center font-bold from-blue-700 h-16 w-96 from-60% to-blue-900">
-                    <tr>
-                        <td class="border rounded-l-lg border-blue-200">
-                            Время
-                        </td>
-                        <td class="border border-blue-200">
-                            Понедельник
-                        </td>
-                        <td class="border border-blue-200">
-                            Вторник
-                        </td>
-                        <td class="border border-blue-200">
-                            Среда
-                        </td>
-                        <td class="border border-blue-200">
-                            Четверг
-                        </td>
-                        <td class="border border-blue-200">
-                            Пятница
-                        </td>
-                        <td class="border rounded-r-lg border-blue-200">
-                            Субота
-                        </td>
-                    </tr>
-                </thead>
-            </table>
-        </div>
+        <table class="border-separate border-spacing-1 rounded-lg font-sans font-normal text-xl text-white p-4">
 
+            <thead class="bg-gradient-to-br text-center font-bold from-blue-700 h-16 w-96 from-60% to-blue-900">
+                <tr>
+                    <td class="border rounded-l-lg border-blue-200">
+                        Время
+                    </td>
+                    <td class="border border-blue-200">
+                        Понедельник
+                    </td>
+                    <td class="border border-blue-200">
+                        Вторник
+                    </td>
+                    <td class="border border-blue-200">
+                        Среда
+                    </td>
+                    <td class="border border-blue-200">
+                        Четверг
+                    </td>
+                    <td class="border border-blue-200">
+                        Пятница
+                    </td>
+                    <td class="border rounded-r-lg border-blue-200">
+                        Субота
+                    </td>
+                </tr>
+            </thead>
 
-        <div class="mt-2 scrollbar-thin overflow-y-scroll h-screen scrollbar-thumb-[#059669] scrollbar-track-sky-800">
             <tbody class="bg-gradient-to-br h-14 from-blue-600 from-60%  to-blue-900">
                 @if ($SoT == "Student")
 
@@ -95,55 +91,52 @@
                 </tr>
                 @endforeach
                 @endif
-        </div>
-        @if ($SoT == "Teacher")
-        {{$SoT}}
-        @foreach($time_var as $time)
-        <tr>
-            <td>
-                {{$time}}
-            </td>
-            @for ($i =0; $i!=6;$i++)
-            <td class="border w-96 rounded-md text-xl font-sans font-norm   al border-blue-200">
-                <table>
+                @if ($SoT == "Teacher")
+                {{$SoT}}
+                @foreach($time_var as $time)
+                <tr>
+                    <td>
+                        {{$time}}
+                    </td>
+                    @for ($i =0; $i!=6;$i++)
+                    <td class="border w-96 rounded-md text-xl font-sans font-norm   al border-blue-200">
+                        <table>
 
-                    @foreach ($now as $now1)
-                    @if( $now1->time == $time )
-                    @if ($now1->date == Carbon\Carbon::parse($now_date1)->addDays($i)->format("Y-m-d"))
-                    <tr>
+                            @foreach ($now as $now1)
+                            @if( $now1->time == $time )
+                            @if ($now1->date == Carbon\Carbon::parse($now_date1)->addDays($i)->format("Y-m-d"))
+                            <tr>
 
-                        {{$now1->lesson_place}}
+                                {{$now1->lesson_place}}
 
-                    </tr>
-                    <tr>
+                            </tr>
+                            <tr>
 
-                        {{$now1->lesson_type}}
-
-
-                    </tr>
-                    <tr>
-                        {{$now1->group}}
-                    </tr>
-                    <tr>
-
-                        {{$now1->discipline}}
+                                {{$now1->lesson_type}}
 
 
-                    </tr>
-                    @endif
-                    @endif
-                    @endforeach
-                </table>
-            </td>
-            @endfor
-        </tr>
-        @endforeach
-        @endif
-        </tbody>
+                            </tr>
+                            <tr>
+                                {{$now1->group}}
+                            </tr>
+                            <tr>
+
+                                {{$now1->discipline}}
+
+
+                            </tr>
+                            @endif
+                            @endif
+                            @endforeach
+                        </table>
+                    </td>
+                    @endfor
+                </tr>
+                @endforeach
+                @endif
+            </tbody>
         </table>
     </div>
-
-
     <x-dialog-modal wire:model="confirmingUserDeletion">
         <x-slot name="title">
             Delete Account

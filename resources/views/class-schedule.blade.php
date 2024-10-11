@@ -1,12 +1,12 @@
 <x-main-layout>
-    <x-slot name="logotip">
-
-        <img class = "w-32" src="{{ asset('img/logo_dark.png') }}">
-        <img class = "w-48" src="https://www.centrinvest.ru/_ipx/_/logo.svg">
-
+    <x-slot name="backButton">
+        <div class="mt-20 px-4">
+            <a href="/">
+                <i class="fa-solid fa-chevron-left fa-2xl" style="color: #c4cacc;"></i></a>
+        </div>
     </x-slot>
     <x-slot name="head">
-        расписаниe занятий
+        Расписаниe занятий
     </x-slot>
     @livewire('class-schedule', ['SoT' => $SoT])
-</x-main-layout> 
+</x-main-layout>
