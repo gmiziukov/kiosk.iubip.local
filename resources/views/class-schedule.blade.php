@@ -9,4 +9,5 @@
         расписаниe занятий
     </x-slot>
     @livewire('class-schedule', ['SoT' => $SoT])
+    @livewire('my-modal')
 </x-main-layout> 

@@ -1,5 +1,8 @@
 <div>
+
+
     <div class="h-screen w-full">
+
         <div class="py-20">
             <div class="flex flex-row w-full p-4 fixed">
                 <div class = "w-full flex flex-row">
@@ -27,4 +30,6 @@
             </div>
         </div>
     </div>
+
+
 </div>
