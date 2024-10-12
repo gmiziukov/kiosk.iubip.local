@@ -9,7 +9,11 @@
             </div>
             <div class="border-t border-gray-200">
                 <div class="px-4 py-4 sm:px-6">
-                    <input type="text" wire:model="inputData" class="form-input" placeholder="Введите данные">
+                    <div class = "flex flex-col gap-3">
+
+                        <input type="text" wire:model="inputLogin" class="form-input" placeholder="логин">
+                        <input type="text" wire:model="inputPassword" class="form-input" placeholder="пароль">
+                    </div>
                     <button @click="open = false; $wire.saveData()" class="btn btn-primary">продолжить</button>
                     <button @click="open = false" class="btn btn-secondary">Закрыть</button>
                 </div>

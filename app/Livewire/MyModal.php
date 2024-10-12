@@ -6,7 +6,8 @@ use Livewire\Component;
 
 class MyModal extends Component
 {
-    public $inputData;
+    public $inputLogin;
+    public $inputPassword;
     public function render()
     {
         return view('livewire.my-modal');
