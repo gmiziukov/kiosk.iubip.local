@@ -1,22 +1,22 @@
-<div @class([ 'flex flex-col space-y-2 border rounded border-slate-200 dark:border-slate-400/20 px-4 py-4 text-xs sm:text-sm md:text-sm lg:text-base xl:text-base text-justify font-medium'=> true,
-    'bg-slate-100 dark:bg-slate-700 text-sky-400' => $type === 'info',
-    'bg-slate-100 dark:bg-slate-700 text-orange-400' => $type === 'warning',
-    'bg-slate-100 dark:bg-slate-700 text-green-400' => $type === 'success',
-    'bg-slate-100 dark:bg-slate-700 text-red-400' => $type === 'error'
+<div @class([ 'flex flex-col space-y-2 border rounded border-orange-400 px-4 py-4 text-base text-justify font-medium'=> true,
+    'bg-blue-400 text-white' => $type === 'info',
+    'bg-orange-400 text-white' => $type === 'warning',
+    'bg-green-400 text-white' => $type === 'success',
+    'bg-red-400 text-white' => $type === 'error'
     ]) role="alert">
 
     <div class="inline-flex items-baseline space-x-2">
         @if($type == 'info')
-        <i class="fa-solid fa-circle-info fa-lg"></i>
+        <i class="fa-solid fa-circle-info fa-xl"></i>
         @elseif($type == 'warning')
-        <i class="fa-solid fa-triangle-exclamation fa-lg"></i>
+        <i class="fa-solid fa-triangle-exclamation fa-xl"></i>
         @elseif($type == 'success')
-        <i class="fa-solid fa-circle-check fa-lg"></i>
+        <i class="fa-solid fa-circle-check fa-xl"></i>
         @else
-        <i class="fa-solid fa-xmark fa-lg"></i>
+        <i class="fa-solid fa-xmark fa-xl"></i>
         @endif
-        <span class="font-semibold">{{ $title }}</span>
+        <span class="text-xl font-semibold">{{ $title }}</span>
     </div>
 
-    <span>{{ $message }}</span>
+    <span class="text-xl">{{ $message }}</span>
 </div>

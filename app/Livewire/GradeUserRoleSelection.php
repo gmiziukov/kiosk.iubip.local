@@ -10,4 +10,12 @@ class GradeUserRoleSelection extends Component
     {
         return view('livewire.grade-user-role-selection');
     }
+
+    public function redirectBack() {
+        redirect()->route('index');
+    }
+
+    public function redirectToHome() {
+        redirect()->route('index');
+    }
 }

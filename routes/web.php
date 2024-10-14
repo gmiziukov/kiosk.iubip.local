@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function() {
     return view('index');
-});
+})->name('index');
 
 //Расписание занятий
 Route::get('/SelectStudentOrTeacher', function () {

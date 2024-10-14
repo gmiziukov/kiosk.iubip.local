@@ -8,17 +8,17 @@ use Illuminate\View\Component;
 
 class Alert extends Component
 {
-    /**
-     * Create a new component instance.
-     */
-    public function __construct()
+    public string $type;
+    public string $title;
+    public string $message;
+
+    public function __construct($type, $title, $message)
     {
-        //
+        $this->type = $type;
+        $this->title = $title;
+        $this->message = $message;
     }
 
-    /**
-     * Get the view / contents that represent the component.
-     */
     public function render(): View|Closure|string
     {
         return view('components.alert');
