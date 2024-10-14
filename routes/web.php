@@ -54,22 +54,10 @@ Route::get('/faq', function () {
     return view('pages.faq');
 })->name('faq');
 
+Route::get('/faq/{val}', function ($val) {
+    return view('pages.faq1',['val'=> $val]);
+})->name('faq');
 
-Route::get('/class-schedule/{SoT}', function ($SoT) {
-    return view('class-schedule', ['SoT'=> $SoT]);
-})->name('class-schedule');
-Route::get('/order-documen', function () {
-    return view('order-documen');
-});
-Route::get('/retake-schedule', function () {
-    return view('pages.retake-schedule');
-})->name('retake.schedule');
-Route::get('/student-grades', function () {
-    return view('pages.student-grades');
-})->name('student.grades');
-Route::get('/order-document-search/{key}', function ($key) {
-    return view('pages.order-document-search', ['key' => $key]);
-})->name('order.document.search');
 
 
 Route::middleware([

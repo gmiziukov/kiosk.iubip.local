@@ -48,43 +48,45 @@
                     @for ($i = 0; $i!=6;$i++)
                     <td class="border w-96 rounded-md text-xl font-sans font-norm border-blue-200">
                         <table>
-                            @foreach ($now as $now1)
-                            @if( $now1->time == $time )
-                            @if ($now1->date == Carbon\Carbon::parse($now_date1)->addDays($i)->format("Y-m-d"))
-                            <tr>
-                                <div class="text-center pt-2 font-bold">
-                                    <ul>
-                                        {{$now1->discipline}}
-                                    </ul>
-                                </div>
-                            </tr>
+                            @if($now)
+                                @foreach ($now as $now1)
+                                @if( $now1->time == $time )
+                                @if ($now1->date == Carbon\Carbon::parse($now_date1)->addDays($i)->format("Y-m-d"))
+                                <tr>
+                                    <div class="text-center pt-2 font-bold">
+                                        <ul>
+                                            {{$now1->discipline}}
+                                        </ul>
+                                    </div>
+                                </tr>
 
-                            <tr>
-                                <div class="flex pt-2">
-                                    <i class="fa-solid fa-chalkboard-user indent-4 fa-location-pin">
-                                        <span class="text-lg font-sans font-normal indent-8">
-                                            {{$now1->teacher}}
-                                        </span>
-                                    </i>
-                                </div>
-                            </tr>
+                                <tr>
+                                    <div class="flex pt-2">
+                                        <i class="fa-solid fa-chalkboard-user indent-4 fa-location-pin">
+                                            <span class="text-lg font-sans font-normal indent-8">
+                                                {{$now1->teacher}}
+                                            </span>
+                                        </i>
+                                    </div>
+                                </tr>
 
-                            <tr>
-                                <div class="flex items-center justify-between">
-                                    <div class="flex space-x-2 pt-2 items-center">
-                                        <i class="fa-solid indent-4 fa-location-pin"></i>
-                                        <span class="text-lg font-sans font-normal ">
-                                            {{$now1->lesson_place}}
+                                <tr>
+                                    <div class="flex items-center justify-between">
+                                        <div class="flex space-x-2 pt-2 items-center">
+                                            <i class="fa-solid indent-4 fa-location-pin"></i>
+                                            <span class="text-lg font-sans font-normal ">
+                                                {{$now1->lesson_place}}
+                                            </span>
+                                        </div>
+                                        <span class="text-xl font-sans pt-2 font-normal indent-8">
+                                            {{$now1->lesson_type}}
                                         </span>
                                     </div>
-                                    <span class="text-xl font-sans pt-2 font-normal indent-8">
-                                        {{$now1->lesson_type}}
-                                    </span>
-                                </div>
-                            </tr>
+                                </tr>
+                                @endif
+                                @endif
+                                @endforeach
                             @endif
-                            @endif
-                            @endforeach
                         </table>
                     </td>
                     @endfor
@@ -101,33 +103,35 @@
                     @for ($i =0; $i!=6;$i++)
                     <td class="border w-96 rounded-md text-xl font-sans font-norm   al border-blue-200">
                         <table>
+                            @if($now)
 
-                            @foreach ($now as $now1)
-                            @if( $now1->time == $time )
-                            @if ($now1->date == Carbon\Carbon::parse($now_date1)->addDays($i)->format("Y-m-d"))
-                            <tr>
+                                @foreach ($now as $now1)
+                                @if( $now1->time == $time )
+                                @if ($now1->date == Carbon\Carbon::parse($now_date1)->addDays($i)->format("Y-m-d"))
+                                <tr>
 
-                                {{$now1->lesson_place}}
+                                    {{$now1->lesson_place}}
 
-                            </tr>
-                            <tr>
+                                </tr>
+                                <tr>
 
-                                {{$now1->lesson_type}}
-
-
-                            </tr>
-                            <tr>
-                                {{$now1->group}}
-                            </tr>
-                            <tr>
-
-                                {{$now1->discipline}}
+                                    {{$now1->lesson_type}}
 
 
-                            </tr>
+                                </tr>
+                                <tr>
+                                    {{$now1->group}}
+                                </tr>
+                                <tr>
+
+                                    {{$now1->discipline}}
+
+
+                                </tr>
+                                @endif
+                                @endif
+                                @endforeach
                             @endif
-                            @endif
-                            @endforeach
                         </table>
                     </td>
                     @endfor

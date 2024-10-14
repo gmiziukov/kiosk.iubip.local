@@ -14,7 +14,7 @@ class ClassSchedule extends Component
 
     public $data ;
     public $currentDate = '';
-    public $group =  "К1И1(11)";
+    public $group =  "";
     public $now = "";
     public $now_date1; 
     public $weekStartDate = NULL;
@@ -52,7 +52,7 @@ class ClassSchedule extends Component
         $this->weekendDate = '2024-10-05';
         $this->now_date1=Carbon::parse($this->weekStartDate);
         $this->now_date1 = $this->weekStartDate;
-        $this->week($this->group);
+        // $this->week($this->group);
         
         $this->currentDate = Carbon::now()->format('Y-m-d');
 
