@@ -1,7 +1,6 @@
 <x-guest-layout>
     <x-slot name="title">
-        Успеваемость
+        {{ __('Расписание занятий') }}
     </x-slot>
 
-    @livewire('student-grades')
 </x-guest-layout>

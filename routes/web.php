@@ -12,9 +12,40 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/', function() {
+    return view('index');
 });
+
+//Расписание занятий
+Route::get('/schedule', function () {
+    return view('pages.schedule');
+})->name('schedule');
+
+//Заказ документов
+Route::get('/student-document-order-requests', function () {
+    return view('pages.student-document-order-requests');
+})->name('student.document.order.requests');
+
+//График пересдач
+Route::get('/retake-schedule', function () {
+    return view('pages.retake-schedule');
+})->name('retake.schedule');
+
+//Успеваемость
+Route::get('/student-grades', function () {
+    return view('pages.student-grades');
+})->name('student.grades');
+
+//Посещаемость
+Route::get('/e-journal', function () {
+    return view('pages.e-journal');
+})->name('e.journal');
+
+//Часто задаваемые вопросы
+Route::get('/faq', function () {
+    return view('pages.faq');
+})->name('faq');
+
 Route::get('/SelectStudentOrTeacher', function () {
     return view('SelectStudentOrTeacher');
 })->name('SelectStudentOrTeacher');
