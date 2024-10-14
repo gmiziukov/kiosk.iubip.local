@@ -5,9 +5,9 @@
     'bg-red-400 text-white' => $type === 'error'
     ]) role="alert">
 
-    <div class="inline-flex items-baseline space-x-2">
+    <div class="flex justify-center items-baseline space-x-2">
         @if($type == 'info')
-        <i class="fa-solid fa-circle-info fa-xl"></i>
+        <i class="fa-solid text-center fa-circle-info fa-xl"></i>
         @elseif($type == 'warning')
         <i class="fa-solid fa-triangle-exclamation fa-xl"></i>
         @elseif($type == 'success')
@@ -15,8 +15,8 @@
         @else
         <i class="fa-solid fa-xmark fa-xl"></i>
         @endif
-        <span class="text-xl font-semibold">{{ $title }}</span>
+        <span class="text-2xl font-semibold">{{ $title }}</span>
     </div>
 
-    <span class="text-xl">{{ $message }}</span>
+    <span class="text-2xl text-center">{{ $message }}</span>
 </div>

@@ -1,4 +1,4 @@
-<div class="h-full flex flex-col space-y-4">
+<div class="h-full w-full flex flex-col space-y-4">
     <!-- Кнопки навигации -->
     <div class="flex justify-between">
         <button wire:click="redirectBack()" class="w-40 flex space-x-2 items-center justify-center bg-gradient-to-br from-blue-800 from-60% to-blue-700 rounded shadow-md shadow-emerald-400 p-4 text-white">
@@ -16,13 +16,14 @@
 
     <!-- Выбор роли пользователя -->
     <div class="grow flex flex-row space-x-10 items-center justify-center">
-        <a href="#">
-            <div class="w-96 h-56 flex items-center justify-center bg-gradient-to-br from-blue-800 from-60% to-blue-700 rounded shadow-md shadow-emerald-400 p-6">
+        <a href="#" class="w-[40rem]">
+            <div class=" h-[20rem] flex items-center justify-center bg-gradient-to-br from-blue-800 from-60% to-blue-700 rounded-lg shadow-md shadow-emerald-400 p-6">
                 <h4 class="text-white text-4xl">Обучающийся</h4>
             </div>
         </a>
-        <a href="#">
-            <div class="w-96 h-56 flex items-center justify-center bg-gradient-to-br from-blue-800 from-60% to-blue-700 rounded shadow-md shadow-emerald-400 p-6">
+
+        <a href="#" class="w-[40rem]">
+            <div class="h-[20rem] flex items-center justify-center bg-gradient-to-br from-blue-800 from-60% to-blue-700 rounded-lg shadow-md shadow-emerald-400 p-6">
                 <h4 class="text-white text-4xl">Преподаватель</h4>
             </div>
         </a>
