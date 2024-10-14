@@ -32,9 +32,9 @@ Route::get('/retake-schedule', function () {
 })->name('retake.schedule');
 
 //Успеваемость
-Route::get('/student-grades', function () {
-    return view('pages.student-grades');
-})->name('student.grades');
+Route::get('/grade-user-role-selection', function () {
+    return view('pages.grade-user-role-selection');
+})->name('grade.user.role.selection');
 
 //Посещаемость
 Route::get('/e-journal', function () {

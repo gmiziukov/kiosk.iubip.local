@@ -32,7 +32,7 @@
             </p>
         </div>
     </a>
-    <a href="{{ route('student.grades') }}">
+    <a href="{{ route('grade.user.role.selection') }}">
         <div class="h-72 flex flex-col space-y-4 bg-gradient-to-br from-blue-800 from-60%  to-blue-700 rounded shadow-md shadow-emerald-400 p-6">
             <div class="h-16 w-16 bg-blue-600 flex items-center justify-center rounded-full">
                 <i class="fa-solid fa-star fa-2xl" style="color: #08cc22;"></i>
