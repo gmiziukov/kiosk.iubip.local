@@ -17,9 +17,17 @@ Route::get('/', function() {
 });
 
 //Расписание занятий
-Route::get('/schedule', function () {
-    return view('pages.schedule');
+Route::get('/SelectStudentOrTeacher', function () {
+    return view('pages.SelectStudentOrTeacher');
+})->name('SelectStudentOrTeacher');
+
+
+Route::get('/schedule/{SoT}', function ($SoT) {
+    return view('pages.schedule',['SoT'=> $SoT]);
 })->name('schedule');
+
+
+
 
 //Заказ документов
 Route::get('/student-document-order-requests', function () {
@@ -46,9 +54,7 @@ Route::get('/faq', function () {
     return view('pages.faq');
 })->name('faq');
 
-Route::get('/SelectStudentOrTeacher', function () {
-    return view('SelectStudentOrTeacher');
-})->name('SelectStudentOrTeacher');
+
 Route::get('/class-schedule/{SoT}', function ($SoT) {
     return view('class-schedule', ['SoT'=> $SoT]);
 })->name('class-schedule');
