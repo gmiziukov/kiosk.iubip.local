@@ -16,7 +16,7 @@
 </head>
 
 <body>
-    <div class="w-full h-screen flex flex-col bg-cover font-sans antialiased overflow-hidden" style="background-image: url({{ asset('storage/background.png') }});">
+    <div class="w-full h-screen flex flex-col bg-cover font-sans antialiased overflow-hidden" style="background-image: url({{ asset('storage/background.png') }})">
         <header class="w-full h-24 flex flex-row shadow-md px-4 py-2">
             <!-- Логотип -->
             <div class="w-1/3 h-full flex space-x-4">

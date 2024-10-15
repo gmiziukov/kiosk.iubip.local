@@ -10,22 +10,27 @@
             <span class="text-xl">Главная</span>
         </button>
     </div>
-
     <!-- Уведомление -->
-    <x-alert type="warning" title="Внимание" message="Пожалуйста, выберите вашу роль: обучающийся или преподаватель, чтобы отобразить соответствующую информацию." />
+    <div class="pt-10">
+        <x-alert type="warning" title="Внимание" message="Пожалуйста, выберите вашу роль: обучающийся или преподаватель, чтобы отобразить соответствующую информацию." />
+    </div>
+
 
     <!-- Выбор роли пользователя -->
     <div class="grow flex flex-row space-x-10 items-center justify-center">
-        <a href="#" class="w-[40rem]">
-            <div class=" h-[20rem] flex items-center justify-center bg-gradient-to-br from-blue-800 from-60% to-blue-700 rounded-lg shadow-md shadow-emerald-400 p-6">
-                <h4 class="text-white text-4xl">Обучающийся</h4>
-            </div>
-        </a>
-
-        <a href="#" class="w-[40rem]">
-            <div class="h-[20rem] flex items-center justify-center bg-gradient-to-br from-blue-800 from-60% to-blue-700 rounded-lg shadow-md shadow-emerald-400 p-6">
-                <h4 class="text-white text-4xl">Преподаватель</h4>
-            </div>
-        </a>
+        <div class="w-[50rem] h-[21rem] items-center space-x-10 justify-center flex flex-row">
+            <a href="#" class="w-[50rem]">
+                <div class=" h-[20rem] flex items-center justify-center bg-gradient-to-br from-blue-800 from-60% to-blue-700 rounded-md shadow-md shadow-emerald-400 p-6">
+                    <h4 class="text-white text-4xl">Обучающийся</h4>
+                </div>
+            </a>
+        </div>
+        <div class="w-[50rem] h-[21rem] items-center space-x-10 justify-center flex flex-row">
+            <a href="#" class="w-[50rem]">
+                <div class="h-[20rem] flex items-center justify-center bg-gradient-to-br from-blue-800 from-60% to-blue-700 rounded-md shadow-md shadow-emerald-400 p-6">
+                    <h4 class="text-white text-4xl">Преподаватель</h4>
+                </div>
+            </a>
+        </div>
     </div>
 </div>

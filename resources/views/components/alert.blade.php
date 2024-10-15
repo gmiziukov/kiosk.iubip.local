@@ -15,7 +15,7 @@
         @else
         <i class="fa-solid fa-xmark fa-xl"></i>
         @endif
-        <span class="text-2xl font-semibold">{{ $title }}</span>
+        <span class="text-3xl font-bold">{{ $title }}</span>
     </div>
 
     <span class="text-2xl text-center">{{ $message }}</span>
