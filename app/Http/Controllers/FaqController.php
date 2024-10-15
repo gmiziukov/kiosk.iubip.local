@@ -10,9 +10,28 @@ class FaqController extends Controller
     public $data = Null;
 
     public function data(){
-        $a = DB::table("faqs");
+        $a = DB::table("faqs")
+        ->orderBy("relevance","DESC");
         $a = $a->get();
         // dd($a->get()); 
         return $a;
+    }
+    public function data_now($i){
+        $a = DB::table("faqs")
+        ->where("id", $i);
+        $a = $a->get();
+        foreach($a as $k){
+            $int = $k->relevance +1;
+            $this->data_relevance($int, $i);
+        }
+        // dd($a->get()); 
+        return $a;
+    }
+    public function data_relevance($i, $id){
+        DB::update(
+            'update faqs set relevance = ? where id = ?',
+            [$i, $id]);
+
+        return 0;
     }
 }

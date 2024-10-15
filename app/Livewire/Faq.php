@@ -13,9 +13,10 @@ class Faq extends Component
         $this->data = $a->data();
         // dd($this->data);
     }
-    public function vie(){
-        dd($this->val);
-        return redirect()->route('faq1', ['val' => $this->val]);
+    public function vie($val1){
+
+        // dd($val1);
+        return redirect()->route('faq1', ['val' => $val1]);
     }
     public function render()
     {
