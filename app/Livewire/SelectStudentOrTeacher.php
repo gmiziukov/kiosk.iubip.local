@@ -11,12 +11,12 @@ class SelectStudentOrTeacher extends Component
 
     public $SoT = "Student";
     public function student (){
-        return redirect()->route('class-schedule', ['SoT'=>$this->SoT]);
+        return redirect()->route('schedule', ['SoT'=>$this->SoT]);
     }
     public function teacher(){
         $this->SoT = "Teacher";
         // dd($this->SoT);
-        return redirect()->route('class-schedule',['SoT'=>$this->SoT]);
+        return redirect()->route('schedule',['SoT'=>$this->SoT]);
     }
     public function render()
     {

@@ -3,5 +3,5 @@
         {{ __('Расписание занятий') }}
     </x-slot>
 
-    @livewire('class-schedule')
+    @livewire('class-schedule', ['SoT' => $SoT])
 </x-guest-layout>

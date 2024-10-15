@@ -9,5 +9,5 @@
         Расписаниe занятий
     </x-slot>
     
-    @livewire('class-schedule', ['SoT' => $SoT])
+    @livewire('schedule', ['SoT' => $SoT])
 </x-main-layout>
