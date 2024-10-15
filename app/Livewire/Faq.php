@@ -14,7 +14,8 @@ class Faq extends Component
         // dd($this->data);
     }
     public function vie(){
-        return redirect()->route('class-schedule',['SoT'=>$this->val]);
+        dd($this->val);
+        return redirect()->route('faq1', ['val' => $this->val]);
     }
     public function render()
     {
