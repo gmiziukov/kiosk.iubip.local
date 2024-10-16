@@ -10,8 +10,8 @@
 
     <div class="mt-4">
         <div>
-            <button wire:click="add_week">back</button>
-            <button wire:click="back_week">cont</button>
+            <button wire:click="add_week()">back</button>
+            <button wire:click="back_week()">cont</button>
             <div>
                 {{$weekStartDate}} -- {{$weekendDate}}
             </div>
@@ -56,7 +56,9 @@
                     <td class="border w-96 rounded-md text-xl font-sans font-norm border-blue-200">
                         <table>
                             @if($now)
+                                {{-- {{dd($now)}} --}}
                             @foreach ($now as $now1)
+                            {{-- {{dd($now1)}} --}}
                             @if( $now1->time == $time )
                             @if ($now1->date == Carbon\Carbon::parse($now_date1)->addDays($i)->format("Y-m-d"))
                             <tr>
