@@ -39,7 +39,8 @@ class ClassSchedule extends Component
         $this->now_date = Carbon::parse($this->now_date)->addDay(-7);
         $this->weekStartDate = $this->now_date->startOfWeek()->format("Y-m-d");
         $this->weekendDate = $this->now_date->endOfWeek()->format("Y-m-d");
-        // dd($this->now_date, );
+
+        return $this->now_date;
     }
     public function back_week(){
         $this->now_date = Carbon::parse($this->now_date)->addDay(7);

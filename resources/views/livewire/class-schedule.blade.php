@@ -10,8 +10,8 @@
 
     <div class="mt-4">
         <div>
-            <button wire:click="add_week">back</button>
-            <button wire:click="back_week">cont</button>
+            <button wire:click="add_week()">back</button>
+            <button wire:click="back_week()">cont</button>
             <div>
                 {{$weekStartDate}} -- {{$weekendDate}}
             </div>
