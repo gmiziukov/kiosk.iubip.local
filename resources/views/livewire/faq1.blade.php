@@ -10,9 +10,9 @@
         </button>
     </div>
 
-    <div class="flex flex-col">
+    <div class="flex flex-col p-4">
         @foreach($data as $val)
-        <div>
+        <div class="font-sans text-white h-16 w-full shadow-md flex items-center shadow shadow-green-600 justify-center text-xl">
             {{ $val->question }}
         </div>
         <div>
