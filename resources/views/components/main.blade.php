@@ -63,10 +63,7 @@
                 </div>
             </div>
         </div>
-        <div class="mt-8">
-            @if(isset($backButton))
-            {{$backButton}}
-            @endif
+        <div class="mt-24 p-4">
             {{ $slot }}
         </div>
     </div>

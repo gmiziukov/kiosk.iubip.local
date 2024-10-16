@@ -1,4 +1,14 @@
 <div>
+    <div class="flex justify-between">
+        <button wire:click="redirectBack()" class="w-40 flex space-x-2 items-center justify-center bg-gradient-to-br from-blue-800 from-60% to-blue-700 rounded shadow-md shadow-emerald-400 p-4 text-white">
+            <i class="fa-solid fa-chevron-left fa-xl"></i>
+            <span class="text-xl">Назад</span>
+        </button>
+        <button wire:click="redirectToHome()" class="w-40 flex space-x-2 items-center justify-center bg-gradient-to-br from-blue-800 from-60% to-blue-700 rounded shadow-md shadow-emerald-400 p-4 text-white">
+            <i class="fa-solid fa-home fa-xl"></i>
+            <span class="text-xl">Главная</span>
+        </button>
+    </div>
     <div class="w-full h-full overflow-y-auto">
         <div class="">
             <div class="flex justify-center ">
@@ -15,9 +25,9 @@
                     </table>
                 </div>
 
-                <div class="mt-2 scrollbar-thin overflow-y-scroll h-screen scrollbar-thumb-[#059669] scrollbar-track-sky-800"> 
+                <div class="mt-2 scrollbar-thin overflow-y-scroll h-screen scrollbar-thumb-[#059669] scrollbar-track-sky-800">
                     <table
-                        class="table border-separate border-spacing-2 font-sans font-normal text-xl text-white text-center mt-[3rem] mb-[10.72rem] ml-[1.15rem]">
+                        class="table border-separate border-spacing-2 font-sans font-normal text-xl text-white text-center mt-[3rem] mb-[11.50rem] ml-[1.15rem]">
                         <tbody class="bg-gradient-to-b from-blue-700 via-30% via-blue-800 to-blue-900">
                             @foreach ($data as $schedule)
                             <tr class="h-[3rem]">

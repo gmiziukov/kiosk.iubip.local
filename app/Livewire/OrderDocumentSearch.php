@@ -15,4 +15,14 @@ class OrderDocumentSearch extends Component
     {
         $this->key = $key;
     }
+
+    public function redirectBack()
+    {
+        redirect()->route('order-documen');
+    }
+
+    public function redirectToHome()
+    {
+        redirect()->route('index');
+    }
 }

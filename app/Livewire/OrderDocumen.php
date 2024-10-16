@@ -47,4 +47,13 @@ class OrderDocumen extends Component
             return 0;
         }
     }
+    public function redirectBack()
+    {
+        redirect()->route('index');
+    }
+
+    public function redirectToHome()
+    {
+        redirect()->route('index');
+    }
 }
