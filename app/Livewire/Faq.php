@@ -19,7 +19,7 @@ class Faq extends Component
     {
 
         // dd($val1);
-        return redirect()->route('faq1', ['val' => $val1]);
+        return redirect()->route('faq.item', ['val' => $val1]);
     }
     public function render()
     {

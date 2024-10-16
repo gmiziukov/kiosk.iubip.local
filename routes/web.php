@@ -54,9 +54,9 @@ Route::get('/faq', function () {
     return view('pages.faq');
 })->name('faq');
 
-Route::get('/faq1/{val}', function ($val) {
+Route::get('/faq/{val}', function ($val) {
     return view('pages.faq1',['val'=> $val]);
-})->name('faq1');
+})->name('faq.item');
 
 
 

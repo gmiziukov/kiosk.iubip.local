@@ -20,7 +20,7 @@ class Faq1 extends Component
     }
     public function redirectBack()
     {
-        redirect()->route('index');
+        redirect()->route('faq');
     }
 
     public function redirectToHome()

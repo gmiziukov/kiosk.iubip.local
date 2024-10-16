@@ -14,8 +14,10 @@
     <div class="grid grid-cols-3 gap-2 mt-4">
         @foreach($data as $data1)
         <button wire:click='vie({{ $data1->id }})'>
-            <div class="font-sans text-white h-16 w-full shadow-md flex items-center shadow shadow-green-600 justify-center text-xl">
-                {{ $data1->question }}
+            <div class="font-sans text-white h-16 w-full shadow-md flex items-center shadow shadow-green-600 justify-start pl-4 text-xl">
+                <div class = "w-[33rem]">
+                    <p class="text-left">{{ $data1->question }}</p>
+                </div>
             </div>
         </button>
         @endforeach
