@@ -23,29 +23,36 @@ class ClassSchedule extends Component
     public $time_var = ["08:20-09:50","10:00-11:30","11:40-13:10","13:30-15:00","15:10-16:40","17:00-18:30","18:40-20:10","20:20-21:50"];
     public $SoT = 0;
     public $now_date = null;
-    public function week($group){
+    public function week($date, $group){
         $new_a = new ClassScheduleController();
         if ($this->SoT == "Student"){
-            $this->now = $new_a->add_day_student($this->now_date,$group);
-            
+            // dd($this->now_date);
+            $this->now = $new_a->add_day_student($date,$group);
+            // dd($this->now);
+            return $this->now; 
         }
         else{
-            $this->now = $new_a->add_day_teacher($this->now_date,$group);
+            $this->now = $new_a->add_day_teacher($date,$group);
+            return $this->now;
         }
-        return $this->now;
+        
         
     }
     public function add_week(){
         $this->now_date = Carbon::parse($this->now_date)->addDay(-7);
         $this->weekStartDate = $this->now_date->startOfWeek()->format("Y-m-d");
         $this->weekendDate = $this->now_date->endOfWeek()->format("Y-m-d");
-
+        $this->now_date1=Carbon::parse($this->weekStartDate);
+        $this->now_date1 = $this->weekStartDate;
         return $this->now_date;
     }
     public function back_week(){
         $this->now_date = Carbon::parse($this->now_date)->addDay(7);
         $this->weekStartDate = $this->now_date->startOfWeek()->format("Y-m-d");
         $this->weekendDate = $this->now_date->endOfWeek()->format("Y-m-d");
+        $this->now_date1=Carbon::parse($this->weekStartDate);
+        $this->now_date1 = $this->weekStartDate;
+        return $this->now_date;
     }
     public function datatable($data_now, $group_now){
         $datatable = new ClassScheduleController();
@@ -53,7 +60,7 @@ class ClassSchedule extends Component
         return $this->data;
     }
     public function search(){
-        $this->week($this->group);
+        $this->week($this->now_date, $this->group);
         // $this->datatable($this->currentDate, $this->group);
     }
     public function mount($SoT)  {
