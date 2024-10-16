@@ -8,20 +8,20 @@ use Carbon\Carbon;
 
 class ClassScheduleController extends Controller
 {
-    public function data($data_now, $group_now){
+    public function data($now_data, $group_now){
         $a = DB::table("schedules")
-        ->where("date", $data_now);
+        ->where("date", $now_data);
         if($group_now != NULL){
             $a->where("group", strtoupper($group_now));
         }
         return $a->get();
     }
-    public function add_day_student($group_now){
-        $now = Carbon::now();
-        // $weekStartDate = $now->startOfWeek()->format("Y-m-d");
-        // $weekendDate = $now->endOfWeek()->format("Y-m-d");
-        $weekStartDate = '2024-09-30';
-        $weekendDate ='2024-10-05';
+    public function add_day_student($now_date, $group_now){
+        $now = $now_date;
+        $weekStartDate = $now->startOfWeek()->format("Y-m-d");
+        $weekendDate = $now->endOfWeek()->format("Y-m-d");
+        // $weekStartDate = '2024-09-30';
+        // $weekendDate ='2024-10-05';
         $a = DB::table("schedules")
         ->where("date", '>=',$weekStartDate )
         ->where("date", '<=',$weekendDate );
@@ -32,12 +32,12 @@ class ClassScheduleController extends Controller
         // dd($a);
         return $a;
     }
-    public function add_day_teacher($group_now){
-        $now = Carbon::now();
-        // $weekStartDate = $now->startOfWeek()->format("Y-m-d");
-        // $weekendDate = $now->endOfWeek()->format("Y-m-d");
-        $weekStartDate = '2024-09-30';
-        $weekendDate ='2024-10-05';
+    public function add_day_teacher($now_date, $group_now){
+        $now = $now_date;
+        $weekStartDate = $now->startOfWeek()->format("Y-m-d");
+        $weekendDate = $now->endOfWeek()->format("Y-m-d");
+        // $weekStartDate = '2024-09-30';
+        // $weekendDate ='2024-10-05';
         $a = DB::table("schedules")
         ->where("date", '>=',$weekStartDate )
         ->where("date", '<=',$weekendDate );

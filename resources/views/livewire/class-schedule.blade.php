@@ -9,6 +9,13 @@
     </div>
 
     <div class="mt-4">
+        <div>
+            <button wire:click="add_week">back</button>
+            <button wire:click="back_week">cont</button>
+            <div>
+                {{$weekStartDate}} -- {{$weekendDate}}
+            </div>
+        </div>
         <table class="border-separate border-spacing-1 rounded-lg font-sans font-normal text-xl text-white">
 
             <thead class="bg-gradient-to-br  text-center font-bold from-blue-700 h-16 w-96 from-60% to-blue-900">
