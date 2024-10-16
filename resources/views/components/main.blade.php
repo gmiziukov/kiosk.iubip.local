@@ -43,10 +43,10 @@
 <body class="bg-cover" style="background-image: url({{ asset('img/colorkit16.png')}}); bg-cover;">
 
     <div class="h-screen w-full fixed flex flex-col">
-        <div class="fixed z-10 h-26 w-full bg-opacity-40 backdrop-blur-md bg-blue-900 shadow-lg ">
+        <div class="fixed z-10 h-26 w-full shadow-lg ">
             <div class="h-full flex flex-row">
                 <div class="w-1/3 flex space-x-4 pl-4 pt-2">
-                    <img class="w-32" src="{{ asset('img/logo_dark.png') }}">
+                    <img class="w-32" src="{{ asset('storage/logo_iubip.png') }}">
                     <img class="w-48" src="https://www.centrinvest.ru/_ipx/_/logo.svg">
                 </div>
                 <div

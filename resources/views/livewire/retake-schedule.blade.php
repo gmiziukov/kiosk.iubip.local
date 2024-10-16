@@ -17,7 +17,7 @@
 
                 <div class="mt-2 scrollbar-thin overflow-y-scroll h-screen scrollbar-thumb-[#059669] scrollbar-track-sky-800"> 
                     <table
-                        class="table border-separate border-spacing-2 font-sans font-normal text-xl text-white text-center mt-[3rem] mb-[9rem] ml-[1.15rem]">
+                        class="table border-separate border-spacing-2 font-sans font-normal text-xl text-white text-center mt-[3rem] mb-[10.72rem] ml-[1.15rem]">
                         <tbody class="bg-gradient-to-b from-blue-700 via-30% via-blue-800 to-blue-900">
                             @foreach ($data as $schedule)
                             <tr class="h-[3rem]">

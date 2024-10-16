@@ -1,6 +1,7 @@
 <x-guest-layout>
     <x-slot name="title">
-        {{ __('Посещаемость') }}
+        {{ __('Университет сегодня') }}
     </x-slot>
 
+    @livewire('ejournal')
 </x-guest-layout>

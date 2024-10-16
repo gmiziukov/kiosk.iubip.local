@@ -23,4 +23,12 @@ class SelectStudentOrTeacher extends Component
         // $this->SoT;
         return view('livewire.select-student-or-teacher');
     }
+
+    public function redirectBack() {
+        redirect()->route('index');
+    }
+
+    public function redirectToHome() {
+        redirect()->route('index');
+    }
 }

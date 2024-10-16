@@ -11,7 +11,7 @@
     <div class="mt-4">
         <table class="border-separate border-spacing-1 rounded-lg font-sans font-normal text-xl text-white">
 
-            <thead class="bg-gradient-to-br text-center font-bold from-blue-700 h-16 w-96 from-60% to-blue-900">
+            <thead class="bg-gradient-to-br  text-center font-bold from-blue-700 h-16 w-96 from-60% to-blue-900">
                 <tr>
                     <td class="border rounded-l-lg border-blue-200">
                         Время
@@ -151,6 +151,7 @@
             </tbody>
         </table>
     </div>
+
     <x-dialog-modal wire:model="confirmingUserDeletion">
         <x-slot name="title">
             Delete Account
