@@ -41,7 +41,7 @@ Route::get('/retake-schedule', function () {
 
 //Успеваемость
 Route::get('/grade-user-role-selection', function () {
-    return view('pages.grade-user-role-selection');
+    return view('pages.student_grades');
 })->name('grade.user.role.selection');
 
 //Посещаемость

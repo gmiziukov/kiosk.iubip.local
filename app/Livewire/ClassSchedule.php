@@ -54,6 +54,7 @@ class ClassSchedule extends Component
         $this->now_date1 = $this->weekStartDate;
         return $this->now_date;
     }
+    
     public function datatable($data_now, $group_now){
         $datatable = new ClassScheduleController();
         $this->data = $datatable->data($data_now, $group_now);
