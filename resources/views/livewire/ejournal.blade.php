@@ -10,51 +10,121 @@
         </button>
     </div>
 
-    <div class="mt-4">
-        <p class="text-center font-sans text-2xl font-bold text-white"> Современный вуз Ростова-на-Дону. ИУБиП – территория успеха</p>
+    <div class="mt-10 font-mono text-white flex flex-row text-3xl">
 
+        <img src="{{asset('storage/iubip.jpg')}}" class="rounded-l-xl w-[35rem] h-[40rem]" alt=""></img>
+
+        <div class="flex flex-col h-[40rem]">
+
+            <div class="w-[15rem] ">
+                <p class="pl-4 pt-2 py-4 indent-4">Факты о Вузе</p>
+            </div>
+
+            <div class="grid grid-cols-1 list-disc">
+                <div class="w-[30rem]">
+                    <li class=" text-xl indent-4 text-white pt-6">
+                        На сегодняшний день в Университете:
+                    </li>
+                    <li class="list-none text-xl indent-10 text-white px-4"> Обучается около <span class="font-sans italic underline font-bold decoration-sky-500 text-xl text-white">5 000</span> студентов.</li>
+                    <li class="list-none text-xl indent-10 text-white pb-[1.06rem] px-4"> Работает более <span class="font-sans italic underline font-bold decoration-sky-500 text-xl text-white">500</span> преподавателей.</li>
+                </div>
+                <div>
+                    <li class="text-xl indent-4 py-8 text-white">
+                        "ЮЖНЫЙ УНИВЕРСИТЕТ" был основан в <span class="italic underline font-bold decoration-sky-500">1991 году</span>
+                    </li>
+                </div>
+
+                <div>
+                    <li class="text-xl indent-4 py-8 text-white">
+                        Является первым негосударственным вузом современной России.
+                    </li>
+                </div>
+
+                <div>
+                    <li class="text-xl indent-4 py-6 text-white">
+                        За время работы университетом подготовлено более <span class="font-sans italic underline font-bold decoration-sky-500 text-lg text-white">20 000</span> квалифицированных специалистов.
+                    </li>
+                </div>
+
+                <div class="w-[70rem]">
+                    <li class="text-xl list-outside indent-4 py-10 text-white">
+                        В соответствии с действующим законодательством предоставляется отсрочка от службы.
+                    </li>
+                </div>
+
+                <div>
+                    <li class="text-xl indent-4 pt-6 text-lg text-white">
+                        Более 98% выпускников Унверситета успешно трудоустраиваются по специальностям обучения.
+                    </li>
+                    <li class="text-xl list-none indent-8 pl-2 text-lg text-white">
+                        Именно этот показатель традиционно считается в Университете важнейшим.
+                    </li>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="">
-        <p class="font-sans text-lg text-white mt-4">
-            Частное образовательное учреждение высшего образования
-            "ЮЖНЫЙ УНИВЕРСИТЕТ (Институт Управления, Бизнеса и Права)" был основан в <span class="italic underline font-bold decoration-sky-500">1991 году</span> и является первым негосударственным вузом современной России.
+
+    <div class="mt-10 font-mono text-white text-3xl">
+        <p>
+            Наши достижения
         </p>
     </div>
 
-    <div class="border-l-2 border-dashed">
-        <p class="font-sans ml-2 text-lg text-white mt-4">
-            На сегодняшний день в Университете работает более <span class="font-sans italic underline font-bold decoration-sky-500 text-lg text-white">500</span> преподавателей,
-            и обучается около <span class="font-sans italic underline font-bold decoration-sky-500 text-lg text-white">5 000</span> студентов.
-            За время работы университетом подготовлено более <span class="font-sans italic underline font-bold decoration-sky-500 text-lg text-white">20 000</span> квалифицированных специалистов.
-            "ЮЖНЫЙ УНИВЕРСИТЕТ (ИУБиП)" стал одним из первых вузов на юге страны, получившим от Федеральной службы по надзору в сфере образования и науки бессрочную лицензию на право образовательной деятельности.
-            По итогам обучения студентам вручаются государственные дипломы Российской Федерации, подтверждающие качество подготовки выпускников.
-            В соответствии с действующим законодательством предоставляется отсрочка от службы в Вооруженных силах РФ.
-        </p>
+    <div class="grid grid-cols-6 justify-between pt-2 w-full gap-8">
+        <div class="bg-purple-400/60 rounded-lg w-[18rem] h-[14rem] flex justify-center items-center text-white flex-col">
+            <p class="font-mono text-3xl font-bold flex justify-start indent-4 w-[15rem]">Топ-20</p>
+            <div class="flex justify-center w-[15rem] border-t pb-12 items-center">
+                <p class="font-mono text-white text-left flex justify-center items-center mt-4">
+                    Университет входит в состав 17 элитных российских вузов
+                </p>
+            </div>
+        </div>
+        <div class="bg-zinc-400/60 rounded-lg w-[18rem] h-[14rem] flex justify-center items-center text-white flex-col">
+            <p class="font-mono text-3xl font-bold flex justify-start indent-4 w-[15rem]">12 место</p>
+            <div class="flex justify-center w-[15rem] pb-6 border-t items-center">
+                <p class="font-mono text-white text-left flex justify-center items-center mt-4">
+                    Входит в международный рейтинг Eduniversal среди российских участников
+                </p>
+            </div>
+        </div>
+        <div class="bg-indigo-400/50 rounded-lg w-[18rem] h-[14rem] flex justify-center items-center text-white flex-col">
+            <p class="font-mono text-3xl font-bold border-b flex justify-start pt-6 indent-4 w-[15rem]">2 место</p>
+            <div class="flex justify-center items-center">
+                <p class="font-mono px-6 text-white text-left flex justify-center items-center mt-4">
+                    В 2013 году по итогам мониторинга эффективности высших учебных заведений занял второе место Ростовской области
+                </p>
+            </div>
+        </div>
+        <div class="bg-amber-200/50 rounded-lg w-[18rem] h-[14rem] flex justify-center items-center text-white flex-col">
+            <p class="font-mono text-2xl font-bold flex justify-start border-b pl-2 w-[15rem]">Доверие от государства</p>
+            <div class="flex justify-center items-center">
+                <p class="font-mono px-6 text-white text-left flex justify-center items-center mt-4">
+                    Получение от Федеральной службы по надзору бессрочную лицензию на право образовательной деятельности
+                </p>
+
+            </div>
+        </div>
+        <div class="bg-fuchsia-300/50 rounded-lg w-[18rem] h-[14rem] flex justify-center items-center text-white flex-col">
+            <p class="font-mono text-2xl font-bold border-b flex pl-2 justify-start w-[15rem]">Новые кадры: отклик от бизнеса</p>
+            <div class="flex justify-center items-center">
+                <p class="font-mono px-6 text-white text-left flex justify-center items-center mt-4">
+                    Проведение защиты дипломных работ с полной открытостью процесса, которой пользуются представители ростовских работодателей
+                </p>
+            </div>
+        </div>
+        <div class="bg-cyan-200/50 rounded-lg w-[18rem] h-[14rem] flex justify-center items-center text-white flex-col">
+            <p class="font-mono text-2xl font-bold border-b pl-2 flex justify-start w-[15rem]">Обучение под потребности рынка</p>
+            <div class="flex justify-center items-center">
+                <p class="font-mono px-6 text-white text-left flex justify-center items-center mt-4">
+                    Использование закона, позволяющего вести целевую подготовку студентов для конкретных работодателей с учетом их деятельности
+                </p>
+            </div>
+        </div>
     </div>
-    <div class="border-l-2 border-dashed">
-        <p class="font-sans ml-2 text-lg text-white mt-4">
-            Университет в составе 17 элитных российских вузов и единственный на юге страны входит в международный рейтинг Eduniversal,
-            занимая в нем 12 место среди российских участников.
-            Рейтинг определяет 1000 лучших учебных заведений из 154 стран мира.
-        </p>
+    <div class="grid grid-cols-3 justify-between items-center flex justify-center pt-10 w-full gap-3">
+        <img src="{{asset('storage/2photo.jpg')}}" class="rounded-xl " alt=""></img>
+        <img src="{{asset('storage/3photo.jpg')}}" class="rounded-xl" alt=""></img>
     </div>
-
-    <p class="font-sans text-lg text-white mt-4">
-        В 2013 году по итогам мониторинга эффективности высших учебных заведений Российской Федерации, ЮУ (ИУБиП) занял второе место среди вузов Ростовской области.
-
-        По данным Центра занятости более 98% выпускников Унверситета успешно трудоустраиваются по специальностям обучения.
-        Именно этот показатель традиционно считается в Университете важнейшим. Вся система обучения и внеучебной работы направлена на то, чтобы готовить компетентных,
-        востребованных на рынке труда специалистов, способных добиться успеха, как в профессиональной сфере, так и в целом в жизни.
-
-        Наш Университет одним из первых в стране начал проводить защиту дипломных работ с полной открытостью этого процесса.
-        Защита ВКР транслируется в online режиме и наиболее активно этой возможностью пользуются представители ростовских работодателей.
-    </p>
-
-    <p class="font-sans text-lg text-white mt-4">
-        Одним из первых в России Университет стал пользоваться возможностями нового Федерального закона об образовании, который позволяет вести целевую подготовку
-        студентов для конкретных работодателей с учетом специфики их деятельности.
-        В соответствии с уже заключенным договором для одной из коммерческих структур, имеющих общероссийский статус, ведется целевая подготовка бакалавров.
-    </p>
 
 
     <p class="text-center font-sans text-2xl font-bold text-white mt-6">Направления обучения Университета</p>
