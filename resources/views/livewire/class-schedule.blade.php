@@ -1,20 +1,33 @@
 <div class="h-full w-full">
-    <div class="flex items-center justify-center">
-        <input
-            class="placeholder:italic placeholder:text-green-600 rounded-md pl-2 w-1/2 text-xl h-16 border border-green-600 text-blue-500"
-            placeholder="{{($SoT == 'Student') ? 'Пожалуйста, введите полное название группы' : 'Пожалуйста, укажите имя в формате Фамилия И.О.'}}" wire:model="group" type="text" value="">
-        <button
-            class="outline text-xl ml-8 font-medium border border-green-400 h-14 w-20 bg-white text-green-600 rounded-md"
-            wire:click="search()">найти</button>
+    <div class="flex justify-between">
+        <button wire:click="redirectBack()" class="w-[11.7rem] h-[3.75rem] flex space-x-2 items-center justify-center bg-gradient-to-br from-blue-800 from-60% to-blue-700 rounded shadow-md shadow-emerald-400 p-4 text-white">
+            <i class="fa-solid fa-chevron-left fa-xl"></i>
+            <span class="text-xl">Назад</span>
+        </button>
+        <div class="flex justify-center mt-10 items-center w-full">
+            <input
+                class="placeholder:italic placeholder:text-green-600 rounded-md pl-2 w-1/2 text-xl h-16 border border-green-600 text-blue-500"
+                placeholder="{{($SoT == 'Student') ? 'Пожалуйста, введите полное название группы' : 'Пожалуйста, укажите имя в формате Фамилия И.О.'}}" wire:model="group" type="text" value="">
+            <button
+                class="outline text-xl font-medium border ml-8 border-green-400 h-14 w-20 bg-white text-green-600 rounded-md"
+                wire:click="search()">найти</button>
+        </div>
+
+        <button wire:click="redirectToHome()" class="w-[11.7rem] h-[3.75rem] flex space-x-2 items-center justify-center bg-gradient-to-br from-blue-800 from-60% to-blue-700 rounded shadow-md shadow-emerald-400 p-4 text-white">
+            <i class="fa-solid fa-home fa-xl"></i>
+            <span class="text-xl">Главная</span>
+        </button>
     </div>
 
     <div class="mt-4">
-        <div>
-            <button wire:click="add_week()">back</button>
-            <button wire:click="back_week()">cont</button>
-            <div>
-                {{$weekStartDate}} -- {{$weekendDate}}
+        <div class = "flex justify-between flex-row p-2">
+            <button class = "rounded border border-blue-200 p-2 text-white" wire:click="add_week()">Предыдущая неделя</button>
+            <div class = "text-white text-2xl">
+                {{\Carbon\Carbon::parse($weekStartDate)->format('d') }} {{ ['января', 'февраля', 'марта', 'апреля', 'мая', 'июня', 'июля', 'августа', 'сентября', 'октября', 'ноября', 'декабря'][\Carbon\Carbon::parse($weekStartDate)->month - 1]  }}
+                -
+                {{\Carbon\Carbon::parse($weekendDate)->format('d') }} {{ ['января', 'февраля', 'марта', 'апреля', 'мая', 'июня', 'июля', 'августа', 'сентября', 'октября', 'ноября', 'декабря'][\Carbon\Carbon::parse($weekendDate)->month - 1]  }}
             </div>
+            <button class = "rounded border border-blue-200 p-2 text-white" wire:click="back_week()">Следующая неделя</button>
         </div>
         <table class="border-separate border-spacing-1 rounded-lg font-sans font-normal text-xl text-white">
 
@@ -39,7 +52,7 @@
                         Пятница
                     </td>
                     <td class="border rounded-r-lg border-blue-200">
-                        Субота
+                        Суббота
                     </td>
                 </tr>
             </thead>
@@ -56,7 +69,7 @@
                     <td class="border w-96 rounded-md text-xl font-sans font-norm border-blue-200">
                         <table>
                             @if($now)
-                                {{-- {{dd($now)}} --}}
+                            {{-- {{dd($now)}} --}}
                             @foreach ($now as $now1)
                             {{-- {{dd($now1)}} --}}
                             @if( $now1->time == $time )
