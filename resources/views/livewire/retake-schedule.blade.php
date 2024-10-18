@@ -25,7 +25,7 @@
                     </table>
                 </div>
 
-                <div class="mt-2 scrollbar-thin overflow-y-scroll h-screen scrollbar-thumb-[#059669] scrollbar-track-sky-800">
+                <div class="mt-[0.75rem] scrollbar-thin overflow-y-scroll h-screen scrollbar-thumb-[#059669] scrollbar-track-sky-800">
                     <table
                         class="table border-separate border-spacing-2 font-sans font-normal text-xl text-white text-center mt-[3rem] mb-[11.50rem] ml-[1.15rem]">
                         <tbody class="bg-gradient-to-b from-blue-700 via-30% via-blue-800 to-blue-900">

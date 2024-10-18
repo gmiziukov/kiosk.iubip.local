@@ -26,7 +26,7 @@ class StudentGradesController extends Controller
  
         ->select('student_grades.grade', "disciplines.name", "bulletins.type_bulletin_id", "control_types.name as type_name")
         // 
-        ->where("users.name","=","st107206")
+        ->where("users.name","=","st107196")
         // 
         ->get();
         // dd($a);
