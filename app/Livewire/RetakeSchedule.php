@@ -2,16 +2,31 @@
 
 namespace App\Livewire;
 
-use App\Models\RetakeSchedule as ModelsRetakeSchedule;
 use Livewire\Component;
-
+use App\Http\Controllers\RetakeScheduleController;
 
 class RetakeSchedule extends Component
 {
+    public $data = Null;
+    public $get_name = Null;
+    public function mount(){
+        $data = new RetakeScheduleController();
+
+        return $this->data = $data->main_data();  
+    }
+    public function search(){
+        $data = new RetakeScheduleController();
+        return $this->data = $data->search($this->get_name);
+
+    }
+
+
+
+
+
     public function render()
     {
-        $data = ModelsRetakeSchedule::get();
-        return view('livewire.retake-schedule', ['data' => $data]);
+        return view('livewire.retake-schedule');
     }
     public function redirectBack()
     {
