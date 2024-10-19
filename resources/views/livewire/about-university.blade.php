@@ -12,12 +12,12 @@
 
     <div class="mt-10 font-mono text-white flex flex-row text-3xl">
 
-        <img src="{{asset('storage/iubip.jpg')}}" class="rounded-l-xl w-[35rem] h-[40rem]" alt=""></img>
+        <img src="{{asset('storage/iubip_img_1.jpg')}}" class="rounded-l-xl w-[35rem] h-[40rem]" alt=""></img>
 
         <div class="flex flex-col h-[40rem]">
 
             <div class="w-[15rem] ">
-                <p class="pl-4 pt-2 py-4 indent-4">Факты о Вузе</p>
+                <p class="pt-2 py-4 indent-4">Факты о Вузе</p>
             </div>
 
             <div class="grid grid-cols-1 list-disc">
@@ -25,12 +25,12 @@
                     <li class=" text-xl indent-4 text-white pt-6">
                         На сегодняшний день в Университете:
                     </li>
-                    <li class="list-none text-xl indent-10 text-white px-4"> Обучается около <span class="font-sans italic underline font-bold decoration-sky-500 text-xl text-white">5 000</span> студентов.</li>
-                    <li class="list-none text-xl indent-10 text-white pb-[1.06rem] px-4"> Работает более <span class="font-sans italic underline font-bold decoration-sky-500 text-xl text-white">500</span> преподавателей.</li>
+                    <li class="list-none text-xl indent-10 text-white px-4"> Обучается около <span class="font-sans font-bold  text-xl text-white">5 000</span> студентов.</li>
+                    <li class="list-none text-xl indent-10 text-white pb-[1.06rem] px-4"> Работает более <span class="font-sans font-bold  text-xl text-white">500</span> преподавателей.</li>
                 </div>
                 <div>
                     <li class="text-xl indent-4 py-8 text-white">
-                        "ЮЖНЫЙ УНИВЕРСИТЕТ" был основан в <span class="italic underline font-bold decoration-sky-500">1991 году</span>
+                        "ЮЖНЫЙ УНИВЕРСИТЕТ" был основан в <span class="font-bold ">1991 году</span>
                     </li>
                 </div>
 
@@ -42,7 +42,7 @@
 
                 <div>
                     <li class="text-xl indent-4 py-6 text-white">
-                        За время работы университетом подготовлено более <span class="font-sans italic underline font-bold decoration-sky-500 text-lg text-white">20 000</span> квалифицированных специалистов.
+                        За время работы университетом подготовлено более <span class="font-sans font-bold  text-lg text-white">20 000</span> квалифицированных специалистов.
                     </li>
                 </div>
 
@@ -56,7 +56,7 @@
                     <li class="text-xl indent-4 pt-6 text-lg text-white">
                         Более 98% выпускников Унверситета успешно трудоустраиваются по специальностям обучения.
                     </li>
-                    <li class="text-xl list-none indent-8 pl-2 text-lg text-white">
+                    <li class="text-xl list-none indent-4 text-lg text-white">
                         Именно этот показатель традиционно считается в Университете важнейшим.
                     </li>
                 </div>
@@ -121,9 +121,11 @@
             </div>
         </div>
     </div>
-    <div class="grid grid-cols-3 justify-between items-center flex justify-center pt-10 w-full gap-3">
-        <img src="{{asset('storage/2photo.jpg')}}" class="rounded-xl " alt=""></img>
-        <img src="{{asset('storage/3photo.jpg')}}" class="rounded-xl" alt=""></img>
+    <div class="justify-between items-center flex pt-10 w-full">
+        <img src="{{asset('storage/iubip_img_2.png')}}" class="rounded-xl " alt=""></img>
+        <img src="{{asset('storage/iubip_img_3.png')}}" class="rounded-xl " alt=""></img>
+        <img src="{{asset('storage/iubip_img_4.png')}}" class="rounded-xl" alt=""></img>
+
     </div>
 
 

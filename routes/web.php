@@ -27,8 +27,6 @@ Route::get('/schedule/{SoT}', function ($SoT) {
 })->name('schedule');
 
 
-
-
 //Заказ документов
 Route::get('/student-document-order-requests', function () {
     return view('pages.student-document-order-requests');
@@ -40,14 +38,14 @@ Route::get('/retake-schedule', function () {
 })->name('retake.schedule');
 
 //Успеваемость
-Route::get('/grade-user-role-selection', function () {
+Route::get('/student-grades', function () {
     return view('pages.student_grades');
-})->name('grade.user.role.selection');
+})->name('student.grades');
 
-//Посещаемость
-Route::get('/e-journal', function () {
-    return view('pages.e-journal');
-})->name('e.journal');
+//Об университете
+Route::get('/about-university', function () {
+    return view('pages.about-university');
+})->name('about.university');
 
 //Часто задаваемые вопросы
 Route::get('/faq', function () {

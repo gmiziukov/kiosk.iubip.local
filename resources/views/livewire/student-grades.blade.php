@@ -5,13 +5,14 @@
             <span class="text-xl">Назад</span>
         </button>
 
-        <div class="flex justify-center mt-10 items-center w-full">
+        <div class="flex justify-center items-center w-full">
             <input
-                class="placeholder:italic placeholder:text-green-600 rounded-md pl-2 w-1/2 text-xl h-16 border border-green-600 text-blue-500"
-                placeholder="Пожалуйста, введите логин от своего аккаунта moodle">
-            <button
-                class="outline text-xl font-medium border ml-8 border-green-400 h-14 w-20 bg-white text-green-600 rounded-md"
-                wire:click="search()">найти</button>
+                class="rounded-md pl-2 w-1/2 text-2xl h-16 border border-green-600 text-blue-500"
+                placeholder="Пожалуйста, введите номер зачетной книжки" wire:model="search" type="text" value="">
+            <button wire:click="getStudentGrades" class="flex items-center justify-center px-4 text-xl font-medium border ml-8 border-green-400 h-16 bg-white rounded-md">
+                <i class="fa-solid fa-search fa-xl"></i>
+                <span class="ml-2">Найти</span>
+            </button>
         </div>
 
         <button wire:click="redirectToHome()" class="w-[11.7rem] h-[3.75rem] flex space-x-2 items-center justify-center bg-gradient-to-br from-blue-800 from-60% to-blue-700 rounded shadow-md shadow-emerald-400 p-4 text-white">
@@ -31,7 +32,7 @@
                         Вид контроля
                     </td>
                     <td class="border text-2xl font-semibold rounded-r-lg border-blue-200">
-                        Результат
+                        Оценка
                     </td>
                 </tr>
             </thead>

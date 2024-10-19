@@ -1,6 +1,6 @@
 <x-guest-layout>
     <x-slot name="title">
-        {{ __('Частые вопросы') }}
+        {{ __('Часто задаваемые вопросы') }}
     </x-slot>
 
     @livewire('faq')

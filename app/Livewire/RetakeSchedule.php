@@ -9,25 +9,24 @@ class RetakeSchedule extends Component
 {
     public $data = Null;
     public $get_name = Null;
-    public function mount(){
-        $data = new RetakeScheduleController();
 
-        return $this->data = $data->main_data();  
+    public function mount()
+    {
+        $data = new RetakeScheduleController();
+        return $this->data = $data->main_data();
     }
-    public function search(){
+
+    public function search()
+    {
         $data = new RetakeScheduleController();
         return $this->data = $data->search($this->get_name);
-
     }
-
-
-
-
 
     public function render()
     {
         return view('livewire.retake-schedule');
     }
+
     public function redirectBack()
     {
         redirect()->route('index');

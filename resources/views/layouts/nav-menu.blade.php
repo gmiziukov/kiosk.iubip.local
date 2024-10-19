@@ -1,12 +1,12 @@
 <div class="grid grid-cols-3 gap-4">
-    <a href="{{ route('e.journal') }}">
+    <a href="{{ route('about.university') }}">
         <div class="h-72 flex flex-col space-y-4 bg-gradient-to-br from-blue-800 from-60%  to-blue-700 rounded shadow-md shadow-emerald-400 p-6">
             <div class="h-16 w-16 bg-blue-600 flex items-center justify-center rounded-full">
                 <i class="fa-solid fa-book-open fa-2xl" style="color: #08cc22;"></i>
             </div>
             <h4 class="text-white text-2xl">Университет сегодня</h4>
             <p class="text-white text-base text-justify">
-                В этом разделе вы можете 
+                В этом разделе представлена актуальная информация о текущей деятельности университета, его достижениях, новостях и мероприятиях
             </p>
         </div>
     </a>
@@ -43,7 +43,7 @@
             </p>
         </div>
     </a>
-    <a href="{{ route('grade.user.role.selection') }}">
+    <a href="{{ route('student.grades') }}">
         <div class="h-72 flex flex-col space-y-4 bg-gradient-to-br from-blue-800 from-60%  to-blue-700 rounded shadow-md shadow-emerald-400 p-6">
             <div class="h-16 w-16 bg-blue-600 flex items-center justify-center rounded-full">
                 <i class="fa-solid fa-star fa-2xl" style="color: #08cc22;"></i>
