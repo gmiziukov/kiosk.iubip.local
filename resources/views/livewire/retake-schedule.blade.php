@@ -6,10 +6,11 @@
         </button>
 
         <div class="flex justify-center items-center w-full">
-            <input
+            <input 
+                wire:model = "get_name"
                 class="rounded-md pl-2 w-1/2 text-2xl h-16 border border-green-600 text-blue-500"
                 placeholder="Пожалуйста, введите ФИО преподавателя" type="text" value="">
-            <button class="flex items-center justify-center px-4 text-xl font-medium border ml-8 border-green-400 h-16 bg-white rounded-md">
+            <button wire:click = "search()" class="flex items-center justify-center px-4 text-xl font-medium border ml-8 border-green-400 h-16 bg-white rounded-md">
                 <i class="fa-solid fa-search fa-xl"></i>
                 <span class="ml-2">Найти</span>
             </button>
