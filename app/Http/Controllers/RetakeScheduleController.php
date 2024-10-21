@@ -13,6 +13,7 @@ class RetakeScheduleController extends Controller
 
     public function search($name)
     {
-        return DB::table("retake_schedules")->where("fio_teacher", $name)->get();
+        return DB::table("retake_schedules")->where("fio_teacher", "like", "%".$name."%")->get();
+        // return DB::table("retake_schedules")->where("fio_teacher", $name)->get();
     }
 }
