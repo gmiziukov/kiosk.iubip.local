@@ -16,6 +16,13 @@ class FaqController extends Controller
         // dd($a->get()); 
         return $a;
     }
+    public function order($category){
+        $a = DB::table("faqs")
+        ->where("category",$category);
+        $a = $a->get();
+        // dd($a->get()); 
+        return $a;
+    }
     public function data_now($i){
         $a = DB::table("faqs")
         ->where("id", $i);

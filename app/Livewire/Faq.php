@@ -8,6 +8,7 @@ use App\Http\Controllers\FaqController;
 class Faq extends Component
 {
     public $data = Null;
+    public $order = Null;
     public $val = Null;
     public function mount()
     {
@@ -15,6 +16,13 @@ class Faq extends Component
         $this->data = $a->data();
         // dd($this->data);
     }
+    public function ORD($a)
+    {
+        $a = new FaqController();
+        $this->order = $a->order($a);
+
+    }
+
     public function vie($val1)
     {
 
