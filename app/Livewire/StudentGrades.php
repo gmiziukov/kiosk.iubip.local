@@ -7,18 +7,14 @@ use Livewire\Component;
 
 class StudentGrades extends Component
 {
-    public $data = null;
-    public function mount()
-    {
-        $studentGradesController = new StudentGradesController();
-        $this->data = $studentGradesController->main();
-        // dd ($this->data);
-    }
+    public $search = '';
+    public $data = [];
 
     public function render()
     {
         return view('livewire.student-grades');
     }
+
     public function redirectBack()
     {
         redirect()->route('index');
@@ -27,5 +23,11 @@ class StudentGrades extends Component
     public function redirectToHome()
     {
         redirect()->route('index');
+    }
+
+    public function getStudentGrades()
+    {
+        $studentGradesController = new StudentGradesController();
+        $this->data = $studentGradesController->getStudentGrades($this->search);
     }
 }

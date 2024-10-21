@@ -16,7 +16,7 @@
         <button wire:click='vie({{ $data1->id }})'>
             <div class="font-sans text-white h-16 w-full shadow-md flex items-center shadow shadow-green-600 justify-start pl-4 text-xl">
                 <div class="w-[36.5rem] flex justify-between items-center">
-                    <p class="text-left w-[34rem]">{{ $data1->question }}</p> <i class="fa-solid fa-caret-up fa-rotate-90 fa-xl" style="color: #1e67ce;"></i>
+                    <p class="text-left w-[34rem]">{{ $data1->question }}</p> <i class="fa-solid fa-caret-up fa-rotate-90 fa-xl"></i>
                 </div>
             </div>
         </button>

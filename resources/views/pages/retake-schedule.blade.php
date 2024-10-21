@@ -1,6 +1,7 @@
-<x-main-layout>
-    <x-slot name="head">
+<x-guest-layout>
+    <x-slot name="title">
         График пересдач
     </x-slot>
+    
     @livewire('retake-schedule')
-</x-main-layout>
+</x-guest-layout>

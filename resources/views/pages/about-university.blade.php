@@ -3,5 +3,5 @@
         {{ __('Университет сегодня') }}
     </x-slot>
 
-    @livewire('ejournal')
+    @livewire('about-university')
 </x-guest-layout>
