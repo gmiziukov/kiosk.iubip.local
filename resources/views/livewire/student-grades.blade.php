@@ -22,7 +22,7 @@
 
     <div class="flex">
         <table class="border-separate px-36 mt-4 mb-2 overflow-y-auto rounded-lg w-full font-sans font-normal text-xl text-white">
-            <thead class="bg-gradient-to-b from-blue-700 text-center h-14 from-20% to-blue-900 sticky top-0">
+            <thead class="bg-gradient-to-b from-blue-700 from-20% to-blue-900 ">
                 <tr>
                     <td class="border text-2xl font-semibold rounded-l-lg w-[35rem] border-blue-200">
                         Дисциплина
@@ -58,4 +58,36 @@
             </tbody>
         </table>
     </div>
+
+    <!-- <table class="text-left w-full">
+        <thead class="bg-gradient-to-b from-blue-700 from-20% to-blue-900 flex text-white  w-full">
+            <tr class="flex justify-center justify-between items-center w-full mb-4">
+                <th class="text-xl text-center w-[50rem]">Дисциплина</th>
+                <th class="p-4 text-xl w-[20rem]">Вид контроля</th>
+                <th class="p-4 text-xl w-[14rem]">Результат</th>
+            </tr>
+        </thead>
+        <tbody class="bg-grey-light bg-gradient-to-b from-blue-700 from-20% to-blue-900 flex flex-col items-center justify-between overflow-y-scroll w-full" style="height: 50vh;">
+            @foreach ($data as $data1)
+            <tr class="flex w-full h-12 mb-4">
+                <td class="text-xl font-norm w-1/2 py-2 border-b-2 text-white px-4 border-blue-200">
+                    {{$data1->name}}
+                </td>
+                <td class=" text-xl font-norm border-b-2 text-white text-center w-1/3 border-blue-200">
+                    {{$data1->type_name}}
+                </td>
+                <td class="text-xl font-norm border-b-2 text-white text-center w-1/5 border-blue-200">
+                    @if ($data1->grade == 1)
+                    <span>Зачет</span>
+                    @elseif ($data1->grade == 0)
+                    <span>Не зачтено</span>
+                    @else
+                    <span>{{$data1->grade}}</span>
+                    @endif
+                </td>
+            </tr>
+            @endforeach
+
+        </tbody>
+    </table> -->
 </div>
