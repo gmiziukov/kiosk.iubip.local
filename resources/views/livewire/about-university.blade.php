@@ -12,120 +12,139 @@
 
     <div class="mt-10 font-mono text-white flex flex-row text-3xl">
 
-        <img src="{{asset('storage/iubip_img_1.jpg')}}" class="rounded-l-xl w-[35rem] h-[40rem]" alt=""></img>
+        <img src="{{asset('storage/iubip1.png')}}" class="rounded-xl w-[35rem] h-[40rem]" alt=""></img>
 
-        <div class="flex flex-col h-[40rem]">
-
-            <div class="w-[15rem] ">
+        <div class="flex flex-col flex items-center justify-center h-[40rem]">
+            <div class="w-[15rem] flex">
                 <p class="pt-2 py-4 indent-4">Факты о Вузе</p>
             </div>
 
-            <div class="grid grid-cols-1 list-disc">
+            <div class="grid grid-cols-1">
                 <div class="w-[30rem]">
-                    <li class=" text-xl indent-4 text-white pt-6">
+                    <p class=" text-xl indent-4 text-white">
                         На сегодняшний день в Университете:
-                    </li>
-                    <li class="list-none text-xl indent-10 text-white px-4"> Обучается около <span class="font-sans font-bold  text-xl text-white">5 000</span> студентов.</li>
-                    <li class="list-none text-xl indent-10 text-white pb-[1.06rem] px-4"> Работает более <span class="font-sans font-bold  text-xl text-white">500</span> преподавателей.</li>
+                    </p>
+                    <p class="text-xl indent-10 text-white px-4"> Обучается около <span class="font-sans font-bold  text-xl text-white">5 000</span> студентов.</p>
+                    <p class="text-xl indent-10 text-white pb-[1.06rem] px-4"> Работает более <span class="font-sans font-bold  text-xl text-white">500</span> преподавателей.</p>
                 </div>
                 <div>
-                    <li class="text-xl indent-4 py-8 text-white">
+                    <p class="text-xl indent-4 py-8 text-white">
                         "ЮЖНЫЙ УНИВЕРСИТЕТ" был основан в <span class="font-bold ">1991 году</span>
-                    </li>
+                    </p>
                 </div>
 
                 <div>
-                    <li class="text-xl indent-4 py-8 text-white">
+                    <p class="text-xl indent-4 py-8 text-white">
                         Является первым негосударственным вузом современной России.
-                    </li>
+                    </p>
                 </div>
 
                 <div>
-                    <li class="text-xl indent-4 py-6 text-white">
+                    <p class="text-xl indent-4 py-6 text-white">
                         За время работы университетом подготовлено более <span class="font-sans font-bold  text-lg text-white">20 000</span> квалифицированных специалистов.
-                    </li>
+                    </p>
                 </div>
 
                 <div class="w-[70rem]">
-                    <li class="text-xl list-outside indent-4 py-10 text-white">
+                    <p class="text-xl indent-4 py-10 text-white">
                         В соответствии с действующим законодательством предоставляется отсрочка от службы.
-                    </li>
+                    </p>
                 </div>
 
                 <div>
-                    <li class="text-xl indent-4 pt-6 text-lg text-white">
+                    <p class="text-xl indent-4 pt-6 text-lg text-white">
                         Более 98% выпускников Унверситета успешно трудоустраиваются по специальностям обучения.
-                    </li>
-                    <li class="text-xl list-none indent-4 text-lg text-white">
+                    </p>
+                    <p class="text-xl indent-4 text-lg text-white">
                         Именно этот показатель традиционно считается в Университете важнейшим.
-                    </li>
+                    </p>
                 </div>
             </div>
         </div>
     </div>
 
-    <div class="mt-10 font-mono text-white text-3xl">
+    <div class="mt-5 flex items-center justify-center font-mono text-white text-3xl">
         <p>
             Наши достижения
         </p>
     </div>
 
-    <div class="grid grid-cols-6 justify-between pt-2 w-full gap-8">
-        <div class="bg-purple-400/60 rounded-lg w-[18rem] h-[14rem] flex justify-center items-center text-white flex-col">
+    <div class="grid grid-cols-6 justify-between pt-4 w-full gap-8">
+
+        <div class="relative h-full bg-slate-900 p-6 pb-8 rounded-3xl z-20 overflow-hidden w-[18rem] h-[14rem] flex justify-center items-center text-white flex-col">
             <p class="font-mono text-3xl font-bold flex justify-start indent-4 w-[15rem]">Топ-20</p>
+
+            <div class="w-[60%] h-[60%] absolute -translate-x-[10%] -translate-y-[10%] blur-3xl -z-10 rounded-full bg-blue-500"></div>
+
             <div class="flex justify-center w-[15rem] border-t pb-12 items-center">
                 <p class="font-mono text-white text-left flex justify-center items-center mt-4">
                     Университет входит в состав 17 элитных российских вузов
                 </p>
             </div>
         </div>
-        <div class="bg-zinc-400/60 rounded-lg w-[18rem] h-[14rem] flex justify-center items-center text-white flex-col">
+        <div class="relative h-full bg-slate-900 p-6 pb-8 rounded-3xl z-20 overflow-hidden w-[18rem] h-[14rem] flex justify-center items-center text-white flex-col">
             <p class="font-mono text-3xl font-bold flex justify-start indent-4 w-[15rem]">12 место</p>
+            <div class="w-[50%] h-[50%] absolute -translate-x-[10%] -translate-y-[10%] blur-3xl -z-10 rounded-full bg-blue-500"></div>
             <div class="flex justify-center w-[15rem] pb-6 border-t items-center">
                 <p class="font-mono text-white text-left flex justify-center items-center mt-4">
                     Входит в международный рейтинг Eduniversal среди российских участников
                 </p>
             </div>
         </div>
-        <div class="bg-indigo-400/50 rounded-lg w-[18rem] h-[14rem] flex justify-center items-center text-white flex-col">
+        <div class="relative bg-slate-900 p-6 pb-8 rounded-3xl z-20 overflow-hidden w-[18rem] h-[14rem] flex justify-center items-center text-white flex-col">        
             <p class="font-mono text-3xl font-bold border-b flex justify-start pt-6 indent-4 w-[15rem]">2 место</p>
+            <div class="w-[50%] h-[50%] absolute -translate-x-[10%] -translate-y-[10%] blur-3xl -z-10 rounded-full bg-blue-500"></div>
             <div class="flex justify-center items-center">
-                <p class="font-mono px-6 text-white text-left flex justify-center items-center mt-4">
+                <p class="font-mono text-white text-left flex justify-center items-center mt-4">
                     В 2013 году по итогам мониторинга эффективности высших учебных заведений занял второе место Ростовской области
                 </p>
             </div>
         </div>
-        <div class="bg-amber-200/50 rounded-lg w-[18rem] h-[14rem] flex justify-center items-center text-white flex-col">
+        <div class="relative bg-slate-900 p-6 pb-8 rounded-3xl z-20 overflow-hidden w-[18rem] h-[14rem] flex justify-center items-center text-white flex-col">
             <p class="font-mono text-2xl font-bold flex justify-start border-b pl-2 w-[15rem]">Доверие от государства</p>
+            <div class="w-[50%] h-[50%] absolute -translate-x-[10%] -translate-y-[10%] blur-3xl -z-10 rounded-full bg-blue-500"></div>
             <div class="flex justify-center items-center">
-                <p class="font-mono px-6 text-white text-left flex justify-center items-center mt-4">
+                <p class="font-mono text-white text-left flex justify-center items-center mt-4">
                     Получение от Федеральной службы по надзору бессрочную лицензию на право образовательной деятельности
                 </p>
 
             </div>
         </div>
-        <div class="bg-fuchsia-300/50 rounded-lg w-[18rem] h-[14rem] flex justify-center items-center text-white flex-col">
+        <div class="relative bg-slate-900 p-6 pb-8 rounded-3xl z-20 overflow-hidden w-[18rem] h-[14rem] flex justify-center items-center text-white flex-col">
             <p class="font-mono text-2xl font-bold border-b flex pl-2 justify-start w-[15rem]">Новые кадры: отклик от бизнеса</p>
+            <div class="w-[50%] h-[50%] absolute -translate-x-[10%] -translate-y-[10%] blur-3xl -z-10 rounded-full bg-blue-500"></div>
             <div class="flex justify-center items-center">
-                <p class="font-mono px-6 text-white text-left flex justify-center items-center mt-4">
+                <p class="font-mono text-white text-left flex justify-center items-center mt-4">
                     Проведение защиты дипломных работ с полной открытостью процесса, которой пользуются представители ростовских работодателей
                 </p>
             </div>
         </div>
-        <div class="bg-cyan-200/50 rounded-lg w-[18rem] h-[14rem] flex justify-center items-center text-white flex-col">
+        <div class="relative bg-slate-900 p-6 pb-8 rounded-3xl z-20 overflow-hidden w-[18rem] h-[14rem] flex justify-center items-center text-white flex-col">
             <p class="font-mono text-2xl font-bold border-b pl-2 flex justify-start w-[15rem]">Обучение под потребности рынка</p>
+            <div class="w-[50%] h-[50%] absolute -translate-x-[10%] -translate-y-[10%] blur-3xl -z-10 rounded-full bg-blue-500"></div>
             <div class="flex justify-center items-center">
-                <p class="font-mono px-6 text-white text-left flex justify-center items-center mt-4">
+                <p class="font-mono text-white text-left flex justify-center items-center mt-4">
                     Использование закона, позволяющего вести целевую подготовку студентов для конкретных работодателей с учетом их деятельности
                 </p>
             </div>
         </div>
     </div>
-    <div class="justify-between items-center flex pt-10 w-full">
-        <img src="{{asset('storage/iubip_img_2.png')}}" class="rounded-xl " alt=""></img>
-        <img src="{{asset('storage/iubip_img_3.png')}}" class="rounded-xl " alt=""></img>
-        <img src="{{asset('storage/iubip_img_4.png')}}" class="rounded-xl" alt=""></img>
+    <div class="group mt-5 flex max-md:flex-col justify-center gap-3">
+        <article class="group/article relative w-full rounded-xl overflow-hidden md:group-hover:[&:not(:hover)]:w-[60%] md:group-focus-within:[&:not(:focus-within):not(:hover)]:w-[20%] transition-all duration-300 ease-[cubic-bezier(.5,.85,.25,1.15)] before:absolute before:inset-x-0 before:bottom-0 before:h-1/3 before:bg-gradient-to-t before:from-black/50 before:transition-opacity md:before:opacity-0 md:hover:before:opacity-100 focus-within:before:opacity-100 after:opacity-0 md:group-hover:[&:not(:hover)]:after:opacity-100 md:group-focus-within:[&:not(:focus-within):not(:hover)]:after:opacity-100 after:absolute after:inset-0 after:bg-white/30 after:backdrop-blur after:transition-all focus-within:ring focus-within:ring-indigo-300">
+            <img class="object-cover  md:h-[480px] md:w-auto" src="{{asset('storage/4.jpeg')}}" alt="Image 01">
+        </article>
 
+        <article class="group/article relative w-full rounded-xl overflow-hidden md:group-hover:[&:not(:hover)]:w-[60%] md:group-focus-within:[&:not(:focus-within):not(:hover)]:w-[20%] transition-all duration-300 ease-[cubic-bezier(.5,.85,.25,1.15)] before:absolute before:inset-x-0 before:bottom-0 before:h-1/3 before:bg-gradient-to-t before:from-black/50 before:transition-opacity md:before:opacity-0 md:hover:before:opacity-100 focus-within:before:opacity-100 after:opacity-0 md:group-hover:[&:not(:hover)]:after:opacity-100 md:group-focus-within:[&:not(:focus-within):not(:hover)]:after:opacity-100 after:absolute after:inset-0 after:bg-white/30 after:backdrop-blur after:transition-all focus-within:ring focus-within:ring-indigo-300">
+            <img class="object-cover h-72 md:h-[480px] md:w-auto" src="{{asset('storage/3photo.jpg')}}" alt="Image 01">
+        </article>
+
+        <article class="group/article relative w-full rounded-xl overflow-hidden md:group-hover:[&:not(:hover)]:w-[80%] md:group-focus-within:[&:not(:focus-within):not(:hover)]:w-[20%] transition-all duration-300 ease-[cubic-bezier(.5,.85,.25,1.15)] before:absolute before:inset-x-0 before:bottom-0 before:h-1/3 before:bg-gradient-to-t before:from-black/50 before:transition-opacity md:before:opacity-0 md:hover:before:opacity-100 focus-within:before:opacity-100 after:opacity-0 md:group-hover:[&:not(:hover)]:after:opacity-100 md:group-focus-within:[&:not(:focus-within):not(:hover)]:after:opacity-100 after:absolute after:inset-0 after:bg-white/30 after:backdrop-blur after:transition-all focus-within:ring focus-within:ring-indigo-300">
+            <img class="object-cover h-72 md:h-[480px] md:w-auto" src="{{asset('storage/5.jpg')}}" alt="Image 01">
+        </article>
+
+        <article class="group/article relative w-full rounded-xl overflow-hidden md:group-hover:[&:not(:hover)]:w-[60%] md:group-focus-within:[&:not(:focus-within):not(:hover)]:w-[20%] transition-all duration-300 ease-[cubic-bezier(.5,.85,.25,1.15)] before:absolute before:inset-x-0 before:bottom-0 before:h-1/3 before:bg-gradient-to-t before:from-black/50 before:transition-opacity md:before:opacity-0 md:hover:before:opacity-100 focus-within:before:opacity-100 after:opacity-0 md:group-hover:[&:not(:hover)]:after:opacity-100 md:group-focus-within:[&:not(:focus-within):not(:hover)]:after:opacity-100 after:absolute after:inset-0 after:bg-white/30 after:backdrop-blur after:transition-all focus-within:ring focus-within:ring-indigo-300">
+            <img class="object-cover h-72 md:h-[480px] md:w-auto" src="{{asset('storage/6.jpg')}}" alt="Image 03">
+        </article>
     </div>
 
 
