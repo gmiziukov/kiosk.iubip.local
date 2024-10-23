@@ -16,7 +16,9 @@ return new class extends Migration
             $table->string('question');
             $table->string('answer');
             $table->integer('relevance');
+            $table->string('category');
             $table->timestamps();
+            
         });
     }
 

@@ -18,8 +18,8 @@ class FaqController extends Controller
     }
     public function order($category){
         $a = DB::table("faqs")
-        ->where("category",$category);
-        $a = $a->get();
+        ->where("category",'=',$category)
+        ->get();
         // dd($a->get()); 
         return $a;
     }

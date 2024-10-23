@@ -5,19 +5,19 @@
             <i class="fa-solid fa-chevron-left fa-xl"></i>
             <span class="text-xl">Назад</span>
         </button>
-        <button wire:click="()" class="w-40 flex space-x-2 items-center justify-center bg-gradient-to-br from-blue-800 from-60% to-blue-700 rounded shadow-md shadow-emerald-400 p-4 text-white">
+        <button wire:click="main()" class="w-40 flex space-x-2 items-center justify-center bg-gradient-to-br from-blue-800 from-60% to-blue-700 rounded shadow-md shadow-emerald-400 p-4 text-white">
             <span class="text-xl">Все</span>
         </button>
-        <button wire:click="ORD('Преподаватель)" class="w-40 flex space-x-2 items-center justify-center bg-gradient-to-br from-blue-800 from-60% to-blue-700 rounded shadow-md shadow-emerald-400 p-4 text-white">
+        <button wire:click="ORD('Преподаватель')" class="w-40 flex space-x-2 items-center justify-center bg-gradient-to-br from-blue-800 from-60% to-blue-700 rounded shadow-md shadow-emerald-400 p-4 text-white">
             <span class="text-xl">Преподаватель</span>
         </button>
-        <button wire:click="ORD('Студент)" class="w-40 flex space-x-2 items-center justify-center bg-gradient-to-br from-blue-800 from-60% to-blue-700 rounded shadow-md shadow-emerald-400 p-4 text-white">
+        <button wire:click="ORD('Студент')" class="w-40 flex space-x-2 items-center justify-center bg-gradient-to-br from-blue-800 from-60% to-blue-700 rounded shadow-md shadow-emerald-400 p-4 text-white">
             <span class="text-xl">Студент</span>
         </button>
-        <button wire:click="ORD('Абитуриент)" class="w-40 flex space-x-2 items-center justify-center bg-gradient-to-br from-blue-800 from-60% to-blue-700 rounded shadow-md shadow-emerald-400 p-4 text-white">
+        <button wire:click="ORD('Абитуриент')" class="w-40 flex space-x-2 items-center justify-center bg-gradient-to-br from-blue-800 from-60% to-blue-700 rounded shadow-md shadow-emerald-400 p-4 text-white">
             <span class="text-xl">Абитуриент</span>
         </button>
-        <button wire:click="ORD('Сотрудники')" class="w-40 flex space-x-2 items-center justify-center bg-gradient-to-br from-blue-800 from-60% to-blue-700 rounded shadow-md shadow-emerald-400 p-4 text-white">
+        <button wire:click="ORD('Сотрудник')" class="w-40 flex space-x-2 items-center justify-center bg-gradient-to-br from-blue-800 from-60% to-blue-700 rounded shadow-md shadow-emerald-400 p-4 text-white">
             <span class="text-xl">Сотрудник</span>
         </button>
         <button wire:click="()" class="w-40 flex space-x-2 items-center justify-center bg-gradient-to-br from-blue-800 from-60% to-blue-700 rounded shadow-md shadow-emerald-400 p-4 text-white">
