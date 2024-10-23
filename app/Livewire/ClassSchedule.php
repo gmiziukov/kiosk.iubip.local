@@ -23,6 +23,7 @@ class ClassSchedule extends Component
     public $time_var = ["08:20-09:50", "10:00-11:30", "11:40-13:10", "13:30-15:00", "15:10-16:40", "17:00-18:30", "18:40-20:10", "20:20-21:50"];
     public $SoT = 0;
     public $now_date = null;
+
     public function week($date, $group)
     {
         $new_a = new ClassScheduleController();
@@ -36,6 +37,7 @@ class ClassSchedule extends Component
             return $this->now;
         }
     }
+
     public function add_week()
     {
         $this->now_date = Carbon::parse($this->now_date)->addDay(-7);
@@ -45,6 +47,7 @@ class ClassSchedule extends Component
         $this->now_date1 = $this->weekStartDate;
         return $this->now_date;
     }
+
     public function back_week()
     {
         $this->now_date = Carbon::parse($this->now_date)->addDay(7);
@@ -61,11 +64,17 @@ class ClassSchedule extends Component
         $this->data = $datatable->data($data_now, $group_now);
         return $this->data;
     }
+
     public function search()
     {
-        $this->week($this->now_date, $this->group);
+        $data  =$this->week($this->now_date, $this->group);
+        if (count($data) == 0) {
+            session()->flash('error', 'Пожалуйста, проверьте введенные вами данные или выбранную неделю');
+        }
+        return $data;
         // $this->datatable($this->currentDate, $this->group);
     }
+    
     public function mount($SoT)
     {
         $this->now_date = Carbon::now();

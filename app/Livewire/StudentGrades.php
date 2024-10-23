@@ -29,5 +29,9 @@ class StudentGrades extends Component
     {
         $studentGradesController = new StudentGradesController();
         $this->data = $studentGradesController->getStudentGrades($this->search);
+
+        if(count($this->data) == 0){
+            session()->flash('error', 'Пожалуйста, проверьте введенные вами данные');
+        }
     }
 }

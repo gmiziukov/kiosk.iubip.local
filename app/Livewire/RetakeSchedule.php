@@ -19,6 +19,10 @@ class RetakeSchedule extends Component
     public function search()
     {
         $data = new RetakeScheduleController();
+        $this->data = $data->search($this->get_name);
+        if (count($this->data) == 0) {
+            session()->flash('error', 'Пожалуйста, проверьте введенные вами данные');
+        }
         return $this->data = $data->search($this->get_name);
     }
 

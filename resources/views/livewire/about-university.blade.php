@@ -12,52 +12,61 @@
 
     <div class="mt-10 font-mono text-white flex flex-row text-3xl">
 
-        <img src="{{asset('storage/iubip1.png')}}" class="rounded-xl w-[35rem] h-[40rem]" alt=""></img>
+        <img src="{{asset('storage/iubip1.png')}}" class=" w-[35rem] h-[40rem]" alt=""></img>
 
-        <div class="flex flex-col flex items-center justify-center h-[40rem]">
-            <div class="w-[15rem] flex">
-                <p class="pt-2 py-4 indent-4">Факты о Вузе</p>
+        <div class="flex flex-col flex items-center justify-center">
+            <div class="w-[20rem] h-full flex">
+                <p class="font-mono font-semibold text-4xl">Факты о Вузе</p>
             </div>
+            <div class="flex items-center justify-center">
+                <div class="grid grid-cols-2 h-full w-full px-6">
 
-            <div class="grid grid-cols-1">
-                <div class="w-[30rem]">
-                    <p class=" text-xl indent-4 text-white">
-                        На сегодняшний день в Университете:
-                    </p>
-                    <p class="text-xl indent-10 text-white px-4"> Обучается около <span class="font-sans font-bold  text-xl text-white">5 000</span> студентов.</p>
-                    <p class="text-xl indent-10 text-white pb-[1.06rem] px-4"> Работает более <span class="font-sans font-bold  text-xl text-white">500</span> преподавателей.</p>
-                </div>
-                <div>
-                    <p class="text-xl indent-4 py-8 text-white">
-                        "ЮЖНЫЙ УНИВЕРСИТЕТ" был основан в <span class="font-bold ">1991 году</span>
-                    </p>
-                </div>
 
-                <div>
-                    <p class="text-xl indent-4 py-8 text-white">
-                        Является первым негосударственным вузом современной России.
-                    </p>
-                </div>
+                    <div class="py-10">
+                        <i class="fa-solid fa-caret-right" style="color: #101b32;"></i>
+                        <span class="font-mono">Новое начало</span>
+                        <p class="text-xl  py-2 w-[35rem] text-slate-400">
+                            "ЮЖНЫЙ УНИВЕРСИТЕТ" был основан в <span class="font-bold ">1991 году</span>
+                        </p>
+                    </div>
 
-                <div>
-                    <p class="text-xl indent-4 py-6 text-white">
-                        За время работы университетом подготовлено более <span class="font-sans font-bold  text-lg text-white">20 000</span> квалифицированных специалистов.
-                    </p>
-                </div>
+                    <div class="py-10">
+                        <i class="fa-solid fa-caret-right" style="color: #101b32;"></i>
+                        <span class="font-mono">Студенческая жизнь</span>
+                        <p class="text-xl w-[35rem] text-justify text-slate-400"> На сегодняшний день в Университете: около <span class="font-sans font-bold  text-xl text-white">5 000</span> студентов и работает более <span class="font-sans font-bold  text-xl text-white">500</span> преподавателей.</p>
+                    </div>
 
-                <div class="w-[70rem]">
-                    <p class="text-xl indent-4 py-10 text-white">
-                        В соответствии с действующим законодательством предоставляется отсрочка от службы.
-                    </p>
-                </div>
+                    <div class="py-10">
+                        <i class="fa-solid fa-caret-right" style="color: #101b32;"></i>
+                        <span class="font-mono">Первопроходец</span>
+                        <p class="text-xl w-[35rem] py-2 text-slate-400">
+                            Является первым негосударственным вузом современной России.
+                        </p>
+                    </div>
 
-                <div>
-                    <p class="text-xl indent-4 pt-6 text-lg text-white">
-                        Более 98% выпускников Унверситета успешно трудоустраиваются по специальностям обучения.
-                    </p>
-                    <p class="text-xl indent-4 text-lg text-white">
-                        Именно этот показатель традиционно считается в Университете важнейшим.
-                    </p>
+                    <div class="py-10">
+                        <i class="fa-solid fa-caret-right" style="color: #101b32;"></i>
+                        <span class="font-mono ">Успешный путь обучения</span>
+                        <p class="text-xl w-[35rem] text-justify py-2 text-slate-400">
+                            За время работы университетом подготовлено более <span class="font-sans font-bold  text-lg text-white">20 000</span> квалифицированных специалистов.
+                        </p>
+                    </div>
+
+                    <div class="py-10">
+                        <i class="fa-solid fa-caret-right" style="color: #101b32;"></i>
+                        <span class="font-mono">Льготы для студентов</span>
+                        <p class="text-xl w-[35rem] py-2 text-slate-400">
+                            В соответствии с действующим законодательством предоставляется отсрочка от службы.
+                        </p>
+                    </div>
+
+                    <div class="py-10 pb-10">
+                        <i class="fa-solid fa-caret-right" style="color: #101b32;"></i>
+                        <span class="font-mono">Главный приоритет: трудоустройство</span>
+                        <p class="text-xl pb-10 py-2 w-[35rem] text-justify text-lg text-slate-400">
+                            Более 98% выпускников Университета успешно трудоустраиваются по специальностям обучения.
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -91,7 +100,7 @@
                 </p>
             </div>
         </div>
-        <div class="relative bg-slate-900 p-6 pb-8 rounded-3xl z-20 overflow-hidden w-[18rem] h-[14rem] flex justify-center items-center text-white flex-col">        
+        <div class="relative bg-slate-900 p-6 pb-8 rounded-3xl z-20 overflow-hidden w-[18rem] h-[14rem] flex justify-center items-center text-white flex-col">
             <p class="font-mono text-3xl font-bold border-b flex justify-start pt-6 indent-4 w-[15rem]">2 место</p>
             <div class="w-[50%] h-[50%] absolute -translate-x-[10%] -translate-y-[10%] blur-3xl -z-10 rounded-full bg-blue-500"></div>
             <div class="flex justify-center items-center">

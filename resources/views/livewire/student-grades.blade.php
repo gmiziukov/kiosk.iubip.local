@@ -22,49 +22,54 @@
     </div>
     <div class="flex items-center justify-center">
         <div wire:loading.remove wire:target="getStudentGrades">
-            <div>
-                <table class="border-separate mt-4 overflow-y-auto rounded-lg w-full font-sans font-normal text-xl text-white">
-                    <thead class="bg-gradient-to-b h-12 from-blue-700 from-20% to-blue-900 ">
-                        <tr>
-                            <td class="border text-2xl text-center font-semibold rounded-l-lg w-[50rem] border-blue-200">
-                                Дисциплина
-                            </td>
-                            <td class="border text-2xl text-center font-semibold w-[40rem] border-blue-200">
-                                Вид контроля
-                            </td>
-                            <td class="border text-2xl text-center font-semibold w-[15rem] rounded-r-lg border-blue-200">
-                                Результат
-                            </td>
-                        </tr>
-                    </thead>
-                    <tbody class="bg-gradient-to-b h-14 from-blue-700 via-30% via-blue-800 to-blue-900">
-                        @if(count($data) != NULL)
-                        @foreach ($data as $data1)
-                        <tr>
-                            <td class="border w-48 px-4 h-10 rounded-l-lg w-[35rem] text-xl font-norm border-blue-200">
-                                {{$data1->name}}
-                            </td>
-                            <td class="border w-48 text-center h-10 text-xl w-[26rem] font-norm border-blue-200">
-                                {{$data1->type_name}}
-                            </td>
-                            <td class="border w-48 text-center h-10 rounded-r-lg w-[10rem] text-xl font-norm border-blue-200">
-                                @if ($data1->grade == 1)
-                                <span>Зачет</span>
-                                @elseif ($data1->grade == 0)
-                                <span>Не зачтено</span>
-                                @else
-                                <span>{{$data1->grade}}</span>
-                                @endif
-                            </td>
-                        </tr>
-                        @endforeach
-                        @else
-                        <div class="pt-8">
-                            <x-alert type="warning" title="Внимание" message="Пожалуйста, укажите корректный номер зачетной книжки." />
-                        </div>
-                        @endif
-                    </tbody>
-                </table>
+            <div class="mt-10">
+                @if(Session::has('error'))
+                <x-alert type="warning" title="Внимание" message="{{ Session::get('error') }}" />
+                @endif
+                @if(count($data) != NULL)
+                <div>
+                    <table class="border-separate overflow-y-auto rounded-lg w-full font-sans font-normal text-xl text-white">
+                        <thead class="bg-gradient-to-b h-12 from-blue-700 from-20% to-blue-900 ">
+                            <tr>
+                                <td class="border text-2xl text-center font-semibold rounded-l-lg w-[50rem] border-blue-200">
+                                    Дисциплина
+                                </td>
+                                <td class="border text-2xl text-center font-semibold w-[40rem] border-blue-200">
+                                    Вид контроля
+                                </td>
+                                <td class="border text-2xl text-center font-semibold w-[15rem] rounded-r-lg border-blue-200">
+                                    Результат
+                                </td>
+                            </tr>
+                        </thead>
+                        <tbody class="bg-gradient-to-b h-14 from-blue-700 via-30% via-blue-800 to-blue-900">
+                            @foreach ($data as $data1)
+                            <tr>
+                                <td class="border w-48 px-4 h-10 rounded-l-lg w-[35rem] text-xl font-norm border-blue-200">
+                                    {{$data1->name}}
+                                </td>
+                                <td class="border w-48 text-center h-10 text-xl w-[26rem] font-norm border-blue-200">
+                                    {{$data1->type_name}}
+                                </td>
+                                <td class="border w-48 text-center h-10 rounded-r-lg w-[10rem] text-xl font-norm border-blue-200">
+                                    @if ($data1->grade == 1)
+                                    <span>Зачет</span>
+                                    @elseif ($data1->grade == 0)
+                                    <span>Не зачтено</span>
+                                    @else
+                                    <span>{{$data1->grade}}</span>
+                                    @endif
+                                </td>
+                            </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
+                </div>
+                @elseif (empty($data) && !Session::has('error'))
+                <div class="pt-8">
+                    <x-alert type="info" title="Информация" message="Для отображения информации воспользуйтесь формой ввода поиска." />
+                </div>
+                @endif
             </div>
         </div>
         <div wire:loading wire:target="getStudentGrades">

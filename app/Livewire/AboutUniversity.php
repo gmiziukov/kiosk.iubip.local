@@ -11,8 +11,13 @@ class AboutUniversity extends Component
         return view('livewire.about-university');
     }
 
+    public function redirectBack()
+    {
+        redirect()->route('index');
+    }
+
     public function redirectToHome()
     {
-        return redirect()->route('index');
+        redirect()->route('index');
     }
 }

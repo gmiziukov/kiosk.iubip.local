@@ -59,6 +59,6 @@ class ClassScheduleController extends Controller
 
         // dd($a);
         return $a;
-            }
+        }
 
 }
