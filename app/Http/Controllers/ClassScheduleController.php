@@ -47,14 +47,28 @@ class ClassScheduleController extends Controller
         }
         $a = $a->get();
         $b = $a;
-        foreach($a as $a_arr)
-            foreach($b as $b_arr)
-                if($a_arr->date == $b_arr->date and $a_arr->time == $b_arr->time and $a_arr->discipline == $b_arr->discipline and $a_arr->group != $b_arr->group){
-
-                    $a_arr->discipline = "";
-                    $a_arr->lesson_type = "";
-                    // unset($a[$a_arr->discipline]);
+        for($i = 0; $i  != count($a);$i++){
+            for($j = 0;$j != count($b);$j++){
+                if($a[$i]->date == $b[$j]->date and $a[$i]->time == $b[$j]->time and $a[$i]->discipline == $b[$j]->discipline and $a[$i]->group != $b[$j]->group){
+                   $a[$i]->group = $a[$i]->group." ".$b[$j]->group;
+                   $a[$j]->discipline = null;
+                   $a[$j]->group = null;
+                   $a[$j]->lesson_place = null;
+                   $a[$j]->lesson_type = null;
+                //    unset($a[$j]->discipline);
                 }
+            }
+        }
+
+        // ################## old var ##################
+        // foreach($a as $a_arr)
+        //     foreach($b as $b_arr)
+        //         if($a_arr->date == $b_arr->date and $a_arr->time == $b_arr->time and $a_arr->discipline == $b_arr->discipline and $a_arr->group != $b_arr->group){
+
+        //             $a_arr->discipline = "";
+        //             $a_arr->lesson_type = "";
+        //             // unset($a[$a_arr->discipline]);
+        //         }
             
 
         // dd($a);
