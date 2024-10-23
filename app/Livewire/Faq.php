@@ -16,10 +16,17 @@ class Faq extends Component
         $this->data = $a->data();
         // dd($this->data);
     }
-    public function ORD($a)
+    public function main()
     {
         $a = new FaqController();
-        $this->order = $a->order($a);
+        $this->data = $a->data();
+        // dd($this->data);
+    }   
+
+    public function ORD($b)
+    {
+        $a = new FaqController();
+        $this->data = $a->order($b);
 
     }
 
