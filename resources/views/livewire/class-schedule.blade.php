@@ -131,7 +131,6 @@
                                 </tr>
                                 @endforeach
                                 @endif
-
                                 @if ($SoT == "Teacher")
                                 @foreach($time_var as $time)
                                 <tr>
@@ -154,6 +153,7 @@
 
                                             </tr>
                                             <tr>
+                                                @if($now1->group != null)
                                                 <div class="flex pt-2">
                                                     <i class="fa-solid fa-chalkboard-user indent-4 fa-location-pin">
                                                         <span class="text-lg font-sans font-normal indent-8">
@@ -161,9 +161,11 @@
                                                         </span>
                                                     </i>
                                                 </div>
+                                                @endif
                                             </tr>
 
                                             <tr>
+                                                @if($now1->lesson_place != Null )
                                                 <div class="flex items-center justify-between">
                                                     <div class="flex space-x-2 pt-2 items-center">
                                                         <i class="fa-solid indent-4 fa-location-pin"></i>
@@ -176,6 +178,7 @@
                                                     </span>
                                                 </div>
 
+                                                @endif
                                             </tr>
                                             @endif
                                             @endif
@@ -189,88 +192,21 @@
                                 @endif
                             </tbody>
                         </table>
-<<<<<<< HEAD
+                        <<<<<<< HEAD
+                            </div>
+                            @elseif (empty($data) && !Session::has('error'))
+                            <div class="pt-8">
+                                <x-alert type="info" title="Информация" message="Для отображения информации воспользуйтесь формой ввода поиска." />
+                            </div>
+                            @endif
                     </div>
-                    @elseif (empty($data) && !Session::has('error'))
-                    <div class="pt-8">
-                        <x-alert type="info" title="Информация" message="Для отображения информации воспользуйтесь формой ввода поиска." />
+                </div>
+                <div wire:loading wire:target="search">
+                    <div class="text-white mt-[19rem] text-6xl flex items-center justify-center">
+                        <img src="{{ asset('storage/output-onlinegiftools.gif') }}" alt="Анимация загрузки">
                     </div>
-                    @endif
                 </div>
             </div>
-            <div wire:loading wire:target="search">
-                <div class="text-white mt-[19rem] text-6xl flex items-center justify-center">
-                    <img src="{{ asset('storage/output-onlinegiftools.gif') }}" alt="Анимация загрузки">
-                </div>
-            </div>
+
         </div>
-=======
-                    </td>
-                    @endfor
-                </tr>
-                @endforeach
-                @endif
-                @if ($SoT == "Teacher")
-                @foreach($time_var as $time)
-                <tr>
-                    <td class="border w-48 text-center h-10 rounded-l-lg text-xl font-sans font-norm border-blue-200">
-                        {{$time}}
-                    </td>
-                    @for ($i =0; $i!=6;$i++)
-                    <td class="border w-96 rounded-md text-xl font-sans font-norm border-blue-200">
-                        <table>
-                            @if($now)
-
-                            @foreach ($now as $now1)
-                            @if( $now1->time == $time )
-                            @if ($now1->date == Carbon\Carbon::parse($now_date1)->addDays($i)->format("Y-m-d"))
-
-                            <tr>
-                                <div class="text-center pt-2 font-bold">
-                                    {{$now1->discipline}}
-                                </div>
-
-                            </tr>
-                            <tr>
-                                @if($now1->group != null)
-                                <div class="flex pt-2">
-                                    <i class="fa-solid fa-chalkboard-user indent-4 fa-location-pin">
-                                        <span class="text-lg font-sans font-normal indent-8">
-                                            {{$now1->group}}
-                                        </span>
-                                    </i>
-                                </div>
-                                @endif
-                            </tr>
-
-                            <tr>
-                                @if($now1->lesson_place != Null )
-                                <div class="flex items-center justify-between">
-                                    <div class="flex space-x-2 pt-2 items-center">
-                                        <i class="fa-solid indent-4 fa-location-pin"></i>
-                                        <span class="text-lg font-sans font-normal ">
-                                            {{$now1->lesson_place}}
-                                        </span>
-                                    </div>
-                                    <span class="text-xl font-sans pt-2 font-normal indent-8">
-                                        {{$now1->lesson_type}}
-                                    </span>
-                                </div>
-                                
-                                @endif
-                            </tr>
-                            @endif
-                            @endif
-                            @endforeach
-                            @endif
-                        </table>
-                    </td>
-                    @endfor
-                </tr>
-                @endforeach
-                @endif
-            </tbody>
-        </table>
->>>>>>> fe3b5b6b484d3fefca96a0a5567d91dca637faeb
     </div>
-</div>
