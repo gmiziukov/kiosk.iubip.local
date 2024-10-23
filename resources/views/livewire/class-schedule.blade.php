@@ -144,6 +144,7 @@
 
                             </tr>
                             <tr>
+                                @if($now1->group != null)
                                 <div class="flex pt-2">
                                     <i class="fa-solid fa-chalkboard-user indent-4 fa-location-pin">
                                         <span class="text-lg font-sans font-normal indent-8">
@@ -151,9 +152,11 @@
                                         </span>
                                     </i>
                                 </div>
+                                @endif
                             </tr>
 
                             <tr>
+                                @if($now1->lesson_place != Null )
                                 <div class="flex items-center justify-between">
                                     <div class="flex space-x-2 pt-2 items-center">
                                         <i class="fa-solid indent-4 fa-location-pin"></i>
@@ -165,7 +168,8 @@
                                         {{$now1->lesson_type}}
                                     </span>
                                 </div>
-
+                                
+                                @endif
                             </tr>
                             @endif
                             @endif
