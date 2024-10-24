@@ -4,13 +4,28 @@ namespace App\Livewire;
 
 use App\Http\Controllers\AcademyController;
 use Livewire\Component;
+use Livewire\Component\MyModal;
 use App\Http\Controllers\OrderDocumentController;
 
 class OrderDocumen extends Component
 {
     public $type_document = 0;
     public $name = "";
-    public $selectAcademyKey = 0;
+    public $ful_name = "";
+
+    public function val(){
+        $b = new OrderDocumentController;
+        $b->val($this->name);
+        
+    }
+
+
+
+
+
+
+    
+    public $get_name = Null;
 
     public function mount()
     {
@@ -18,11 +33,17 @@ class OrderDocumen extends Component
         return 0;
     }
     
+    public function request1(){
+        $time_var = new OrderDocumentController;
+        $this->get_name = $time_var->add_user($this->name);
+        return $this->get_name;
+
+    }
     public function request()
     {
         if ($this->type_document != 0) {
             $time_var = new OrderDocumentController;
-
+            $this->request1();
             return $time_var->add_order($this->type_document, $this->name);
         } else {
             return 0;
