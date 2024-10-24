@@ -11,9 +11,21 @@ class Weather extends Component
     {
         $wt = new WeatherWeather();
         $info = $wt->getCurrentByCord(47.222109, 39.718813);
-        dd($info);
 
-        return view('livewire.weather');
+        return view('livewire.weather', [
+            'info' => $info, // Передаем в шаблон
+        ]);
     }
+
+    public function getCurrentTempByCity(string $city)
+    {
+        if (! is_numeric($city)) {
+            $params['q'] = $city;
+        } else {
+            $params['id'] = $city;
+        }
+
+        return $this->getCurrent($params)->main;
+    }
+
 }
-// https://github.com/rakibdevs/openweather-laravel-api?tab=readme-ov-file
