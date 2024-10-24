@@ -23,4 +23,3 @@
         </div>
     </div>
 </div>
-<!-- composer remove rakibdevs/openweather-laravel-api -->
