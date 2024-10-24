@@ -82,6 +82,7 @@
 
 
 {{-- ####################################################################################################################### --}}
+{{-- https://www.meteonova.ru/informer/html.php?type=88_31_2 --}}
     <a style="display: block; position: relative; border: 0; padding: 0; margin: 0; text-decoration: none;" id="meteonova_inf_88_31_2_34731" href="//www.meteonova.ru/weather/34731-Rostov-Na-Donu.htm" alt="Погода в Ростове-на-Дону" title="Погода в Ростове-на-Дону"></a>
 <script type="text/javascript">
 (function() {
