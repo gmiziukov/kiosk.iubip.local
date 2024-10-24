@@ -34,6 +34,7 @@
                     <span id="currentTime" class="text-white text-3xl font-semibold"></span>
                 </div>
             </div>
+            @livewire('weather')
         </header>
 
         <main class="p-6 grow overflow-y-auto scrollbar-thin scrollbar-thumb-[#059669] scrollbar-track-sky-800">

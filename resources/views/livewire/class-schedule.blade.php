@@ -22,7 +22,7 @@
 
     <div class="mt-4">
         <div class="flex justify-between flex-row p-2">
-            <button class="flex items-center rounded border border-blue-200 p-2 text-white" wire:click="add_week()">
+            <button class="flex items-center rounded border border-blue-200 p-2 text-white" wire:click="add_week">
                 <i class="fa-solid fa-chevron-left fa-xl"></i>
                 <span class="ml-2">Предыдущая неделя</span>
             </button>
@@ -31,20 +31,20 @@
                 -
                 {{\Carbon\Carbon::parse($weekendDate)->format('d') }} {{ ['января', 'февраля', 'марта', 'апреля', 'мая', 'июня', 'июля', 'августа', 'сентября', 'октября', 'ноября', 'декабря'][\Carbon\Carbon::parse($weekendDate)->month - 1]  }}
             </div>
-            <button class="flex items-center rounded border border-blue-200 p-2 text-white" wire:click="back_week()">
+            <button class="flex items-center rounded border border-blue-200 p-2 text-white" wire:click="back_week">
                 <span class="mr-2">Следующая неделя</span>
                 <i class="fa-solid fa-chevron-right fa-xl"></i>
             </button>
         </div>
 
         <div class="flex items-center justify-center">
-            <div wire:loading.remove wire:target="search">
+            <div wire:loading.remove wire:target="add_week, search, back_week">
                 <div class="mt-4">
                     @if(Session::has('error'))
                     <x-alert type="warning" title="Внимание" message="{{ Session::get('error') }}" />
                     @endif
 
-                    @if($now != "")
+                    @if($now != "" && !Session::has('error'))
                     <div>
                         <table class="border-separate border-spacing-1 rounded-lg font-sans font-normal text-xl text-white">
                             <thead class="bg-gradient-to-br  text-center font-bold from-blue-700 h-16 w-96 from-60% to-blue-900">
@@ -72,7 +72,6 @@
                                     </td>
                                 </tr>
                             </thead>
-
                             <tbody class="bg-gradient-to-br h-14 from-blue-600 from-60%  to-blue-900">
                                 @if ($SoT == "Student")
 
@@ -131,6 +130,7 @@
                                 </tr>
                                 @endforeach
                                 @endif
+
                                 @if ($SoT == "Teacher")
                                 @foreach($time_var as $time)
                                 <tr>
@@ -163,7 +163,6 @@
                                                 </div>
                                                 @endif
                                             </tr>
-
                                             <tr>
                                                 @if($now1->lesson_place != Null )
                                                 <div class="flex items-center justify-between">
@@ -192,7 +191,6 @@
                                 @endif
                             </tbody>
                         </table>
-                        <<<<<<< HEAD
                             </div>
                             @elseif (empty($data) && !Session::has('error'))
                             <div class="pt-8">
@@ -201,7 +199,7 @@
                             @endif
                     </div>
                 </div>
-                <div wire:loading wire:target="search">
+                <div wire:loading wire:target="add_week, search, back_week">
                     <div class="text-white mt-[19rem] text-6xl flex items-center justify-center">
                         <img src="{{ asset('storage/output-onlinegiftools.gif') }}" alt="Анимация загрузки">
                     </div>

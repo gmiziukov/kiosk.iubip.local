@@ -64,9 +64,9 @@
                         </div>
                     </div>
                 </div>
-                @elseif (empty($data) && !Session::has('error'))
+                @elseif (count($data) == 0 && !Session::has('error'))
                 <div class="pt-8">
-                    <x-alert type="info" title="Информация" message="На данный момент таблица график пересдач отсутствует." />
+                    <x-alert type="info" title="Информация" message="На данный момент график пересдач отсутствует." />
                 </div>
                 @endif
             </div>

@@ -11,7 +11,7 @@
 	</div>
 
 	<div class="pt-8">
-		<x-alert type="warning" title="Внимание" message="Пожалуйста, выберите вашу роль: обучающийся или преподаватель, чтобы отобразить соответствующую информацию." />
+		<x-alert type="info" title="Информация" message="Пожалуйста, выберите вашу роль: обучающийся или преподаватель, чтобы отобразить соответствующую информацию." />
 	</div>
 
 	<div class="grow flex flex-row space-x-10 items-center justify-center">

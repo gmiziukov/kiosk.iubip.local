@@ -154,9 +154,11 @@ return [
     | this array to grant expanded functionality to your applications.
     |
     */
-
+       
     'providers' => ServiceProvider::defaultProviders()->merge([
-        /*
+
+        RakibDevs\Weather\WeatherServiceProvider::class,
+         /*
          * Package Service Providers...
          */
 
@@ -184,6 +186,7 @@ return [
     */
 
     'aliases' => Facade::defaultAliases()->merge([
+        'Weather' => RakibDevs\Weather\Weather::class,	
         // 'Example' => App\Facades\Example::class,
     ])->toArray(),
 

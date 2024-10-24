@@ -1,4 +1,4 @@
-<div class="grid grid-cols-3 gap-4">
+<div class="grid grid-cols-3 gap-4 mt-20">
     <a href="{{ route('about.university') }}">
         <div class="h-72 flex flex-col space-y-4  absolute shadow-md rounded-xl shadow-emerald-400 p-6 relative"
             style="background-image: url('storage/ibib.jpeg'); background-size: 100% 100%; background-position: center;">

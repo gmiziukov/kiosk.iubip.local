@@ -27,7 +27,9 @@ class Faq extends Component
     {
         $a = new FaqController();
         $this->data = $a->order($b);
-
+        if (count($this->data) == 0) {
+            session()->flash('error', 'Вопросов с данной категорией не найдено ');
+        }
     }
 
     public function vie($val1)
