@@ -78,4 +78,26 @@
             </p>
         </div>
     </a>
+
+
+
+{{-- ####################################################################################################################### --}}
+    <a style="display: block; position: relative; border: 0; padding: 0; margin: 0; text-decoration: none;" id="meteonova_inf_88_31_2_34731" href="//www.meteonova.ru/weather/34731-Rostov-Na-Donu.htm" alt="Погода в Ростове-на-Дону" title="Погода в Ростове-на-Дону"></a>
+<script type="text/javascript">
+(function() {
+	var script = document.createElement("script");
+	script.src = "//www.meteonova.ru/informer/html/js/install.min.js";
+	script.charset = "UTF-8";
+	script.defer = true;
+	script.onload = function() {
+		new MeteonovaInf({
+			type: "88_31_2",
+			cities: ["34731"],
+			scheme: {"border_radius":"0","box_shadow":"none","border_color":"#e9ecef","background_color":"transparent","city_color":"#343a40","main_color":"#495057","params_color":"#868e96"}
+		});
+	};
+	document.getElementsByTagName("head")[0].appendChild(script);
+})();
+</script>
+{{-- ####################################################################################################################### --}}
 </div>
