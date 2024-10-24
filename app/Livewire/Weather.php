@@ -16,3 +16,4 @@ class Weather extends Component
         return view('livewire.weather');
     }
 }
+// https://github.com/rakibdevs/openweather-laravel-api?tab=readme-ov-file
