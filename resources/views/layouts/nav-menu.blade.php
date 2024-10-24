@@ -1,10 +1,10 @@
 <div class="grid grid-cols-3 gap-4">
     <a href="{{ route('about.university') }}">
         <div class="h-72 flex flex-col space-y-4  absolute shadow-md rounded-xl shadow-emerald-400 p-6 relative"
-            style="background-image: url('storage/a.jpeg'); background-size: 100% 120%; background-position: center;">
+            style="background-image: url('storage/ibib.jpeg'); background-size: 100% 100%; background-position: center;">
             <div class="absolute inset-0 z-0 rounded-xl bg-blue-950 opacity-85 "></div>
-            <div class="h-16 w-16 bg-blue-600 flex items-center justify-center rounded-full z-10">
-                <i class="fa-solid fa-book-open fa-2xl" style="color: #08cc22;"></i>
+            <div class="h-16 w-16 bg-blue-600 flex items-center justify-center rounded-full">
+                <i class="fa-solid fa-book-open fa-2xl z-10" style="color: #08cc22;"></i>
             </div>
             <h4 class="text-white text-2xl z-10">Университет сегодня</h4>
             <p class="text-white text-base text-justify z-10">
@@ -14,10 +14,10 @@
     </a>
     <a href="{{ route('SelectStudentOrTeacher') }}">
         <div class="h-72 flex flex-col space-y-4  absolute shadow-md rounded-xl shadow-emerald-400 p-6 relative"
-            style="background-image: url('storage/7.png'); background-size: 100% 100%; background-position: center;">
+            style="background-image: url('storage/20.png'); background-size: 100% 100%; background-position: center;">
             <div class="absolute inset-0 z-0 rounded-xl bg-blue-950 opacity-85"></div>
-            <div class="h-16 w-16 bg-blue-600 flex items-center justify-center rounded-full z-10">
-                <i class="fa-solid fa-book-open fa-2xl" style="color: #08cc22;"></i>
+            <div class="h-16 w-16 bg-blue-600 flex items-center justify-center rounded-full">
+                <i class="fa-solid fa-book-open fa-2xl z-10" style="color: #08cc22;"></i>
             </div>
             <h4 class="text-white text-2xl z-10">Расписание занятий</h4>
             <p class="text-white text-base text-justify z-10">
@@ -54,7 +54,7 @@
     </a>
     <a href="{{ route('student.grades') }}">
         <div class="h-72 flex flex-col space-y-4 rounded-xl absolute shadow-md relative shadow-emerald-400 p-6 relative"
-            style="background-image: url('storage/8.png'); background-size: 130% 180%; background-position: center;">
+            style="background-image: url('storage/18.png'); background-size: 120% 125%; background-position: center;">
             <div class="absolute inset-0 z-0 rounded-xl bg-blue-950 opacity-85"></div>
             <div class="h-16 w-16 bg-blue-600 flex items-center justify-center rounded-full">
                 <i class="fa-solid fa-star fa-2xl z-10" style="color: #08cc22;"></i>
