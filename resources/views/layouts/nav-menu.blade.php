@@ -67,8 +67,8 @@
     </a>
     <a href="{{ route('faq') }}">
         <div class="h-72 flex flex-col space-y-4 absolute rounded-xl shadow-md shadow-emerald-400 p-6 relative"
-        style="background-image: url('storage/16.png'); background-size: 100% 100%; background-position: center;">
-        <div class="absolute inset-0 z-0 rounded-xl bg-blue-950 opacity-85"></div>
+            style="background-image: url('storage/16.png'); background-size: 100% 100%; background-position: center;">
+            <div class="absolute inset-0 z-0 rounded-xl bg-blue-950 opacity-85"></div>
             <div class="h-16 w-16 bg-blue-600 flex items-center justify-center rounded-full">
                 <i class="fa-solid fa-headset fa-2xl z-10" style="color: #08cc22;"></i>
             </div>
@@ -78,11 +78,4 @@
             </p>
         </div>
     </a>
-
-
-
-{{-- ####################################################################################################################### --}}
-{{-- https://www.meteonova.ru/informer/html.php?type=88_31_2 --}}
-<div id="idfd78d35ef0570" a='{"t":"s","v":"1.2","lang":"ru","locs":[803],"ssot":"c","sics":"ms","cbkg":"#FFFFFF00","cfnt":"#000000","slfs":"33"}'>Источник данных о погоде: <a href="https://meteolabs.org/погода_ростов-на-дону/завтра/">погода завтра Ростов-на-Дону по часам</a></div><script async src="https://static1.meteolabs.org/widgetjs/?id=idfd78d35ef0570"></script>
-{{-- ####################################################################################################################### --}}
 </div>
