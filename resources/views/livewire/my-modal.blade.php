@@ -10,16 +10,12 @@
             <div class="border-t border-gray-200">
                 <div class="px-4 py-4 sm:px-6">
                     <div class = "flex flex-col gap-3">
-                        @if ($inputLogin)
-                            @foreach($inputLogin as $data)
-                            {{$data->last_name}}
-                            @endforeach
-                            
-                        @else
-                        @endif
                         {{-- <input type="text" wire:model="inputLogin" class="form-input" placeholder="логин">
                         <input type="text" wire:model="inputPassword" class="form-input" placeholder="пароль"> --}}
                     </div>
+                    @if($get_name)
+                        {{dd($get_name)}}
+                    @endif
                     <button
                     @click="open = false;
                     class="flex items-center justify-center px-4 text-xl font-medium border ml-4 border-green-400 h-16 bg-white rounded-md"
