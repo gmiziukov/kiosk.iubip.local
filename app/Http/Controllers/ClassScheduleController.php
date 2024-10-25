@@ -14,9 +14,10 @@ class ClassScheduleController extends Controller
         if($group_now != NULL){
             $a->where("group", strtoupper($group_now));
         }
-        return $a->get();
+        return $a->get();   
     }
     public function add_day_student($now_date, $group_now){
+        if($group_now != NULL){
         $now = new Carbon($now_date->format("Y-m-d"));
         $weekStartDate = $now->startOfWeek()->format("Y-m-d");
         $weekendDate = $now->endOfWeek()->format("Y-m-d");
@@ -25,13 +26,12 @@ class ClassScheduleController extends Controller
         $a = DB::table("schedules")
         ->where("date", '>=',$weekStartDate )
         ->where("date", '<=',$weekendDate );
-        if($group_now != NULL){
-            $a->where("group", strtoupper($group_now));
-        }
+        $a->where("group", strtoupper($group_now));
         $a = $a->get();
-        // dd($a);
-        // dd($a);
         return $a;
+            // dd($a);
+            // dd($a);
+        }
     }
     public function add_day_teacher($now_date, $group_now){
         $now = $now_date;
