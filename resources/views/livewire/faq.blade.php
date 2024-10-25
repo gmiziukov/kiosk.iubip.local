@@ -5,6 +5,8 @@
             <i class="fa-solid fa-chevron-left fa-xl"></i>
             <span class="text-xl">Назад</span>
         </button>
+        <input wire:model = "$search_var" type="text">
+        <button wire:click = "search()" >search</button>
         <button wire:click="main()" class="w-40 flex space-x-2 items-center justify-center bg-gradient-to-br from-blue-800 from-60% to-blue-700 rounded shadow-md shadow-emerald-400 p-4 text-white">
             <span class="text-xl">Все</span>
         </button>
@@ -31,7 +33,8 @@
             @if(Session::has('error'))
             <x-alert type="info" title="Информация" message="{{ Session::get('error') }}" />
             @endif
-            @if(count($data) != NULL)
+
+            @if($data)
             <div class="grid grid-cols-3 gap-x-2 gap-y-6 mt-8">
                 @foreach($data as $data1)
                 <button wire:click='vie({{ $data1->id }})'>
