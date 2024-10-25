@@ -23,58 +23,60 @@
         </button>
     </div>
     <div class="flex items-center justify-center">
-        <div wire:loading.remove wire:target="search">
-            <div class="mt-4">
-                @if(Session::has('error'))
-                <x-alert type="warning" title="Внимание" message="{{ Session::get('error') }}" />
-                @endif
-                @if(count($data) != NULL)
+        <div wire:loading wire:target="search">
+            <div class="text-white mt-[19rem] text-6xl">
+            <i class="fa-solid fa-spinner fa-spin-pulse" style="color: #16243c;"></i>
+                <!-- <img src="{{ asset('storage/output-onlinegiftools.gif') }}" alt="Анимация загрузки"> -->
+            </div>
+        </div>
+    </div>
 
-                <div class="w-full h-full mt-8">
-                    <div class="">
-                        <div class="flex justify-center ">
-                            <table class="table border-separate border-spacing-2 font-sans font-medium text-xl text-white text-center">
-                                <thead class="bg-gradient-to-b from-blue-700 h-12 w-1/5 from-20% to-blue-900">
-                                    <tr class="border w-96 h-[3rem] rounded-l-lg border-blue-200">
-                                        <th class="border w-96 rounded-l-lg border-blue-200">ФИО преподавателя</th>
-                                        <th class="border w-96 border-blue-200">Дата</th>
-                                        <th class="border w-96 border-blue-200">Время</th>
-                                        <th class="border w-96 rounded-r-lg border-blue-200">Аудитория</th>
-                                    </tr>
-                                </thead>
-                                <tbody class="bg-gradient-to-b from-blue-700 via-30% via-blue-800 to-blue-900">
-                                    @foreach ($data as $schedule)
-                                    <tr class="h-[3rem]">
-                                        <td class="border w-96 rounded-l-lg border-blue-200">
-                                            {{ $schedule->fio_teacher }}
-                                        </td>
-                                        <td class="border w-96 border-blue-200">
-                                            {{ \Carbon\Carbon::parse($schedule->date)->format('d.m.Y') }}
-                                        </td>
-                                        <td class="border w-96  border-blue-200">
-                                            {{ \Carbon\Carbon::parse($schedule->time)->format('H:i') }}
-                                        </td>
-                                        <td class="border w-96 rounded-r-lg border-blue-200">
-                                            {{ $schedule->classroom }}
-                                        </td>
-                                    </tr>
-                                    @endforeach
-                                </tbody>
-                            </table>
-                        </div>
+    <div class=w-full wire:loading.remove wire:target="search">
+
+        <div class="mt-8">
+            @if(Session::has('error'))
+            <x-alert type="warning" title="Внимание" message="{{ Session::get('error') }}" />
+            @endif
+
+            @if(count($data) != NULL)
+
+            <div class="w-full h-full mt-8 flex items-center justify-center">
+                <div class="">
+                    <div class="flex justify-center ">
+                        <table class="table border-separate border-spacing-2 font-sans font-medium text-xl text-white text-center">
+                            <thead class="bg-gradient-to-b from-blue-700 h-12 w-1/5 from-20% to-blue-900">
+                                <tr class="border w-96 h-[3rem] rounded-l-lg border-blue-200">
+                                    <th class="border w-96 rounded-l-lg border-blue-200">ФИО преподавателя</th>
+                                    <th class="border w-96 border-blue-200">Дата</th>
+                                    <th class="border w-96 border-blue-200">Время</th>
+                                    <th class="border w-96 rounded-r-lg border-blue-200">Аудитория</th>
+                                </tr>
+                            </thead>
+                            <tbody class="bg-gradient-to-b from-blue-700 via-30% via-blue-800 to-blue-900">
+                                @foreach ($data as $schedule)
+                                <tr class="h-[3rem]">
+                                    <td class="border w-96 rounded-l-lg border-blue-200">
+                                        {{ $schedule->fio_teacher }}
+                                    </td>
+                                    <td class="border w-96 border-blue-200">
+                                        {{ \Carbon\Carbon::parse($schedule->date)->format('d.m.Y') }}
+                                    </td>
+                                    <td class="border w-96  border-blue-200">
+                                        {{ \Carbon\Carbon::parse($schedule->time)->format('H:i') }}
+                                    </td>
+                                    <td class="border w-96 rounded-r-lg border-blue-200">
+                                        {{ $schedule->classroom }}
+                                    </td>
+                                </tr>
+                                @endforeach
+                            </tbody>
+                        </table>
                     </div>
                 </div>
-                @elseif (count($data) == 0 && !Session::has('error'))
-                <div class="pt-8">
-                    <x-alert type="info" title="Информация" message="На данный момент график пересдач отсутствует." />
-                </div>
-                @endif
             </div>
         </div>
-        <div wire:loading wire:target="search">
-            <div class="text-white mt-[19rem] text-6xl flex items-center justify-center">
-                <img src="{{ asset('storage/output-onlinegiftools.gif') }}" alt="Анимация загрузки">
-            </div>
-        </div>
+        @elseif (count($data) == 0 && !Session::has('error'))
+        <x-alert type="info" title="Информация" message="На данный момент график пересдач отсутствует." />
+        @endif
     </div>
 </div>
