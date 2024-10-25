@@ -21,11 +21,20 @@
         </button>
     </div>
     <div class="flex items-center justify-center">
-        <div wire:loading.remove wire:target="getStudentGrades">
-            <div class="mt-10">
-                @if(Session::has('error'))
-                <x-alert type="warning" title="Внимание" message="{{ Session::get('error') }}" />
-                @endif
+        <div wire:loading wire:target="getStudentGrades">
+            <div class="text-white mt-[19rem] text-6xl">
+                <i class="fa-solid fa-spinner fa-spin-pulse" style="color: #16243c;"></i>
+                <!-- <img src="{{ asset('storage/output-onlinegiftools.gif') }}" alt="Анимация загрузки"> -->
+            </div>
+        </div>
+    </div>
+
+    <div class=w-full wire:loading.remove wire:target="getStudentGrades">
+        <div class="mt-10">
+            @if(Session::has('error'))
+            <x-alert type="warning" title="Внимание" message="{{ Session::get('error') }}" />
+            @endif
+            <div class="flex items-center justify-center">
                 @if(count($data) != NULL)
                 <div>
                     <table class="border-separate overflow-y-auto rounded-lg w-full font-sans font-normal text-xl text-white">
@@ -65,17 +74,12 @@
                         </tbody>
                     </table>
                 </div>
-                @elseif (empty($data) && !Session::has('error'))
-                <div class="pt-8">
-                    <x-alert type="info" title="Информация" message="Для отображения информации воспользуйтесь формой ввода поиска." />
-                </div>
-                @endif
             </div>
-        </div>
-        <div wire:loading wire:target="getStudentGrades">
-            <div class="text-white mt-[19rem] text-6xl flex items-center justify-center">
-                <img src="{{ asset('storage/output-onlinegiftools.gif') }}" alt="Анимация загрузки">
+            @elseif (empty($data) && !Session::has('error'))
+            <div class="w-full pt-4">
+                <x-alert type="info" title="Информация" message="Для отображения информации воспользуйтесь формой ввода поиска." />
             </div>
+            @endif
         </div>
     </div>
 </div>
