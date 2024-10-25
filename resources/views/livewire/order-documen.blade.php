@@ -11,7 +11,7 @@
     </div>
     <div class="h-full w-full py-4">
         <div class="w-full flex flex-row justify-center ">
-            <input wire:model="name" type="text"
+            <input wire:input="val()" wire:model="name"  type="text"
                 class="w-1/3 ml-4 rounded-md pl-2 w-1/2 text-2xl h-16 border border-green-600"
                 placeholder="Пожалуйста, введите логин от своего аккаунта moodle">
 
@@ -20,10 +20,31 @@
                 <option class="text-slate-500" value=1>Об обучении</option>
                 <option class="text-slate-500" value=2>На проезд</option>
             </select>
+            {{-- <script>
 
-            <button
-                class="flex items-center justify-center px-4 text-xl font-medium border ml-4 border-green-400 h-16 bg-white rounded-md"
-                wire:click="request()">Заказать</button>
+                Livewire.emit('postAdded')
+            
+            </script> --}}
+            {{-- <button
+            class="flex items-center justify-center px-4 text-xl font-medium border ml-4 border-green-400 h-16 bg-white rounded-md"
+              >Заказать</button> --}}
+            <div>
+                @livewire("my-modal")
+            </div>
+
+            
+            @if ($get_name)
+                @foreach ($get_name as $item)
+                    {{$item->last_name}}
+                    {{$item->first_name}}
+                    {{$item->middle_name}}
+                @endforeach 
+
+                    
+            @else
+                
+            @endif
+
         </div>
         <div class="pt-8">
             <x-alert type="info" title="Информация" message="Пожалуйста, заполните форму ввода для заказа справки." />
