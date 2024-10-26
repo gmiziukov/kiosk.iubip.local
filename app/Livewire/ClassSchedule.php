@@ -14,7 +14,7 @@ class ClassSchedule extends Component
 
     public $data;
     public $currentDate = '';
-    public $group =  "";
+    public $group =  Null;
     public $now = "";
     public $now_date1;
     public $weekStartDate = NULL;
@@ -45,16 +45,21 @@ class ClassSchedule extends Component
         $this->weekendDate = $this->now_date->endOfWeek()->format("Y-m-d");
         $this->now_date1 = Carbon::parse($this->weekStartDate);
         $this->now_date1 = $this->weekStartDate;
+        $this->search();
+
         return $this->now_date;
     }
 
     public function back_week()
     {
+
         $this->now_date = Carbon::parse($this->now_date)->addDay(7);
         $this->weekStartDate = $this->now_date->startOfWeek()->format("Y-m-d");
         $this->weekendDate = $this->now_date->endOfWeek()->format("Y-m-d");
         $this->now_date1 = Carbon::parse($this->weekStartDate);
         $this->now_date1 = $this->weekStartDate;
+        $this->search();
+        
         return $this->now_date;
     }
 
@@ -64,13 +69,16 @@ class ClassSchedule extends Component
         $this->data = $datatable->data($data_now, $group_now);
         return $this->data;
     }
-
+    
     public function search()
     {
+        
         $data  =$this->week($this->now_date, $this->group);
-        if (count($data) == 0) {
+        // dd($data);
+        if ($data == null or count($data) == 0 ) {
             session()->flash('error', 'Пожалуйста, проверьте введенные вами данные или выбранную неделю');
         }
+
         return $data;
         // $this->datatable($this->currentDate, $this->group);
     }

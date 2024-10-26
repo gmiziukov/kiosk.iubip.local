@@ -52,7 +52,7 @@
         <x-alert type="warning" title="Внимание" message="{{ Session::get('error') }}" />
         @endif
         <div class="mt-4 flex justify-center items-center">
-            @if($now != "" && !Session::has('error'))
+            @if(($now != null or $now != "") && !Session::has('error'))
             <div>
                 <table class="border-separate border-spacing-1 font-sans font-normal text-xl text-white">
                     <thead class="bg-gradient-to-b h-14 from-blue-700 to-80% to-blue-900 text-center font-bold h-16 w-96">

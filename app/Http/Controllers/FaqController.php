@@ -8,7 +8,11 @@ use Illuminate\Http\Request;
 class FaqController extends Controller
 {   
     public $data = Null;
+    public function search($search_data){
+        dd($search_data);
 
+        return DB::table("faqs")->where("question","LIKE","%".$search_data."%")->get();
+    }
     public function data(){
         $a = DB::table("faqs")
         ->orderBy("relevance","DESC");
