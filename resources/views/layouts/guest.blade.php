@@ -31,7 +31,8 @@
             <div class="w-1/3 h-full flex justify-end flex ">
                 <div x-data="{ showElement: false }" x-init="setTimeout(() => { showElement = true; }, 1000)">
                     <div x-show="showElement" class="h-full flex items-center justify-end flex-row my-element">
-
+                        <!-- <div id="ww_68f95a294c165" v='1.3' loc='auto' a='{"t":"horizontal","lang":"ru","ids":[],"font":"Arial","sl_ics":"one_a","sl_sot":"celsius","cl_bkg":"#FFFFFF00","cl_font":"rgba(255,255,255,1)","cl_cloud":"#d4d4d4","cl_persp":"#2196F3","cl_sun":"#FFC107","cl_moon":"#FFC107","cl_thund":"#FF5722","el_nme":3,"el_phw":3,"el_whr":3}'>Установить <a href="https://weatherwidget.org/ru/" id="ww_68f95a294c165_u" target="_blank">HTML погодный информер на сайт</a></div>
+                        <script async src="https://app3.weatherwidget.org/js/?id=ww_68f95a294c165"></script> -->
                         <div class=" flex p-4 w-[14.8rem]">
                             <div id="ww_cd2f2b7ad414e" loc='auto' a='{"t":"responsive","lang":"ru","ids":[],"font":"Arial","sl_ics":"one_a","sl_sot":"celsius","cl_bkg":"#FFFFFF00","cl_font":"rgba(255,255,255,1)","cl_cloud":"rgba(195, 225, 232, 0.93)","cl_persp":"rgba(66, 209, 252, 0.89)","cl_sun":"rgba(255, 211, 51)","cl_moon":"#E6E6FA","cl_thund":"rgba(242, 130, 2, 0.89)","el_nme":3,"el_wfc":3,"cl_odd":"#00000000","sl_tof":"1"}'>Установить <a href="https://weatherwidget.org/ru/" id="ww_cd2f2b7ad414e_u" target="_blank">HTML погодный информер для сайта</a></div>
                             <script class="hidden" async src="https://app3.weatherwidget.org/js/?id=ww_cd2f2b7ad414e"></script>

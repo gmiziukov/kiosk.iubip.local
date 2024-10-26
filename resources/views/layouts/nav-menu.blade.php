@@ -1,7 +1,8 @@
-<div class="grid grid-cols-3 gap-4 mt-20">
+
+<div class="grid grid-cols-3 gap-4 mt-36">
     <a href="{{ route('about.university') }}">
         <div class="h-72 flex flex-col space-y-4  absolute shadow-md rounded-xl shadow-emerald-400 p-6 relative"
-            style="background-image: url('storage/ibib.jpeg'); background-size: 100% 100%; background-position: center;">
+            style="background-image: url('storage/12.png'); background-size: 120% 150%; background-position: center;">
             <div class="absolute inset-0 z-0 rounded-xl bg-blue-950 opacity-85 "></div>
             <div class="h-16 w-16 bg-blue-600 flex items-center justify-center rounded-full">
                 <i class="fa-solid fa-book-open fa-2xl z-10" style="color: #08cc22;"></i>
