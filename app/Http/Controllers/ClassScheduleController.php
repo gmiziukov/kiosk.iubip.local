@@ -34,6 +34,7 @@ class ClassScheduleController extends Controller
         }
     }
     public function add_day_teacher($now_date, $group_now){
+        if($group_now != NULL){
         $now = $now_date;
         $weekStartDate = $now->startOfWeek()->format("Y-m-d");
         $weekendDate = $now->endOfWeek()->format("Y-m-d");
@@ -42,22 +43,22 @@ class ClassScheduleController extends Controller
         $a = DB::table("schedules")
         ->where("date", '>=',$weekStartDate )
         ->where("date", '<=',$weekendDate );
-        if($group_now != NULL){
-            $a->where("teacher", strtoupper($group_now));
-        }
+        $a->where("teacher", strtoupper($group_now));
         $a = $a->get();
         $b = $a;
         for($i = 0; $i  != count($a);$i++){
             for($j = 0;$j != count($b);$j++){
                 if($a[$i]->date == $b[$j]->date and $a[$i]->time == $b[$j]->time and $a[$i]->discipline == $b[$j]->discipline and $a[$i]->group != $b[$j]->group){
-                   $a[$i]->group = $a[$i]->group." ".$b[$j]->group;
-                   $a[$j]->discipline = null;
-                   $a[$j]->group = null;
-                   $a[$j]->lesson_place = null;
-                   $a[$j]->lesson_type = null;
-                //    unset($a[$j]->discipline);
+                    $a[$i]->group = $a[$i]->group." ".$b[$j]->group;
+                    $a[$j]->discipline = null;
+                    $a[$j]->group = null;
+                    $a[$j]->lesson_place = null;
+                    $a[$j]->lesson_type = null;
+                    //    unset($a[$j]->discipline);
+                    }
                 }
             }
+            return $a;
         }
 
         // ################## old var ##################
@@ -72,7 +73,6 @@ class ClassScheduleController extends Controller
             
 
         // dd($a);
-        return $a;
         }
 
 }

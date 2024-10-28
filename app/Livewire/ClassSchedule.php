@@ -72,6 +72,7 @@ class ClassSchedule extends Component
     
     public function search()
     {
+        // dd($this->group);
         
         $data  =$this->week($this->now_date, $this->group);
         // dd($data);
