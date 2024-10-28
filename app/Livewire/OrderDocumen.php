@@ -12,7 +12,8 @@ class OrderDocumen extends Component
     public $type_document = 0;
     public $name = "";
 
-    public $get_name;
+    public $get_name = [];
+    public $ar = [0=>'справка не выбрана', 1=>'об обучении', 2=>'на проезд'];
 
 
     
@@ -26,7 +27,7 @@ class OrderDocumen extends Component
     {
         if ($this->type_document != 0) {
             $time_var = new OrderDocumentController;
-            $this->request1();
+            // $this->request1();
             return $time_var->add_order($this->type_document, $this->name);
         } else {
             return 0;

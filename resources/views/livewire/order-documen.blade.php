@@ -16,15 +16,15 @@
                 placeholder="Пожалуйста, введите логин от своего аккаунта moodle">
 
             <select class="w-1/3 ml-4 rounded-md pl-2 w-1/2 text-2xl h-16 border border-green-600 text-slate-500" wire:model="type_document">
-                <option class="text-slate-500" value='справка не выбрана'>Выбор справки</option>
-                <option class="text-slate-500" value='об обучении'>Об обучении</option>
-                <option class="text-slate-500" value='на проезд'>На проезд</option>
+                @foreach($ar as $arr=>$arr1)
+                    <option class="text-slate-500" value={{$arr}}>{{$arr1}}</option>
+                @endforeach
             </select>
 
             <div>
                 <div x-data="{ open: false }">
                     <button class="flex items-center justify-center px-4 text-xl font-medium border ml-4 border-green-400 h-16 bg-white rounded-md" wire:click="request1()" @click="open = true">Заказать</button>
-                    @if ($get_name)
+                    @if (count($get_name) != 0 and $type_document != 0)
                     {{-- {{dd($get_name)}} --}}
                     <div x-show="open" class="fixed inset-0 flex items-center justify-center z-10">
                         <div class="" @click="open = false"></div>
@@ -49,7 +49,11 @@
                                 </div>
                                 <div class="font-mono text-white flex flex-row pt-8 text-2xl">
                                     <p class=font-semibold>Заказанная справка:
-                                    <p class=px-4> {{$type_document}}</p>
+                                        @foreach($ar as $arr=>$arr1)
+                                            @if($type_document == $arr)
+                                            <p class=px-4> {{$arr1}}</p>
+                                            @endif
+                                        @endforeach
                                     </p>
                                 </div>
 
@@ -58,7 +62,7 @@
 
                                     <button @click="open = false;"
                                         class="flex items-center  justify-center text-xl font-medium border border-green-400 text-white h-12 w-[9rem] rounded-lg"
-                                        wire:click="">Заказать</button>
+                                        wire:click="request()">Заказать</button>
                                     {{-- <button  $wire.saveData() class="btn btn-primary">продолжить</button> --}}
 
                                 </div>
