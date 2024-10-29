@@ -21,16 +21,14 @@ class ClassScheduleController extends Controller
         $now = new Carbon($now_date->format("Y-m-d"));
         $weekStartDate = $now->startOfWeek()->format("Y-m-d");
         $weekendDate = $now->endOfWeek()->format("Y-m-d");
-        // $weekStartDate = '2024-09-30';
-        // $weekendDate ='2024-10-05';
+
         $a = DB::table("schedules")
         ->where("date", '>=',$weekStartDate )
         ->where("date", '<=',$weekendDate );
         $a->where("group", strtoupper($group_now));
         $a = $a->get();
         return $a;
-            // dd($a);
-            // dd($a);
+
         }
     }
     public function add_day_teacher($now_date, $group_now){
@@ -38,8 +36,7 @@ class ClassScheduleController extends Controller
         $now = $now_date;
         $weekStartDate = $now->startOfWeek()->format("Y-m-d");
         $weekendDate = $now->endOfWeek()->format("Y-m-d");
-        // $weekStartDate = '2024-09-30';
-        // $weekendDate ='2024-10-05';
+
         $a = DB::table("schedules")
         ->where("date", '>=',$weekStartDate )
         ->where("date", '<=',$weekendDate );
@@ -54,7 +51,6 @@ class ClassScheduleController extends Controller
                     $a[$j]->group = null;
                     $a[$j]->lesson_place = null;
                     $a[$j]->lesson_type = null;
-                    //    unset($a[$j]->discipline);
                     }
                 }
             }

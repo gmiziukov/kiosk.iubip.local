@@ -63,10 +63,9 @@
                                     <button @click="open = false;"
                                         class="flex items-center  justify-center text-xl font-medium border border-green-400 text-white h-12 w-[9rem] rounded-lg"
                                         wire:click="request()">Заказать</button>
-                                    {{-- <button  $wire.saveData() class="btn btn-primary">продолжить</button> --}}
 
                                 </div>
-                                <!-- st107185 -->
+
                             </div>
                         </div>
                     </div>
