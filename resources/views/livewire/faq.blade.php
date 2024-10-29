@@ -5,11 +5,13 @@
             <i class="fa-solid fa-chevron-left fa-xl"></i>
             <span class="text-xl">Назад</span>
         </button>
-        <input wire:model = "search_var" type="text">
-        <button wire:click = "search()" >search</button>
         <button wire:click="main()" class="w-40 flex space-x-2 items-center justify-center bg-gradient-to-br from-blue-800 from-60% to-blue-700 rounded shadow-md shadow-emerald-400 p-4 text-white">
             <span class="text-xl">Все</span>
         </button>
+        <div class = "flex flex-row justify-between">
+            <input wire:model = "search_var"  type="text" class="w-1/5 ml-4 rounded-md pl-2 w-1/2 text-2xl h-16 border border-green-600  w-full"> 
+            <button wire:click = "search()" class="flex items-center justify-center px-4 text-xl font-medium border ml-4 border-green-400 h-16 bg-white rounded-md" >search</button>
+        </div>
         <button wire:click="ORD('Преподаватель')" class="w-40 flex space-x-2 items-center justify-center bg-gradient-to-br from-blue-800 from-60% to-blue-700 rounded shadow-md shadow-emerald-400 p-4 text-white">
             <span class="text-xl">Преподаватель</span>
         </button>

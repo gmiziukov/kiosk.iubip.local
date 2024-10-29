@@ -15,7 +15,9 @@ class Faq extends Component
 
     public function search(){
         $a = new FaqController();
-        return $this->data = $a->search($this->search_var);
+        $this->data = $a->search($this->search_var);
+        $this->search_var = Null;
+        // return ;
         }
     public function mount()
     {
