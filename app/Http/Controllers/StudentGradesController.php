@@ -18,12 +18,14 @@ class StudentGradesController extends Controller
             ->join("control_types", "work_study_plan_course_control_types_in_semesters.control_type_id", "=", "control_types.id")
             ->select(
                 'student_grades.grade',
+                "work_study_plan_courses_in_semesters.semester_number as semestr",
                 "disciplines.name",
                 "bulletins.type_bulletin_id",
                 "control_types.name as type_name",
                 DB::raw("(SELECT ticket_number FROM student_ticket_numbers WHERE user_id = student_grades.user_id ORDER BY id DESC LIMIT 1) as ticket_number"),
             )
             ->having("ticket_number", "=", $ticketNumber)
+            ->orderBy("semestr","asc")
             ->get();
     }
 }

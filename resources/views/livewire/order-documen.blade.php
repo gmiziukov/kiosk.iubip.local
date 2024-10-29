@@ -13,7 +13,7 @@
         <div class="w-full flex flex-row justify-center ">
             <input wire:model="name" type="text"
                 class="w-1/3 ml-4 rounded-md pl-2 w-1/2 text-2xl h-16 border border-green-600"
-                placeholder="Пожалуйста, введите логин от своего аккаунта moodle">
+                placeholder="Пожалуйста, введите номер зачетной книжки">
 
             <select class="w-1/3 ml-4 rounded-md pl-2 w-1/2 text-2xl h-16 border border-green-600 text-slate-500" wire:model="type_document">
                 @foreach($ar as $arr=>$arr1)
