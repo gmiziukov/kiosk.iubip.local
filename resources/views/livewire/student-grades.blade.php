@@ -40,12 +40,13 @@
                     <table class="border-separate overflow-y-auto rounded-lg w-full font-sans font-normal text-xl text-white">
                         <thead class="bg-gradient-to-b h-12 from-blue-700 from-20% to-blue-900 ">
                             <tr>
-                                <td class="border text-2xl text-center font-semibold rounded-l-lg w-[50rem] border-blue-200">
+                                <td class="border text-2xl text-center font-semibold  w-[6rem] rounded-l-lg border-blue-200">
+                                    Семестр
+                                </td>
+                                <td class="border text-2xl text-center font-semibold w-[50rem] border-blue-200">
                                     Дисциплина
                                 </td>
-                                <td class="border text-2xl text-center font-semibold  w-[15rem] rounded-r-lg border-blue-200">
-                                    семестр
-                                </td>
+
                                 <td class="border text-2xl text-center font-semibold w-[40rem] border-blue-200">
                                     Вид контроля
                                 </td>
@@ -57,12 +58,13 @@
                         <tbody class="bg-gradient-to-b h-14 from-blue-700 via-30% via-blue-800 to-blue-900">
                             @foreach ($data as $data1)
                             <tr>
+                                <td class="border w-32 text-center px-4 h-10 rounded-l-lg text-xl font-norm border-blue-200">
+                                    {{$data1->semestr}}
+                                </td>
                                 <td class="border w-48 px-4 h-10 rounded-l-lg w-[35rem] text-xl font-norm border-blue-200">
                                     {{$data1->name}}
                                 </td>
-                                <td class="border w-48 text-center px-4 h-10 rounded-l-lg w-[10rem] text-xl font-norm border-blue-200">
-                                    {{$data1->semestr}}
-                                </td>
+
                                 <td class="border w-48 text-center h-10 text-xl w-[26rem] font-norm border-blue-200">
                                     {{$data1->type_name}}
                                 </td>

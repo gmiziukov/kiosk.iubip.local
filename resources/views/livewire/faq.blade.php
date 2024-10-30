@@ -1,17 +1,26 @@
 <div class="w-full h-full">
-
     <div class="flex justify-between">
         <button wire:click="redirectBack()" class="w-40 flex space-x-2 items-center justify-center bg-gradient-to-br from-blue-800 from-60% to-blue-700 rounded shadow-md shadow-emerald-400 p-4 text-white">
             <i class="fa-solid fa-chevron-left fa-xl"></i>
             <span class="text-xl">Назад</span>
         </button>
+
+        <div class="flex flex-row w-2/3">
+            <input wire:model="search_var" type="text" class="ml-4 w-[40rem] rounded-md text-2xl h-16 border border-green-600  w-full">
+            <button wire:click="search()" class="flex items-center justify-center px-4 text-xl font-medium border ml-4 border-green-400 h-16 bg-white rounded-md">Поиск</button>
+        </div>
+
+        <button wire:click="redirectToHome()" class="w-40 flex space-x-2 items-center justify-center bg-gradient-to-br from-blue-800 from-60% to-blue-700 rounded shadow-md shadow-emerald-400 p-4 text-white">
+            <i class="fa-solid fa-home fa-xl"></i>
+            <span class="text-xl">Главная</span>
+        </button>
+    </div>
+
+
+    <div class="flex justify-between ml-4 px-[20rem] mt-4">
         <button wire:click="main()" class="w-40 flex space-x-2 items-center justify-center bg-gradient-to-br from-blue-800 from-60% to-blue-700 rounded shadow-md shadow-emerald-400 p-4 text-white">
             <span class="text-xl">Все</span>
         </button>
-        <div class = "flex flex-row justify-between">
-            <input wire:model = "search_var"  type="text" class="w-1/5 ml-4 rounded-md pl-2 w-1/2 text-2xl h-16 border border-green-600  w-full"> 
-            <button wire:click = "search()" class="flex items-center justify-center px-4 text-xl font-medium border ml-4 border-green-400 h-16 bg-white rounded-md" >search</button>
-        </div>
         <button wire:click="ORD('Преподаватель')" class="w-40 flex space-x-2 items-center justify-center bg-gradient-to-br from-blue-800 from-60% to-blue-700 rounded shadow-md shadow-emerald-400 p-4 text-white">
             <span class="text-xl">Преподаватель</span>
         </button>
@@ -21,15 +30,11 @@
         <button wire:click="ORD('Абитуриент')" class="w-40 flex space-x-2 items-center justify-center bg-gradient-to-br from-blue-800 from-60% to-blue-700 rounded shadow-md shadow-emerald-400 p-4 text-white">
             <span class="text-xl">Абитуриент</span>
         </button>
-        <!-- Проверка на вывод инфы -->
         <button wire:click="ORD('Купе')" class="w-40 flex space-x-2 items-center justify-center bg-gradient-to-br from-blue-800 from-60% to-blue-700 rounded shadow-md shadow-emerald-400 p-4 text-white">
             <span class="text-xl">Сотрудник</span>
         </button>
-        <button wire:click="()" class="w-40 flex space-x-2 items-center justify-center bg-gradient-to-br from-blue-800 from-60% to-blue-700 rounded shadow-md shadow-emerald-400 p-4 text-white">
-            <i class="fa-solid fa-home fa-xl"></i>
-            <span class="text-xl">Главная</span>
-        </button>
     </div>
+
     <div wire:loading.remove wire:target="getStudentGrades">
         <div class="mt-10">
             @if(Session::has('error'))

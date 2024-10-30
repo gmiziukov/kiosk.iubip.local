@@ -13,12 +13,13 @@ class Faq extends Component
 
     public $search_var = Null;
 
-    public function search(){
+    public function search()
+    {
         $a = new FaqController();
         $this->data = $a->search($this->search_var);
         $this->search_var = Null;
         // return ;
-        }
+    }
     public function mount()
     {
         $a = new FaqController();
@@ -30,7 +31,7 @@ class Faq extends Component
         $a = new FaqController();
         $this->data = $a->data();
         // dd($this->data);
-    }   
+    }
 
     public function ORD($b)
     {
@@ -40,7 +41,15 @@ class Faq extends Component
             session()->flash('error', 'Вопросов с данной категорией не найдено ');
         }
     }
+    public function redirectBack()
+    {
+        redirect()->route('index');
+    }
 
+    public function redirectToHome()
+    {
+        redirect()->route('index');
+    }
     public function vie($val1)
     {
 
@@ -50,14 +59,5 @@ class Faq extends Component
     public function render()
     {
         return view('livewire.faq');
-    }
-    public function redirectBack()
-    {
-        redirect()->route('index');
-    }
-
-    public function redirectToHome()
-    {
-        redirect()->route('index');
     }
 }
