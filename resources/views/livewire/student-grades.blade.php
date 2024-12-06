@@ -31,7 +31,7 @@
         </div>
     </div>
 
-    <div class="h-full" wire:loading.remove wire:target="getStudentGrades">
+    <div class="h-full px-6" wire:loading.remove wire:target="getStudentGrades">
         @if(Session::has('error'))
         <div class="h-full flex items-center justify-center">
             <x-alert type="error" title="Ошибка" message="{{ Session::get('error') }}" />
@@ -39,37 +39,38 @@
         @endif
 
         @if(!is_null($data) && count($data) != 0)
-        <div class="border rounded">
-            <table class="w-full text-white text-xl">
+        <h2 class="text-white text-xl">ФИО: {{ $fio }}</h2>
+        <div class="border border-slate-500 rounded">
+            <table class="w-full border-separate border-spacing-2 border border-slate-500 text-white text-xl">
                 <thead>
-                    <tr class="border">
-                        <th class="p-1">Дисциплина</th>
-                        <th class="p-1">Вид контроля</th>
-                        <th class="p-1">Результат</th>
+                    <tr class="bg-gradient-to-br from-blue-800 from-60% to-blue-700">
+                        <th class="w-auto border border-slate-600 rounded p-2 text-left">Дисциплина</th>
+                        <th class="w-64 border border-slate-600 rounded p-2">Вид контроля</th>
+                        <th class="w-48 border border-slate-600 rounded p-2">Результат</th>
                     </tr>
                 </thead>
                 <tbody>
                     @foreach($data as $key => $value)
-                    <tr class="border">
-                        <td colspan="3" class="p-1 text-center font-bold">Семестр {{ $key }}</td>
+                    <tr class="bg-gradient-to-br from-blue-800 from-60% to-blue-700">
+                        <td colspan="3" class="border border-slate-700 rounded p-2 text-center font-bold">Семестр {{ $key }}</td>
                     </tr>
                     @foreach($value as $item)
-                    <tr class="border">
-                        <td class="p-1">{{ $item['discipline_name'] }}</td>
-                        <td class="p-1 text-center">{{ $item['control_name'] }}</td>
-                        <td class="p-1 text-center">
+                    <tr class="bg-gradient-to-br from-blue-800 from-60% to-blue-700">
+                        <td class="w-auto border border-slate-700 rounded p-2">{{ $item['discipline_name'] }}</td>
+                        <td class="w-64 border border-slate-700 rounded p-2 text-center">{{ $item['control_name'] }}</td>
+                        <td class="w-48 border border-slate-700 rounded p-2 text-center">
                             @if(is_null($item['grade']))
-                            Отсутсвует
+                                Отсутсвует
                             @else
-                            @if($item['control_name'] == 'Зачет')
-                            @if($item['grade'] == 1)
-                            Зачтено
-                            @else
-                            Не зачтено
-                            @endif
-                            @else
-                            {{ $item['grade'] }}
-                            @endif
+                                @if($item['control_name'] == 'Зачет')
+                                    @if($item['grade'] == 1)
+                                    Зачтено
+                                        @else
+                                        Не зачтено
+                                    @endif
+                                @else
+                                    {{ $item['grade'] }}
+                                @endif
                             @endif
                         </td>
                     </tr>
@@ -80,7 +81,11 @@
         </div>
         @else
         <div class="h-full flex items-center justify-center">
+            @if(Session::has('info'))
+            <x-alert type="info" title="Информация" message="{{ Session::get('info') }}" />
+            @else
             <x-alert type="info" title="Информация" message="Для отображения информации воспользуйтесь формой для поиска." />
+            @endif
         </div>
         @endif
     </div>

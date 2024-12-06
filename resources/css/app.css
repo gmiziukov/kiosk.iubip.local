@@ -14,11 +14,11 @@
     }
 
     .menu-card {
-        @apply h-72 rounded shadow-md shadow-emerald-400;
+        @apply h-72 bg-cover rounded shadow-md shadow-emerald-400;
     }
 
     .menu-card-content {
-        @apply w-full h-full flex flex-col space-y-4 bg-blue-950 bg-opacity-50 p-6;
+        @apply w-full h-full flex flex-col space-y-4 bg-blue-950 bg-opacity-50 rounded p-6;
     }
 
     .menu-card-icon {

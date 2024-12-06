@@ -34,8 +34,8 @@ Route::get('/student-document-order-requests', function () {
 
 //График пересдач академических задолженностей
 Route::get('/academic-retake-schedule-list', function () {
-    return view('pages.student.academic-retake-schedule-list');
-})->name('student.academic.retake.schedule.list');
+    return view('pages.academic-retake-schedule-list');
+})->name('academic.retake.schedule.list');
 
 //Успеваемость
 Route::get('/student-grades', function () {
@@ -47,28 +47,17 @@ Route::get('/faq', function () {
     return view('pages.faq');
 })->name('faq');
 
+
+
+
 //Расписание занятий
 Route::get('/SelectStudentOrTeacher', function () {
     return view('pages.SelectStudentOrTeacher');
 })->name('SelectStudentOrTeacher');
 
-
 Route::get('/schedule/{SoT}', function ($SoT) {
     return view('pages.schedule',['SoT'=> $SoT]);
 })->name('schedule1');
-
-
-
-
-//График пересдач
-Route::get('/retake-schedule', function () {
-    return view('pages.retake-schedule');
-})->name('retake.schedule');
-
-
-
-
-
 
 
 Route::get('/faq/{val}', function ($val) {

@@ -8,6 +8,7 @@ use Livewire\Component;
 class StudentGrades extends Component
 {
     public $search = '';
+    public $fio = '';
     public $data = [];
 
     public function render()
@@ -27,13 +28,19 @@ class StudentGrades extends Component
 
     public function getStudentGrades()
     {
-        $studentGradesController = new StudentGradesController();
-        $this->data = $studentGradesController->getStudentGrades($this->search);
+        if (!empty($this->search)) {
+            $studentGradesController = new StudentGradesController();
+            $grades = $studentGradesController->getStudentGrades($this->search);
 
-        if (count($this->data) == 0) {
-            session()->flash('error', 'Пожалуйста, проверьте введенные вами данные');
+            if (count($grades) == 0) {
+                session()->flash('info', 'Для указанного номера зачетной книжки результаты промежуточной аттестации отсутствует.');
+            }else {
+                $this->fio = $grades['fio'];
+                $this->data = $grades['data'];
+            }
+            
+        } else {
+            session()->flash('error', 'Поле для поиска должно быть заполнено!');
         }
     }
-
-    
 }

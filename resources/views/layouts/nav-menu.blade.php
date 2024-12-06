@@ -27,7 +27,7 @@
             </div>
         </a>
         <a href="{{ route('student.document.order.requests') }}">
-            <div class="menu-card" style="background-image: url('storage/schedule.png');">
+            <div class="menu-card" style="background-image: url('storage/student_document_order.png');">
                 <div class="menu-card-content">
                     <div class="menu-card-icon">
                         <i class="fa-solid fa-file-circle-plus fa-2xl" style="color: #08cc22;"></i>
@@ -39,8 +39,8 @@
                 </div>
             </div>
         </a>
-        <a href="{{ route('student.academic.retake.schedule.list') }}">
-            <div class="menu-card" style="background-image: url('storage/schedule.png');">
+        <a href="{{ route('academic.retake.schedule.list') }}">
+            <div class="menu-card" style="background-image: url('storage/academic_retake.png');">
                 <div class="menu-card-content">
                     <div class="menu-card-icon">
                         <i class="fa-solid fa-calendar-day fa-2xl" style="color: #08cc22;"></i>
@@ -53,7 +53,7 @@
             </div>
         </a>
         <a href="{{ route('student.grades') }}">
-            <div class="menu-card" style="background-image: url('storage/schedule.png');">
+            <div class="menu-card" style="background-image: url('storage/student_grades.png');">
                 <div class="menu-card-content">
                     <div class="menu-card-icon">
                         <i class="fa-solid fa-star fa-2xl" style="color: #08cc22;"></i>
@@ -66,7 +66,7 @@
             </div>
         </a>
         <a href="{{ route('faq') }}">
-            <div class="menu-card" style="background-image: url('storage/schedule.png');">
+            <div class="menu-card" style="background-image: url('storage/faq.png');">
                 <div class="menu-card-content">
                     <div class="menu-card-icon">
                         <i class="fa-solid fa-headset fa-2xl" style="color: #08cc22;"></i>
