@@ -15,38 +15,28 @@
     @livewireStyles
 </head>
 
-<body>
-    <div class="w-full h-screen flex flex-col bg-cover font-sans text-gray-600 antialiased overflow-hidden" style="background-image: url({{ asset('storage/background.png') }})">
+<body style="background-image: url({{ asset('storage/background.png') }})">
+    <div class="content">
         <header class="w-full h-24 flex flex-row shadow-md px-4 py-2">
             <!-- Логотип -->
-            <div class="w-1/3 h-full flex space-x-4">
-                <img src="{{ asset('storage/logo_iubip.png') }}" class="w-28 h-20">
+            <div class="w-1/4 h-full flex space-x-4 items-center">
+                <img src="{{ asset('storage/logo_iubip.png') }}" class="w-24 h-16">
                 <img src="{{ asset('storage/logo_ci.svg') }}" class="w-44">
             </div>
             <!-- Заголовок -->
-            <div class="w-1/3 h-full flex items-center justify-center">
-                <h1 class="text-white text-4xl font-semibold">{{ $title }}</h1>
+            <div class="w-2/4 h-full flex flex-col items-center justify-center">
+                <h1 class="text-white text-base lg:text-3xl font-semibold">{{ config('app.name', 'Южный Университет (ИУБиП)') }}</h1>
+                <p class="text-white">{{ $title }}</p>
             </div>
 
-            <div class="w-1/3 h-full flex justify-end flex ">
-                <div x-data="{ showElement: false }" x-init="setTimeout(() => { showElement = true; }, 1000)">
-                    <div x-show="showElement" class="h-full flex items-center justify-end flex-row my-element">
-                        <!-- <div id="ww_68f95a294c165" v='1.3' loc='auto' a='{"t":"horizontal","lang":"ru","ids":[],"font":"Arial","sl_ics":"one_a","sl_sot":"celsius","cl_bkg":"#FFFFFF00","cl_font":"rgba(255,255,255,1)","cl_cloud":"#d4d4d4","cl_persp":"#2196F3","cl_sun":"#FFC107","cl_moon":"#FFC107","cl_thund":"#FF5722","el_nme":3,"el_phw":3,"el_whr":3}'>Установить <a href="https://weatherwidget.org/ru/" id="ww_68f95a294c165_u" target="_blank">HTML погодный информер на сайт</a></div>
-                        <script async src="https://app3.weatherwidget.org/js/?id=ww_68f95a294c165"></script> -->
-                        <div class=" flex p-4 w-[14.8rem]">
-                            <div id="ww_cd2f2b7ad414e" loc='auto' a='{"t":"responsive","lang":"ru","ids":[],"font":"Arial","sl_ics":"one_a","sl_sot":"celsius","cl_bkg":"#FFFFFF00","cl_font":"rgba(255,255,255,1)","cl_cloud":"rgba(195, 225, 232, 0.93)","cl_persp":"rgba(66, 209, 252, 0.89)","cl_sun":"rgba(255, 211, 51)","cl_moon":"#E6E6FA","cl_thund":"rgba(242, 130, 2, 0.89)","el_nme":3,"el_wfc":3,"cl_odd":"#00000000","sl_tof":"1"}'>Установить <a href="https://weatherwidget.org/ru/" id="ww_cd2f2b7ad414e_u" target="_blank">HTML погодный информер для сайта</a></div>
-                            <script class="hidden" async src="https://app3.weatherwidget.org/js/?id=ww_cd2f2b7ad414e"></script>
-                        </div>
-
-                        <div class="flex flex-col w-[13rem] space-y-1 items-center justify-center">
-                            <span id="currentDate" class="text-white text-3xl font-semibold"></span>
-                            <span id="currentTime" class="text-white text-3xl font-semibold"></span>
-                        </div>
-                    </div>
+            <div class="w-1/4 h-full">
+                <div class="w-full current-datetime">
+                    <span id="currentDate" class="text-end"></span>
+                    <span id="currentTime" class="text-end"></span>
                 </div>
         </header>
-
-        <main class="p-6 grow overflow-y-auto scrollbar-thin scrollbar-thumb-[#059669] scrollbar-track-sky-800">
+        
+        <main class="grow p-4 overflow-y-auto scrollbar-thin scrollbar-thumb-[#059669] scrollbar-track-sky-800">
             {{ $slot }}
         </main>
     </div>
@@ -77,6 +67,5 @@
         }
     </script>
 </body>
-
 
 </html>

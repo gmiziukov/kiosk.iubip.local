@@ -1,7 +1,7 @@
-<x-guest-layout>
+<x-app-layout>
     <x-slot name="title">
-        {{ __('Южный Университет (ИУБиП)') }}
+        {{ __('Навигационное меню') }}
     </x-slot>
 
     @include('layouts.nav-menu')
-</x-guest-layout>
+</x-app-layout>

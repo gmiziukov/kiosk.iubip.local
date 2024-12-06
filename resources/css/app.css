@@ -5,6 +5,50 @@
 @tailwind utilities;
 
 @layer components {
+    .content {
+        @apply w-full h-screen flex flex-col font-sans text-gray-600 antialiased overflow-hidden;
+    }
+
+    .current-datetime {
+        @apply flex flex-col space-y-1 text-white text-base lg:text-3xl font-semibold;
+    }
+
+    .menu-card {
+        @apply h-72 rounded shadow-md shadow-emerald-400;
+    }
+
+    .menu-card-content {
+        @apply w-full h-full flex flex-col space-y-4 bg-blue-950 bg-opacity-50 p-6;
+    }
+
+    .menu-card-icon {
+        @apply w-16 h-16 flex items-center justify-center bg-blue-900 rounded-full;
+    }
+
+    .menu-card-title {
+        @apply text-white text-lg lg:text-3xl;
+    }
+
+    .menu-card-text {
+        @apply text-white text-base lg:text-lg text-justify;
+    }
+
+    .btn-back {
+        @apply w-40 h-14 flex space-x-2 items-center justify-center bg-gradient-to-br from-blue-800 from-60% to-blue-700 rounded shadow-md shadow-emerald-400 p-4 text-white;
+    }
+
+    .btn-home {
+        @apply w-40 h-14 flex space-x-2 items-center justify-center bg-gradient-to-br from-blue-800 from-60% to-blue-700 rounded shadow-md shadow-emerald-400 p-4 text-white;
+    }
+
+    .input-search {
+        @apply w-full h-14 rounded shadow-md shadow-emerald-400 px-2 text-xl;
+    }
+
+    .btn-search {
+        @apply h-14 flex items-center justify-center bg-white rounded shadow-md shadow-emerald-400 px-4 text-xl font-medium;
+    }
+
     .select-component {
         @apply w-1/3 ml-4 italic outline outline-offset-2 outline-emerald-400 rounded-md h-14 text-lg border border-green-600 text-green-600 mr-4
     }

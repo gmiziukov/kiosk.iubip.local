@@ -1,93 +1,87 @@
-<div class="w-full h-full">
-    <div class="flex justify-between">
-        <button wire:click="redirectBack()" class="w-[11.7rem] h-[3.75rem] flex space-x-2 items-center justify-center bg-gradient-to-br from-blue-800 from-60% to-blue-700 rounded shadow-md shadow-emerald-400 p-4 text-white">
-            <i class="fa-solid fa-chevron-left fa-xl"></i>
-            <span class="text-xl">Назад</span>
-        </button>
-
-        <div class="flex justify-center items-center w-full">
-            <input
-                class="rounded-md pl-2 w-1/2 text-2xl h-16 border border-green-600 text-blue-500"
-                placeholder="Пожалуйста, введите номер зачетной книжки" wire:model="search" type="text" value="">
-            <button wire:click="getStudentGrades" class="flex items-center justify-center px-4 text-xl font-medium border ml-8 border-green-400 h-16 bg-white rounded-md">
-                <i class="fa-solid fa-search fa-xl"></i>
-                <span class="ml-2">Найти</span>
+<div class="w-full h-full flex flex-col space-y-4">
+    <div class="w-full h-24 flex">
+        <div class="w-52 flex items-center justify-center">
+            <button wire:click="redirectBack" class="btn-back">
+                <i class="fa-solid fa-chevron-left fa-xl"></i>
+                <span class="text-xl">Назад</span>
             </button>
         </div>
-
-        <button wire:click="redirectToHome" class="w-[11.7rem] h-[3.75rem] flex space-x-2 items-center justify-center bg-gradient-to-br from-blue-800 from-60% to-blue-700 rounded shadow-md shadow-emerald-400 p-4 text-white">
-            <i class="fa-solid fa-home fa-xl"></i>
-            <span class="text-xl">Главная</span>
-        </button>
-    </div>
-    <div class="flex items-center justify-center">
-        <div wire:loading wire:target="getStudentGrades">
-            <div class="text-white mt-[19rem] text-6xl">
-                <i class="fa-solid fa-spinner fa-spin-pulse" style="color: #16243c;"></i>
-                <!-- <img src="{{ asset('storage/output-onlinegiftools.gif') }}" alt="Анимация загрузки"> -->
+        <div class="flex-1">
+            <div class="h-full flex items-center justify-center space-x-2 px-2">
+                <input wire:model="search" type="text" class="input-search" placeholder="Пожалуйста, введите номер зачетной книжки">
+                <button wire:click="getStudentGrades" class="btn-search">
+                    <i class="fa-solid fa-search fa-xl"></i>
+                    <span class="ml-2">Найти</span>
+                </button>
             </div>
+        </div>
+        <div class="w-52 flex items-center justify-center">
+            <button wire:click="redirectToHome" class="btn-home">
+                <i class="fa-solid fa-home fa-xl"></i>
+                <span class="text-xl">Главная</span>
+            </button>
         </div>
     </div>
 
-    <div class=w-full wire:loading.remove wire:target="getStudentGrades">
-        <div class="mt-10">
-            @if(Session::has('error'))
-            <x-alert type="warning" title="Внимание" message="{{ Session::get('error') }}" />
-            @endif
-            <div class="flex items-center justify-center">
-                @if(count($data) != NULL)
-                <div>
-                    <table class="border-separate overflow-y-auto rounded-lg w-full font-sans font-normal text-xl text-white">
-                        <thead class="bg-gradient-to-b h-12 from-blue-700 from-20% to-blue-900 ">
-                            <tr>
-                                <td class="border text-2xl text-center font-semibold  w-[6rem] rounded-l-lg border-blue-200">
-                                    Семестр
-                                </td>
-                                <td class="border text-2xl text-center font-semibold w-[50rem] border-blue-200">
-                                    Дисциплина
-                                </td>
-
-                                <td class="border text-2xl text-center font-semibold w-[40rem] border-blue-200">
-                                    Вид контроля
-                                </td>
-                                <td class="border text-2xl text-center font-semibold w-[15rem] rounded-r-lg border-blue-200">
-                                    Результат
-                                </td>
-                            </tr>
-                        </thead>
-                        <tbody class="bg-gradient-to-b h-14 from-blue-700 via-30% via-blue-800 to-blue-900">
-                            @foreach ($data as $data1)
-                            <tr>
-                                <td class="border w-32 text-center px-4 h-10 rounded-l-lg text-xl font-norm border-blue-200">
-                                    {{$data1->semestr}}
-                                </td>
-                                <td class="border w-48 px-4 h-10 rounded-l-lg w-[35rem] text-xl font-norm border-blue-200">
-                                    {{$data1->name}}
-                                </td>
-
-                                <td class="border w-48 text-center h-10 text-xl w-[26rem] font-norm border-blue-200">
-                                    {{$data1->type_name}}
-                                </td>
-                                <td class="border w-48 text-center h-10 rounded-r-lg w-[10rem] text-xl font-norm border-blue-200">
-                                    @if ($data1->grade == 1)
-                                    <span>Зачет</span>
-                                    @elseif ($data1->grade == 0)
-                                    <span>Не зачтено</span>
-                                    @else
-                                    <span>{{$data1->grade}}</span>
-                                    @endif
-                                </td>
-                            </tr>
-                            @endforeach
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-            @elseif (empty($data) && !Session::has('error'))
-            <div class="w-full pt-4">
-                <x-alert type="info" title="Информация" message="Для отображения информации воспользуйтесь формой ввода поиска." />
-            </div>
-            @endif
+    <!-- Preloader -->
+    <div class="h-full" wire:loading wire:target="getStudentGrades">
+        <div class="h-full flex space-x-2 items-center justify-center text-white text-3xl font-semibold">
+            <i class="fa-solid fa-spinner fa-spin-pulse"></i>
+            <span>Пожалуйста, подождите, идет загрузка данных</span>
         </div>
+    </div>
+
+    <div class="h-full" wire:loading.remove wire:target="getStudentGrades">
+        @if(Session::has('error'))
+        <div class="h-full flex items-center justify-center">
+            <x-alert type="error" title="Ошибка" message="{{ Session::get('error') }}" />
+        </div>
+        @endif
+
+        @if(!is_null($data) && count($data) != 0)
+        <div class="border rounded">
+            <table class="w-full text-white text-xl">
+                <thead>
+                    <tr class="border">
+                        <th class="p-1">Дисциплина</th>
+                        <th class="p-1">Вид контроля</th>
+                        <th class="p-1">Результат</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach($data as $key => $value)
+                    <tr class="border">
+                        <td colspan="3" class="p-1 text-center font-bold">Семестр {{ $key }}</td>
+                    </tr>
+                    @foreach($value as $item)
+                    <tr class="border">
+                        <td class="p-1">{{ $item['discipline_name'] }}</td>
+                        <td class="p-1 text-center">{{ $item['control_name'] }}</td>
+                        <td class="p-1 text-center">
+                            @if(is_null($item['grade']))
+                            Отсутсвует
+                            @else
+                            @if($item['control_name'] == 'Зачет')
+                            @if($item['grade'] == 1)
+                            Зачтено
+                            @else
+                            Не зачтено
+                            @endif
+                            @else
+                            {{ $item['grade'] }}
+                            @endif
+                            @endif
+                        </td>
+                    </tr>
+                    @endforeach
+                    @endforeach
+                </tbody>
+            </table>
+        </div>
+        @else
+        <div class="h-full flex items-center justify-center">
+            <x-alert type="info" title="Информация" message="Для отображения информации воспользуйтесь формой для поиска." />
+        </div>
+        @endif
     </div>
 </div>

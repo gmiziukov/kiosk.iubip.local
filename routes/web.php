@@ -12,9 +12,40 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+//Главная
 Route::get('/', function() {
     return view('index');
 })->name('index');
+
+//Об университете
+Route::get('/about-university', function () {
+    return view('pages.about-university');
+})->name('about.university');
+
+//Расписание занятий
+Route::get('/schedule', function() {
+    return view('page.schedule');
+})->name('schedule');
+
+//Заказ документов
+Route::get('/student-document-order-requests', function () {
+    return view('pages.student-document-order-requests');
+})->name('student.document.order.requests');
+
+//График пересдач академических задолженностей
+Route::get('/academic-retake-schedule-list', function () {
+    return view('pages.student.academic-retake-schedule-list');
+})->name('student.academic.retake.schedule.list');
+
+//Успеваемость
+Route::get('/student-grades', function () {
+    return view('pages.student-grades');
+})->name('student.grades');
+
+//Часто задаваемые вопросы
+Route::get('/faq', function () {
+    return view('pages.faq');
+})->name('faq');
 
 //Расписание занятий
 Route::get('/SelectStudentOrTeacher', function () {
@@ -24,46 +55,22 @@ Route::get('/SelectStudentOrTeacher', function () {
 
 Route::get('/schedule/{SoT}', function ($SoT) {
     return view('pages.schedule',['SoT'=> $SoT]);
-})->name('schedule');
+})->name('schedule1');
 
 
-//Заказ документов
-Route::get('/student-document-order-requests', function () {
-    return view('pages.student-document-order-requests');
-})->name('student.document.order.requests');
+
 
 //График пересдач
 Route::get('/retake-schedule', function () {
     return view('pages.retake-schedule');
 })->name('retake.schedule');
 
-//Успеваемость
-Route::get('/student-grades', function () {
-    return view('pages.student_grades');
-})->name('student.grades');
 
-//Об университете
-Route::get('/about-university', function () {
-    return view('pages.about-university');
-})->name('about.university');
 
-//Часто задаваемые вопросы
-Route::get('/faq', function () {
-    return view('pages.faq');
-})->name('faq');
+
+
+
 
 Route::get('/faq/{val}', function ($val) {
     return view('pages.faq1',['val'=> $val]);
 })->name('faq.item');
-
-
-
-Route::middleware([
-    'auth:sanctum',
-    config('jetstream.auth_session'),
-    'verified',
-])->group(function () {
-    Route::get('/dashboard', function () {
-        return view('dashboard');
-    })->name('dashboard');
-});
