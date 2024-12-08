@@ -7,8 +7,8 @@ use Livewire\Component;
 
 class StudentGrades extends Component
 {
-    public $search = '';
-    public $fio = '';
+    public string $search = '';
+    public string $fio = '';
     public $data = [];
 
     public function render()

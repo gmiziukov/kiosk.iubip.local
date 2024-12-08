@@ -43,10 +43,9 @@ Route::get('/student-grades', function () {
 })->name('student.grades');
 
 //Часто задаваемые вопросы
-Route::get('/faq', function () {
-    return view('pages.faq');
-})->name('faq');
-
+Route::get('/faqs', function () {
+    return view('pages.faqs');
+})->name('faqs');
 
 
 
@@ -58,8 +57,3 @@ Route::get('/SelectStudentOrTeacher', function () {
 Route::get('/schedule/{SoT}', function ($SoT) {
     return view('pages.schedule',['SoT'=> $SoT]);
 })->name('schedule1');
-
-
-Route::get('/faq/{val}', function ($val) {
-    return view('pages.faq1',['val'=> $val]);
-})->name('faq.item');

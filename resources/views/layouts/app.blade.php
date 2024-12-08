@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
+    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     <title>{{ config('app.name', 'Южный Университет (ИУБиП)') }}</title>
 
     <!-- Scripts -->
@@ -30,7 +31,7 @@
             </div>
 
             <div class="w-1/4 h-full">
-                <div class="w-full current-datetime">
+                <div class="current-datetime">
                     <span id="currentDate" class="text-end"></span>
                     <span id="currentTime" class="text-end"></span>
                 </div>

@@ -65,8 +65,8 @@
                 </div>
             </div>
         </a>
-        <a href="{{ route('faq') }}">
-            <div class="menu-card" style="background-image: url('storage/faq.png');">
+        <a href="{{ route('faqs') }}">
+            <div class="menu-card" style="background-image: url('storage/faqs.png');">
                 <div class="menu-card-content">
                     <div class="menu-card-icon">
                         <i class="fa-solid fa-headset fa-2xl" style="color: #08cc22;"></i>

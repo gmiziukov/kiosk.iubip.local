@@ -7,7 +7,7 @@ use Livewire\Component;
 
 class AcademicRetakeScheduleList extends Component
 {
-    public $search = '';
+    public string $search = '';
     public $data = [];
 
     public function render()

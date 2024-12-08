@@ -41,6 +41,10 @@
         @apply w-40 h-14 flex space-x-2 items-center justify-center bg-gradient-to-br from-blue-800 from-60% to-blue-700 rounded shadow-md shadow-emerald-400 p-4 text-white;
     }
 
+    .btn-category {
+        @apply w-40 h-14 flex space-x-2 items-center justify-center bg-gradient-to-br from-blue-800 from-60% to-blue-700 rounded shadow-md shadow-emerald-400 p-4 text-xl text-white;
+    }
+
     .input-search {
         @apply w-full h-14 rounded shadow-md shadow-emerald-400 px-2 text-xl;
     }
